@@ -7,64 +7,195 @@
     <meta name="description" content="Unabhängiges Wissensportal für Odoo ERP. 198 fundierte Artikel zu Odoo, Hosting und Implementierung für deutsche Unternehmen.">
     <link rel="canonical" href="https://odoo-experten-deutschland.de/">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+        .stats {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+        }
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .categories {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        .categories h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            color: #1e293b;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .category-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: inherit;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+        .category-card h3 {
+            color: #1e3a8a;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .category-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .category-link {
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        .cta-section {
+            background: #1e293b;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        .btn-primary {
+            display: inline-block;
+            background: #3b82f6;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover {
+            background: #2563eb;
+        }
+    </style>
 </head>
 <body>
     <header>
         <nav class="container">
-            <a href="index.html" class="logo"><img src="https://tbppogohivsxgiavbnvp.supabase.co/storage/v1/object/public/odoo/Logo.png" alt="Odoo Experten Deutschland" class="logo-img" style="height: 40px;">Odoo Experten Deutschland</a>
+            <a href="index.html" class="logo">
+                <img src="https://tbppogohivsxgiavbnvp.supabase.co/storage/v1/object/public/odoo/Logo.png" alt="Odoo Experten Deutschland" class="logo-img" style="height: 40px;">
+                Odoo Experten Deutschland
+            </a>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="odoo/index.html">Odoo ERP</a></li>
                 <li><a href="odoo-19/index.html">Odoo 19</a></li>
                 <li><a href="odoo-hosting/index.html">Hosting</a></li>
+                <li><a href="odoo-hosting-rechner.html">Kostenrechner</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <section class="hero" style="background: linear-gradient(135deg, #6b46c1, #ec4899); color: white; padding: 120px 0 80px; text-align: center;">
+        <section class="hero">
             <div class="container">
-                <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Ihr unabhängiges Wissensportal für Odoo ERP</h1>
-                <p style="font-size: 1.3rem; max-width: 700px; margin: 0 auto 2rem;">
-                    198 fundierte Artikel, neutrale Analysen und aktuelle Informationen zu allen Aspekten von Odoo
-                </p>
+                <h1>Ihr unabhängiges Wissensportal für Odoo ERP</h1>
+                <p>Fundierte Artikel, neutrale Analysen und praxisnahe Anleitungen für deutsche Unternehmen</p>
                 
-                <div style="display: flex; gap: 3rem; justify-content: center; margin: 3rem 0;">
-                    <div>
-                        <div style="font-size: 3rem; font-weight: bold;">69</div>
-                        <div>Odoo ERP Artikel</div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">198</span>
+                        <span class="stat-label">Fachartikel</span>
                     </div>
-                    <div>
-                        <div style="font-size: 3rem; font-weight: bold;">71</div>
-                        <div>Hosting Artikel</div>
+                    <div class="stat">
+                        <span class="stat-number">69</span>
+                        <span class="stat-label">Odoo ERP Guides</span>
                     </div>
-                    <div>
-                        <div style="font-size: 3rem; font-weight: bold;">58</div>
-                        <div>Odoo 19 Artikel</div>
+                    <div class="stat">
+                        <span class="stat-number">71</span>
+                        <span class="stat-label">Hosting Artikel</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">58</span>
+                        <span class="stat-label">Odoo 19 Features</span>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section class="container" style="padding: 60px 20px;">
-            <div class="categories-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                <a href="odoo/index.html" class="category-card" style="background: white; padding: 2rem; border-radius: 12px; text-decoration: none; color: inherit; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
-                    <h2 style="color: #6b46c1;">🎯 Odoo ERP</h2>
-                    <p>Umfassende Anleitungen zu allen Odoo-Modulen und Funktionen für den deutschen Markt.</p>
-                    <div style="color: #6b46c1; font-weight: 600;">69 Artikel →</div>
-                </a>
+        <section class="categories">
+            <div class="container">
+                <h2>Ihre Wissensquelle für Odoo</h2>
+                <div class="category-grid">
+                    <a href="odoo/index.html" class="category-card">
+                        <h3>🎯 Odoo ERP Grundlagen</h3>
+                        <p>Umfassende Anleitungen zu allen Odoo-Modulen und Funktionen. Von der Installation bis zur Optimierung - alles für den deutschen Markt.</p>
+                        <span class="category-link">69 Artikel ansehen →</span>
+                    </a>
+                    
+                    <a href="odoo-hosting/index.html" class="category-card">
+                        <h3>☁️ Hosting-Lösungen</h3>
+                        <p>Finden Sie die perfekte Hosting-Lösung für Ihre Odoo-Installation. Cloud, On-Premise oder Hybrid - wir zeigen alle Optionen.</p>
+                        <span class="category-link">71 Artikel ansehen →</span>
+                    </a>
+                    
+                    <a href="odoo-19/index.html" class="category-card">
+                        <h3>🚀 Odoo 19 Features</h3>
+                        <p>Entdecken Sie die neuesten Funktionen und KI-Integrationen in Odoo 19. Alles über das kommende Major-Update.</p>
+                        <span class="category-link">58 Artikel ansehen →</span>
+                    </a>
+                </div>
                 
-                <a href="odoo-hosting/index.html" class="category-card" style="background: white; padding: 2rem; border-radius: 12px; text-decoration: none; color: inherit; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
-                    <h2 style="color: #10b981;">☁️ Hosting</h2>
-                    <p>Finden Sie die perfekte Hosting-Lösung für Ihre Odoo-Installation.</p>
-                    <div style="color: #10b981; font-weight: 600;">71 Artikel →</div>
-                </a>
-                
-                <a href="odoo-19/index.html" class="category-card" style="background: white; padding: 2rem; border-radius: 12px; text-decoration: none; color: inherit; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.3s;">
-                    <h2 style="color: #ec4899;">🚀 Odoo 19</h2>
-                    <p>Entdecken Sie die neuesten Features und KI-Integrationen in Odoo 19.</p>
-                    <div style="color: #ec4899; font-weight: 600;">58 Artikel →</div>
-                </a>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <h3 style="color: #1e293b; margin-bottom: 1.5rem;">Berechnen Sie Ihre Hosting-Kosten</h3>
+                    <a href="odoo-hosting-rechner.html" class="btn-primary">Zum Kostenrechner</a>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <div class="container">
+                <h2>Starten Sie Ihre Odoo-Reise</h2>
+                <p>Profitieren Sie von unserem umfassenden Expertenwissen und finden Sie die perfekte Lösung für Ihr Unternehmen.</p>
+                <a href="odoo/was-ist-odoo.html" class="btn-primary">Was ist Odoo?</a>
             </div>
         </section>
     </main>
@@ -74,13 +205,33 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Über Odoo Experten Deutschland</h4>
-                    <p>Unabhängiges Wissensportal für Odoo ERP mit fundierter Expertise.</p>
+                    <p>Unabhängiges Wissensportal für Odoo ERP mit fundierter Expertise und neutralen Analysen für deutsche Unternehmen.</p>
                 </div>
+                
+                <div class="footer-section">
+                    <h4>Inhalte</h4>
+                    <a href="odoo/index.html">Odoo ERP Grundlagen</a>
+                    <a href="odoo-19/index.html">Odoo 19 Features</a>
+                    <a href="odoo-hosting/index.html">Hosting-Lösungen</a>
+                    <a href="odoo-hosting-rechner.html">Kostenrechner</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Rechtliches</h4>
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                    <a href="agb.html">AGB</a>
+                    <a href="cookie-richtlinien.html">Cookie-Richtlinien</a>
+                </div>
+                
                 <div class="footer-section">
                     <h4>Kontakt</h4>
-                    <p>info@odoo-experten-deutschland.de</p>
+                    <p>📧 info@odoo-experten-deutschland.de</p>
+                    <p>🌐 odoo-experten-deutschland.de</p>
+                    <p>🇩🇪 Deutschland</p>
                 </div>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2024 Odoo Experten Deutschland. Alle Rechte vorbehalten.</p>
             </div>
