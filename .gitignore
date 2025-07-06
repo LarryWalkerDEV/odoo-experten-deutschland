@@ -15,7 +15,7 @@
 
 # next.js
 /.next/
-/out/
+# /out/ # Commented out to allow static site deployment
 
 # production
 /build
