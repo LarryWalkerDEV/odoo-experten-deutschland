@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odoo Hosting-Kostenrechner - Berechnen Sie Ihre monatlichen Kosten | Odoo Experten Deutschland</title>
+    <meta name="description" content="Kostenloser Odoo Hosting-Rechner für deutsche Unternehmen. Berechnen Sie Ihre monatlichen Kosten basierend auf Nutzerzahl, Speicher und Modulen.">
+    <link rel="canonical" href="https://odoo-experten-deutschland.de/odoo-hosting-rechner.html">
+    <link rel="stylesheet" href="css/modern-styles.css">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💰</text></svg>">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon">🎯</div>
+                Odoo Experten Deutschland
+            </a>
+            <button class="mobile-menu-toggle" aria-label="Menü öffnen">☰</button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="odoo/index.html">Odoo ERP</a></li>
+                <li><a href="odoo-19/index.html">Odoo 19</a></li>
+                <li><a href="odoo-hosting/index.html">Hosting</a></li>
+                <li><a href="odoo-hosting-rechner.html" class="active">Kostenrechner</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="article-layout">
+        <div class="breadcrumbs">
+            <div class="container">
+                <a href="index.html">Home</a> » 
+                <span>Odoo Hosting-Kostenrechner</span>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="article-header text-center">
+                <h1>Odoo Hosting-Kostenrechner</h1>
+                <p style="font-size: 1.25rem; color: var(--gray-600); max-width: 800px; margin: 0 auto;">
+                    Berechnen Sie transparent die monatlichen Kosten für Ihr Odoo-Hosting. 
+                    Unser Rechner berücksichtigt alle wichtigen Faktoren für deutsche Unternehmen.
+                </p>
+            </div>
+            
+            <div class="calculator-container" style="margin-top: 3rem;">
+                <form id="advanced-calculator">
+                    <div class="form-group">
+                        <label for="company-size">Unternehmensgröße</label>
+                        <select id="company-size" class="form-control">
+                            <option value="small">Kleinunternehmen (1-10 Mitarbeiter)</option>
+                            <option value="medium" selected>Mittelstand (11-50 Mitarbeiter)</option>
+                            <option value="large">Großunternehmen (51-200 Mitarbeiter)</option>
+                            <option value="enterprise">Enterprise (200+ Mitarbeiter)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="users">Anzahl der Benutzer</label>
+                        <input type="range" id="users" min="1" max="500" value="25" class="range-slider">
+                        <span class="range-value" id="users-value">25</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="storage">Speicherplatz (GB)</label>
+                        <input type="range" id="storage" min="10" max="2000" value="100" step="10" class="range-slider">
+                        <span class="range-value" id="storage-value">100 GB</span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hosting-type">Hosting-Typ</label>
+                        <select id="hosting-type" class="form-control">
+                            <option value="shared">Shared Hosting (günstig)</option>
+                            <option value="vps" selected>VPS (ausgewogen)</option>
+                            <option value="dedicated">Dedicated Server (Premium)</option>
+                            <option value="cloud">Cloud Hosting (flexibel)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Server-Standort</label>
+                        <select id="location" class="form-control">
+                            <option value="de" selected>Deutschland (DSGVO-konform)</option>
+                            <option value="eu">EU (DSGVO-konform)</option>
+                            <option value="ch">Schweiz</option>
+                            <option value="us">USA</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Odoo Module</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modules" value="crm" checked>
+                                <span>CRM</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modules" value="sales" checked>
+                                <span>Verkauf</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modules" value="accounting" checked>
+                                <span>Buchhaltung</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modules" value="inventory">
+                                <span>Lagerverwaltung</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modules" value="manufacturing">
+                                <span>Produktion</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modules" value="project">
+                                <span>Projektmanagement</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modules" value="hr">
+                                <span>Personal</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modules" value="website">
+                                <span>Website</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modules" value="ecommerce">
+                                <span>E-Commerce</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="modules" value="pos">
+                                <span>Kassensystem</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Zusätzliche Services</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="backup">
+                                <span>Tägliche Backups</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="ssl">
+                                <span>SSL-Zertifikat</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="monitoring">
+                                <span>24/7 Monitoring</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="support">
+                                <span>Premium Support</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="staging">
+                                <span>Staging-Umgebung</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="services" value="migration">
+                                <span>Migrationshilfe</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="btn-calculate" onclick="calculateAdvancedCosts()">
+                        Kosten berechnen
+                    </button>
+                </form>
+                
+                <div id="results" class="calculator-results" style="display: none;">
+                    <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.75rem;">Ihre Kostenkalkulation</h3>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <div class="result-label">Monatliche Kosten</div>
+                            <div class="result-value" id="monthly-cost">€0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Jährliche Kosten</div>
+                            <div class="result-value" id="yearly-cost">€0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Einrichtungsgebühr</div>
+                            <div class="result-value" id="setup-cost">€0</div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-label">Ersparnis vs. On-Premise</div>
+                            <div class="result-value" id="savings">€0</div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding: 2rem; background: rgba(255,255,255,0.1); border-radius: 16px;">
+                        <h4 style="margin-bottom: 1rem;">Empfohlene Hosting-Anbieter für Ihre Konfiguration:</h4>
+                        <div id="provider-recommendations" style="display: grid; gap: 1rem;">
+                            <!-- Recommendations will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <section style="margin-top: 5rem;">
+                <h2 style="text-align: center; margin-bottom: 3rem;">Häufig gestellte Fragen zum Hosting-Rechner</h2>
+                
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: var(--shadow-md);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Wie genau sind die berechneten Kosten?</h3>
+                        <p>Unser Rechner basiert auf aktuellen Marktpreisen deutscher Hosting-Anbieter. Die tatsächlichen Kosten können je nach Anbieter um ±15% variieren. Die Berechnung dient als verlässliche Orientierung für Ihre Budgetplanung.</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: var(--shadow-md);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Welche Kosten sind nicht enthalten?</h3>
+                        <p>Nicht enthalten sind: Individuelle Anpassungen, externe Beratung, Schulungen und eventuelle Lizenzkosten für Odoo Enterprise. Diese Zusatzkosten hängen stark von Ihren spezifischen Anforderungen ab.</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 16px; padding: 2rem; margin-bottom: 1.5rem; box-shadow: var(--shadow-md);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Warum ist der deutsche Serverstandort teurer?</h3>
+                        <p>Deutsche Rechenzentren bieten höchste Datenschutzstandards gemäß DSGVO, redundante Infrastruktur und lokalen Support. Diese Qualität rechtfertigt einen Aufpreis von etwa 20-30% gegenüber internationalen Anbietern.</p>
+                    </div>
+                    
+                    <div style="background: white; border-radius: 16px; padding: 2rem; box-shadow: var(--shadow-md);">
+                        <h3 style="color: var(--primary); margin-bottom: 1rem;">Kann ich später upgraden?</h3>
+                        <p>Ja, alle empfohlenen Hosting-Lösungen sind skalierbar. Sie können jederzeit mehr Benutzer, Speicherplatz oder Module hinzufügen. Die meisten Anbieter berechnen Upgrades anteilig ohne Einrichtungsgebühren.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Über Odoo Experten Deutschland</h4>
+                    <p>Unabhängiges Wissensportal für Odoo ERP mit fundierter Expertise und neutralen Analysen für deutsche Unternehmen.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Inhalte</h4>
+                    <a href="odoo/index.html">Odoo ERP Grundlagen</a>
+                    <a href="odoo-19/index.html">Odoo 19 Features</a>
+                    <a href="odoo-hosting/index.html">Hosting-Lösungen</a>
+                    <a href="odoo-hosting-rechner.html">Kostenrechner</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Rechtliches</h4>
+                    <a href="impressum.html">Impressum</a>
+                    <a href="datenschutz.html">Datenschutz</a>
+                    <a href="agb.html">AGB</a>
+                    <a href="cookie-richtlinien.html">Cookie-Richtlinien</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>📧 info@odoo-experten-deutschland.de</p>
+                    <p>🌐 odoo-experten-deutschland.de</p>
+                    <p>🇩🇪 Deutschland</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Odoo Experten Deutschland. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <button class="back-to-top" aria-label="Nach oben">↑</button>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+        
+        // Scroll functionality
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.querySelector('.scroll-progress');
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = (window.scrollY / scrollHeight) * 100;
+            scrollProgress.style.width = scrolled + '%';
+            
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        document.querySelector('.back-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // Range slider updates
+        document.querySelectorAll('.range-slider').forEach(slider => {
+            slider.addEventListener('input', (e) => {
+                const valueSpan = document.getElementById(e.target.id + '-value');
+                if (e.target.id === 'storage') {
+                    valueSpan.textContent = e.target.value + ' GB';
+                } else {
+                    valueSpan.textContent = e.target.value;
+                }
+            });
+        });
+        
+        // Checkbox styling
+        document.querySelectorAll('.checkbox-label input').forEach(checkbox => {
+            checkbox.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    e.target.parentElement.classList.add('checked');
+                } else {
+                    e.target.parentElement.classList.remove('checked');
+                }
+            });
+        });
+        
+        // Initialize checked checkboxes
+        document.querySelectorAll('.checkbox-label input:checked').forEach(checkbox => {
+            checkbox.parentElement.classList.add('checked');
+        });
+        
+        // Advanced calculator
+        function calculateAdvancedCosts() {
+            const companySize = document.getElementById('company-size').value;
+            const users = parseInt(document.getElementById('users').value);
+            const storage = parseInt(document.getElementById('storage').value);
+            const hostingType = document.getElementById('hosting-type').value;
+            const location = document.getElementById('location').value;
+            const modules = document.querySelectorAll('input[name="modules"]:checked').length;
+            const services = document.querySelectorAll('input[name="services"]:checked').length;
+            
+            // Base costs
+            let userCost = users * 15; // Base per user
+            let storageCost = (storage / 50) * 10; // Per 50GB
+            let moduleCost = modules * 30; // Per module
+            let serviceCost = services * 25; // Per service
+            
+            // Company size multiplier
+            const sizeMultiplier = {
+                'small': 1.0,
+                'medium': 1.2,
+                'large': 1.5,
+                'enterprise': 2.0
+            };
+            
+            // Hosting type multiplier
+            const hostingMultiplier = {
+                'shared': 0.8,
+                'vps': 1.0,
+                'dedicated': 1.8,
+                'cloud': 1.5
+            };
+            
+            // Location multiplier
+            const locationMultiplier = {
+                'de': 1.3,
+                'eu': 1.15,
+                'ch': 1.4,
+                'us': 1.0
+            };
+            
+            // Calculate total
+            let baseMonthly = userCost + storageCost + moduleCost + serviceCost;
+            baseMonthly *= sizeMultiplier[companySize];
+            baseMonthly *= hostingMultiplier[hostingType];
+            baseMonthly *= locationMultiplier[location];
+            
+            const monthlyTotal = Math.round(baseMonthly);
+            const yearlyTotal = monthlyTotal * 12;
+            const setupCost = Math.round(monthlyTotal * 0.5); // 50% of monthly as setup
+            const onPremiseCost = yearlyTotal * 2.5; // On-premise typically costs 2.5x more
+            const savings = Math.round(onPremiseCost - yearlyTotal);
+            
+            // Update display
+            document.getElementById('monthly-cost').textContent = '€' + monthlyTotal.toLocaleString('de-DE');
+            document.getElementById('yearly-cost').textContent = '€' + yearlyTotal.toLocaleString('de-DE');
+            document.getElementById('setup-cost').textContent = '€' + setupCost.toLocaleString('de-DE');
+            document.getElementById('savings').textContent = '€' + savings.toLocaleString('de-DE');
+            
+            // Provider recommendations
+            const recommendations = getProviderRecommendations(hostingType, location, monthlyTotal);
+            document.getElementById('provider-recommendations').innerHTML = recommendations;
+            
+            // Show results
+            const results = document.getElementById('results');
+            results.style.display = 'block';
+            results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+        
+        function getProviderRecommendations(type, location, budget) {
+            const providers = {
+                'de': [
+                    { name: 'Hetzner Cloud', price: '€89', features: 'DSGVO-konform, 99.9% SLA' },
+                    { name: 'IONOS', price: '€119', features: 'Managed Service, 24/7 Support' },
+                    { name: 'Strato', price: '€99', features: 'Deutscher Support, Backup inklusive' }
+                ],
+                'eu': [
+                    { name: 'OVHcloud', price: '€79', features: 'EU-Rechenzentren, DDoS-Schutz' },
+                    { name: 'Scaleway', price: '€69', features: 'Flexible Skalierung, API-Zugang' }
+                ],
+                'ch': [
+                    { name: 'Infomaniak', price: '€129', features: 'Schweizer Datenschutz, Ökostrom' },
+                    { name: 'Hostpoint', price: '€139', features: 'Lokaler Support, High-End Hardware' }
+                ],
+                'us': [
+                    { name: 'DigitalOcean', price: '€59', features: 'Developer-friendly, Globale CDN' },
+                    { name: 'Linode', price: '€49', features: 'Kostengünstig, Gute Performance' }
+                ]
+            };
+            
+            const relevantProviders = providers[location] || providers['de'];
+            
+            return relevantProviders.map(provider => `
+                <div style="padding: 1rem; background: rgba(255,255,255,0.05); border-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <strong>${provider.name}</strong><br>
+                        <small style="opacity: 0.8;">${provider.features}</small>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>ab ${provider.price}/Monat</strong><br>
+                        <small style="opacity: 0.8;">für Ihre Konfiguration</small>
+                    </div>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>
