@@ -507,28 +507,37 @@ nav {
   flex-grow: 1;
 }
 
-.article-meta {
+/* Article Meta - Hide on article pages */
+.article-layout .article-meta {
+  display: none !important;
+}
+
+/* Keep article meta visible only on index pages */
+.articles-section .article-meta,
+.masonry-grid .article-meta,
+.article-card-masonry .article-meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-  padding: 1rem 0;
-  border-top: 1px solid var(--gray-200);
-  border-bottom: 1px solid var(--gray-200);
-  font-size: 0.95rem;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
   color: var(--gray-600);
 }
 
-.article-meta span {
+.articles-section .article-meta span,
+.masonry-grid .article-meta span,
+.article-card-masonry .article-meta span {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-weight: 500;
 }
 
-.article-meta span:not(:last-child)::after {
+.articles-section .article-meta span:not(:last-child)::after,
+.masonry-grid .article-meta span:not(:last-child)::after,
+.article-card-masonry .article-meta span:not(:last-child)::after {
   content: '•';
-  margin-left: 1.5rem;
+  margin-left: 1rem;
   color: var(--gray-400);
 }
 
@@ -1558,10 +1567,7 @@ select.form-control {
     font-size: 2rem;
   }
   
-  .article-meta {
-    gap: 1rem;
-    font-size: 0.875rem;
-  }
+  /* Article meta hidden on article pages via main CSS */
   
   .calculator-container {
     padding: 2rem;
