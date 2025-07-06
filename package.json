@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "export": "node export.js",
-    "build:static": "next build && node export.js",
+    "build:static": "node build-static.js",
     "start": "next start",
     "lint": "next lint"
   },
