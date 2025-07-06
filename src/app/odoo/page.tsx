@@ -12,28 +12,27 @@ export const metadata: Metadata = {
   },
 }
 
-async function getArticles() {
-  try {
-    // Use relative URL for API calls in production
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
-    const res = await fetch(`${baseUrl}/api/articles?category=odoo`, {
-      cache: 'no-store'
-    })
-    
-    if (!res.ok) {
-      throw new Error('Failed to fetch articles')
-    }
-    
-    const { data } = await res.json()
-    return data || []
-  } catch (error) {
-    console.error('Error fetching articles:', error)
-    return []
+// Static articles for now - will be replaced with API calls later
+const staticArticles = [
+  {
+    id: '1',
+    keyword_id: 1,
+    primary_keyword: 'Odoo ERP',
+    url_slug: 'odoo-erp-einfuehrung',
+    title: 'Odoo ERP Einführung für deutsche Unternehmen',
+    meta_description: 'Erfahren Sie alles über Odoo ERP für deutsche Unternehmen',
+    content: 'Odoo ist eine umfassende ERP-Lösung...',
+    author: 'Odoo Experten',
+    word_count: 1500,
+    status: 'published',
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+    category: 'odoo'
   }
-}
+]
 
-export default async function OdooPage() {
-  const articles = await getArticles()
+export default function OdooPage() {
+  const articles = staticArticles
 
   return (
     <>

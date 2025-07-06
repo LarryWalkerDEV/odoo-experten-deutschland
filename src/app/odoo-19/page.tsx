@@ -1,7 +1,6 @@
 import Navigation from '@/components/Navigation'
 import Footer from '@/components/Footer'
 import ArticleCard from '@/components/ArticleCard'
-import { supabase, type Article, type Author } from '@/lib/supabase'
 import { Sparkles, Cpu, TrendingUp } from 'lucide-react'
 import { Metadata } from 'next'
 
@@ -13,45 +12,9 @@ export const metadata: Metadata = {
   },
 }
 
-async function getArticles() {
-  const { data: articles, error } = await supabase
-    .from('articles')
-    .select('*')
-    .eq('category', 'odoo-19')
-    .eq('status', 'published')
-    .order('created_at', { ascending: false })
-
-  if (error) {
-    console.error('Error fetching articles:', error)
-    return []
-  }
-
-  return articles as Article[]
-}
-
-async function getAuthors() {
-  const { data: authors, error } = await supabase
-    .from('authors')
-    .select('*')
-
-  if (error) {
-    console.error('Error fetching authors:', error)
-    return []
-  }
-
-  return authors as Author[]
-}
-
-export default async function Odoo19Page() {
-  const [articles, authors] = await Promise.all([
-    getArticles(),
-    getAuthors()
-  ])
-
-  const authorMap = authors.reduce((acc, author) => {
-    acc[author.id] = author
-    return acc
-  }, {} as Record<string, Author>)
+export default function Odoo19Page() {
+  const articles: any[] = []
+  const authorMap = {}
 
   const features = [
     {
