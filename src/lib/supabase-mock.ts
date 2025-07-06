@@ -1,12 +1,18 @@
-import { createClient } from '@supabase/supabase-js'
+// Mock Supabase client for production build without database
+export const supabase = {
+  from: (table: string) => ({
+    select: () => ({
+      eq: () => ({
+        eq: () => ({
+          order: () => Promise.resolve({ data: [], error: null })
+        }),
+        order: () => Promise.resolve({ data: [], error: null })
+      }),
+      order: () => Promise.resolve({ data: [], error: null })
+    })
+  })
+}
 
-// Use placeholder values if environment variables are not set
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://placeholder.supabase.co'
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'placeholder-key'
-
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
-
-// Type definitions for our data
 export interface Article {
   id: string
   keyword_id: number
@@ -16,7 +22,7 @@ export interface Article {
   title: string
   meta_title?: string
   meta_description: string
-  content: any // Can be string or JSON
+  content: any
   author_id: string
   author?: string
   word_count: number
