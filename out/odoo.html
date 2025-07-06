@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odoo ERP - Umfassender Guide für deutsche Unternehmen</title>
+  <meta name="description" content="Alles über Odoo ERP: Module, Implementierung, Kosten und Best Practices für deutsche Unternehmen. Ihr kompakter Guide zum erfolgreichen Odoo-Einsatz.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">Odoo Experten Deutschland</div>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/odoo.html">Odoo</a></li>
+        <li><a href="/odoo-19.html">Odoo 19</a></li>
+        <li><a href="/odoo-hosting.html">Hosting</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Odoo ERP - Ihr umfassender Guide</h1>
+      <p>Alles was Sie über Odoo ERP wissen müssen: Module, Implementierung und Best Practices</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <h2>Was ist Odoo ERP?</h2>
+      <p>Odoo ist eine umfassende Open-Source-ERP-Suite, die alle Geschäftsprozesse in einem integrierten System vereint. Von CRM und Vertrieb über Buchhaltung und Lager bis hin zu Produktion und E-Commerce - Odoo bietet über 30 Hauptmodule für jeden Unternehmensbereich.</p>
+      
+      <h3>Die wichtigsten Odoo Module</h3>
+      <ul>
+        <li><strong>CRM:</strong> Kundenbeziehungsmanagement mit Lead-Tracking und Vertriebspipeline</li>
+        <li><strong>Verkauf:</strong> Angebotserstellung, Auftragsbearbeitung und Rechnungsstellung</li>
+        <li><strong>Einkauf:</strong> Lieferantenmanagement und Beschaffungsprozesse</li>
+        <li><strong>Lager:</strong> Vollständige Lagerverwaltung mit Barcode-Unterstützung</li>
+        <li><strong>Buchhaltung:</strong> DATEV-konforme Finanzbuchhaltung für Deutschland</li>
+        <li><strong>Personal:</strong> HR-Management mit Zeiterfassung und Gehaltsabrechnung</li>
+        <li><strong>Produktion:</strong> MRP-System für Fertigungsunternehmen</li>
+        <li><strong>E-Commerce:</strong> Integrierter Online-Shop mit automatischer Synchronisation</li>
+      </ul>
+
+      <h3>Vorteile von Odoo für deutsche Unternehmen</h3>
+      <p>Odoo bietet speziell für den deutschen Markt entwickelte Funktionen:</p>
+      <ul>
+        <li>DATEV-Schnittstelle für nahtlose Steuerberaterkommunikation</li>
+        <li>GoBD-konforme Archivierung und Unveränderbarkeit</li>
+        <li>DSGVO-konforme Datenverarbeitung und Speicherung</li>
+        <li>Deutsche Lokalisierung mit korrekten Steuersätzen und Formularen</li>
+        <li>SEPA-Lastschriftverfahren und elektronische Rechnungsstellung</li>
+      </ul>
+
+      <div class="svg-container">
+        <svg class="data-visualization" width="600" height="400" viewBox="0 0 600 400">
+          <rect width="600" height="400" fill="#f8f9fa" rx="10"/>
+          <text x="300" y="30" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Odoo Module Übersicht</text>
+          
+          <!-- CRM -->
+          <rect x="50" y="60" width="120" height="80" fill="#6b46c1" rx="5"/>
+          <text x="110" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">CRM</text>
+          <text x="110" y="105" text-anchor="middle" fill="white" font-size="10">Kunden-</text>
+          <text x="110" y="120" text-anchor="middle" fill="white" font-size="10">management</text>
+          
+          <!-- Sales -->
+          <rect x="190" y="60" width="120" height="80" fill="#10b981" rx="5"/>
+          <text x="250" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Verkauf</text>
+          <text x="250" y="105" text-anchor="middle" fill="white" font-size="10">Angebote &</text>
+          <text x="250" y="120" text-anchor="middle" fill="white" font-size="10">Aufträge</text>
+          
+          <!-- Accounting -->
+          <rect x="330" y="60" width="120" height="80" fill="#f59e0b" rx="5"/>
+          <text x="390" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Buchhaltung</text>
+          <text x="390" y="105" text-anchor="middle" fill="white" font-size="10">DATEV-</text>
+          <text x="390" y="120" text-anchor="middle" fill="white" font-size="10">konform</text>
+          
+          <!-- Inventory -->
+          <rect x="50" y="160" width="120" height="80" fill="#ec4899" rx="5"/>
+          <text x="110" y="185" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Lager</text>
+          <text x="110" y="205" text-anchor="middle" fill="white" font-size="10">Bestands-</text>
+          <text x="110" y="220" text-anchor="middle" fill="white" font-size="10">verwaltung</text>
+          
+          <!-- Manufacturing -->
+          <rect x="190" y="160" width="120" height="80" fill="#8b5cf6" rx="5"/>
+          <text x="250" y="185" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Produktion</text>
+          <text x="250" y="205" text-anchor="middle" fill="white" font-size="10">MRP-</text>
+          <text x="250" y="220" text-anchor="middle" fill="white" font-size="10">System</text>
+          
+          <!-- E-Commerce -->
+          <rect x="330" y="160" width="120" height="80" fill="#06b6d4" rx="5"/>
+          <text x="390" y="185" text-anchor="middle" fill="white" font-size="12" font-weight="bold">E-Commerce</text>
+          <text x="390" y="205" text-anchor="middle" fill="white" font-size="10">Online-</text>
+          <text x="390" y="220" text-anchor="middle" fill="white" font-size="10">Shop</text>
+          
+          <!-- Connections -->
+          <line x1="170" y1="100" x2="190" y2="100" stroke="#ddd" stroke-width="2"/>
+          <line x1="310" y1="100" x2="330" y2="100" stroke="#ddd" stroke-width="2"/>
+          <line x1="110" y1="140" x2="110" y2="160" stroke="#ddd" stroke-width="2"/>
+          <line x1="250" y1="140" x2="250" y2="160" stroke="#ddd" stroke-width="2"/>
+          <line x1="390" y1="140" x2="390" y2="160" stroke="#ddd" stroke-width="2"/>
+          
+          <text x="300" y="280" text-anchor="middle" font-size="12" fill="#666">Integrierte Module für nahtlose Geschäftsprozesse</text>
+        </svg>
+      </div>
+
+      <h3>Implementierung und Kosten</h3>
+      <p>Die Implementierung von Odoo kann je nach Unternehmensgröße und Anforderungen variieren:</p>
+      <ul>
+        <li><strong>Community Edition:</strong> Kostenlos, ideal für kleine Unternehmen</li>
+        <li><strong>Enterprise Edition:</strong> Ab 31€/Benutzer/Monat mit erweiterten Funktionen</li>
+        <li><strong>Implementierungskosten:</strong> 5.000€ - 50.000€ je nach Komplexität</li>
+        <li><strong>Schulungskosten:</strong> 500€ - 2.000€ pro Benutzer</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="author-section">
+    <div class="container">
+      <div class="author-card">
+        <div class="author-avatar">👨‍💼</div>
+        <div class="author-name">Dr. Andreas Müller</div>
+        <div class="author-title">Senior ERP-Berater & Odoo-Experte</div>
+        <div class="author-bio">
+          Mit über 15 Jahren Erfahrung in der ERP-Beratung und speziell 8 Jahren Odoo-Expertise 
+          unterstützt Dr. Müller Unternehmen bei der digitalen Transformation.
+        </div>
+        <div class="author-credentials">
+          <span class="credential-badge">Zertifizierter Odoo Partner</span>
+          <span class="credential-badge">ERP-Consultant</span>
+          <span class="credential-badge">DATEV-Experte</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Über uns</h4>
+          <p>Unabhängiges Expertenwissen zu Odoo ERP für deutsche Unternehmen</p>
+        </div>
+        <div class="footer-section">
+          <h4>Rechtliches</h4>
+          <a href="/impressum.html">Impressum</a>
+          <a href="/datenschutz.html">Datenschutz</a>
+        </div>
+        <div class="footer-section">
+          <h4>Kontakt</h4>
+          <p>info@odoo-experten-deutschland.de</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Odoo Experten Deutschland. Alle Rechte vorbehalten.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
