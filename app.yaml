@@ -2,7 +2,7 @@ name: odoo-experten-deutschland
 region: fra
 services:
 - build_command: npm run build
-  dockerfile_path: Dockerfile
+  run_command: npm start
   environment_slug: node-js
   envs:
   - key: NODE_ENV
@@ -13,13 +13,10 @@ services:
     value: https://odoo-experten-deutschland.de
   - key: NEXT_PUBLIC_SUPABASE_URL
     scope: RUN_AND_BUILD_TIME
-    type: SECRET
+    value: https://placeholder.supabase.co
   - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
     scope: RUN_AND_BUILD_TIME
-    type: SECRET
-  - key: SUPABASE_SERVICE_ROLE_KEY
-    scope: RUN_TIME
-    type: SECRET
+    value: placeholder-key
   github:
     branch: main
     deploy_on_push: true
