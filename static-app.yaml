@@ -1,0 +1,17 @@
+name: odoo-experten-deutschland
+region: fra
+static_sites:
+- name: frontend
+  github:
+    repo: LarryWalkerDEV/odoo-experten-deutschland
+    branch: main
+    deploy_on_push: true
+  build_command: npm install && npm run build && npm run export
+  environment_slug: html
+  output_dir: out
+  routes:
+  - path: /
+  envs:
+  - key: NEXT_PUBLIC_SITE_URL
+    value: https://odoo-experten-deutschland.de
+    scope: BUILD_TIME
