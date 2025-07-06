@@ -794,7 +794,7 @@
             
             <p><strong>Unser Tipp:</strong> Starten Sie mit einem Managed Hosting-Anbieter und wechseln Sie erst zu Self-Hosting, wenn Sie die nötige Expertise und Ressourcen haben. Die gesparte Zeit und reduzierten Risiken rechtfertigen in den meisten Fällen die höheren Kosten des Managed Hostings.</p>
             
-            <p>Nutzen Sie unseren Hosting-Rechner oben, um die beste Lösung für Ihr Unternehmen zu finden. Bei Fragen stehen wir Ihnen gerne zur Verfügung unter info@odoo-experten-deutschland.de.</p>
+            <p>Nutzen Sie unseren Hosting-Rechner oben, um die beste Lösung für Ihr Unternehmen zu finden. Bei Fragen stehen wir Ihnen gerne zur Verfügung unter <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="325b5c545d725d565d5d1f574a42574046575c1f5657474641515a5e535c561c5657">[email&#160;protected]</a>.</p>
         </article>
     </div>
     
@@ -824,7 +824,7 @@
                 
                 <div class="footer-section">
                     <h4>Kontakt</h4>
-                    <p>📧 info@odoo-experten-deutschland.de</p>
+                    <p>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="96fff8f0f9d6f9f2f9f9bbf3eee6f3e4e2f3f8bbf2f3e3e2e5f5fefaf7f8f2b8f2f3">[email&#160;protected]</a></p>
                     <p>🌐 odoo-experten-deutschland.de</p>
                     <p>🇩🇪 Deutschland</p>
                 </div>
@@ -838,12 +838,11 @@
     
     <button class="back-to-top" aria-label="Nach oben">↑</button>
     
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Hosting provider data
         const hostingProviders = {
             odoo4projects: {
                 name: 'Odoo4Projects.com',
-                url: 'https://ODOO4projects.com?utm_source=X5Y2I933&utm_medium=lph',
                 tiers: [
                     { name: 'Side Hustle', users: '1-10', monthlyPrice: 18, yearlyPrice: 214, setupFee: 0 },
                     { name: 'On the Rise', users: '11-25', monthlyPrice: 33, yearlyPrice: 395, setupFee: 0 },
@@ -860,7 +859,6 @@
             
             odooSH: {
                 name: 'Odoo.sh (Official)',
-                url: 'https://www.odoo.sh',
                 pricing: {
                     perWorker: 58,
                     baseFeeDedicated: 480,
@@ -875,7 +873,6 @@
             
             cloudpepper: {
                 name: 'Cloudpepper',
-                url: 'https://cloudpepper.io',
                 tiers: [
                     { name: 'Core', users: 'Unlimited', monthlyPrice: 0, features: ['Free Plan', '1 Server', 'Community Support'] },
                     { name: 'Base', users: 'Unlimited', monthlyPrice: 29, features: ['2 Servers', 'Staging Environment'] },
@@ -888,7 +885,6 @@
             
             cloudclusters: {
                 name: 'Cloud Clusters',
-                url: 'https://www.cloudclusters.io',
                 tiers: [
                     { name: 'Express', monthlyPrice: 4, features: ['2 CPU, 2GB RAM', 'Basic Setup'] },
                     { name: 'Professional', monthlyPrice: 13, features: ['4 CPU, 8GB RAM', 'Enhanced Performance'] },
@@ -901,7 +897,6 @@
             
             simplifyERP: {
                 name: 'Simplify-ERP',
-                url: 'https://www.simplify-erp.de',
                 tiers: [
                     { name: 'Basic', users: '2-3', monthlyPrice: 30, setupFee: 500 },
                     { name: 'Large', users: 'bis 20', monthlyPrice: 90, setupFee: 500 },
@@ -914,7 +909,6 @@
             
             hostinger: {
                 name: 'Hostinger VPS',
-                url: 'https://www.hostinger.com',
                 tiers: [
                     { name: 'KVM 1', monthlyPrice: 5, features: ['1 vCPU, 4GB RAM', 'Self-Setup Required'] },
                     { name: 'KVM 4', monthlyPrice: 25, features: ['4 vCPU, 16GB RAM', 'Professional Setup Needed'] }
@@ -926,7 +920,6 @@
             
             aws: {
                 name: 'AWS EC2',
-                url: 'https://aws.amazon.com',
                 tiers: [
                     { name: 't3.micro', monthlyPrice: 9, features: ['Free Tier eligible', 'Basic Performance'] },
                     { name: 'm5.large', monthlyPrice: 144, features: ['Production Ready', 'High Performance'] }
@@ -1073,7 +1066,7 @@
                         </div>
                     </td>
                     <td>
-                        <a href="${provider.url || '#'}" target="_blank" rel="dofollow" class="cta-btn" style="text-decoration: none; display: inline-block;">Jetzt anfragen</a>
+                        <button class="cta-btn">Jetzt anfragen</button>
                     </td>
                 `;
                 
@@ -1091,7 +1084,6 @@
                           employeeCount <= 50 ? 2 : 3;
             results.push({
                 name: hostingProviders.odoo4projects.name,
-                url: hostingProviders.odoo4projects.url,
                 monthlyPrice: hostingProviders.odoo4projects.tiers[o4pTier].monthlyPrice,
                 setupFee: 0,
                 features: hostingProviders.odoo4projects.features,
@@ -1105,7 +1097,6 @@
             const workers = Math.ceil(employeeCount / 20);
             results.push({
                 name: hostingProviders.odooSH.name,
-                url: hostingProviders.odooSH.url,
                 monthlyPrice: (hostingProviders.odooSH.pricing.perWorker * workers) + 
                              (employeeCount > 20 ? hostingProviders.odooSH.pricing.baseFeeDedicated : 0),
                 setupFee: 0,
@@ -1120,7 +1111,6 @@
             const cpTier = employeeCount <= 10 ? 0 : employeeCount <= 25 ? 1 : 2;
             results.push({
                 name: hostingProviders.cloudpepper.name,
-                url: hostingProviders.cloudpepper.url,
                 monthlyPrice: hostingProviders.cloudpepper.tiers[cpTier].monthlyPrice,
                 setupFee: 0,
                 features: hostingProviders.cloudpepper.tiers[cpTier].features || [],
@@ -1133,7 +1123,6 @@
             const ccTier = employeeCount <= 20 ? 0 : employeeCount <= 50 ? 1 : 2;
             results.push({
                 name: hostingProviders.cloudclusters.name,
-                url: hostingProviders.cloudclusters.url,
                 monthlyPrice: hostingProviders.cloudclusters.tiers[ccTier].monthlyPrice,
                 setupFee: 0,
                 features: hostingProviders.cloudclusters.tiers[ccTier].features,
@@ -1147,7 +1136,6 @@
                 const seTier = employeeCount <= 3 ? 0 : employeeCount <= 20 ? 1 : 2;
                 results.push({
                     name: hostingProviders.simplifyERP.name,
-                    url: hostingProviders.simplifyERP.url,
                     monthlyPrice: hostingProviders.simplifyERP.tiers[seTier].monthlyPrice,
                     setupFee: hostingProviders.simplifyERP.tiers[seTier].setupFee,
                     features: hostingProviders.simplifyERP.features,
@@ -1160,7 +1148,6 @@
             const hostTier = employeeCount <= 20 ? 0 : 1;
             results.push({
                 name: hostingProviders.hostinger.name,
-                url: hostingProviders.hostinger.url,
                 monthlyPrice: hostingProviders.hostinger.tiers[hostTier].monthlyPrice,
                 setupFee: 0,
                 features: hostingProviders.hostinger.tiers[hostTier].features,
@@ -1173,7 +1160,6 @@
             const awsTier = employeeCount <= 10 ? 0 : 1;
             results.push({
                 name: hostingProviders.aws.name,
-                url: hostingProviders.aws.url,
                 monthlyPrice: hostingProviders.aws.tiers[awsTier].monthlyPrice,
                 setupFee: 0,
                 features: hostingProviders.aws.tiers[awsTier].features,

@@ -24,7 +24,7 @@
       "@type": "Organization",
       "name": "Odoo Experten Deutschland",
       "url": "https://odoo-experten-deutschland.de",
-      "logo": "https://odoo-experten-deutschland.de/logo.png",
+      "logo": "https://tbppogohivsxgiavbnvp.supabase.co/storage/v1/object/public/odoo/Logo.png",
       "description": "Umfassendes Wissensportal für Odoo ERP in Deutschland",
       "sameAs": [],
       "address": {
@@ -54,185 +54,137 @@
         </nav>
     </header>
     
-    <section class="hero">
+    <section class="index-hero fade-in">
         <div class="container">
-            <div class="hero-content">
-                <h1>Ihr Wegweiser für erfolgreiche<br>Odoo-Implementierung</h1>
-                <p>Entdecken Sie über 198 Fachartikel zu Odoo ERP, Hosting-Lösungen und der neuen Version 19. Alles was deutsche Unternehmen für ihre digitale Transformation brauchen.</p>
-                <div class="hero-buttons">
-                    <a href="odoo/was-ist-odoo.html" class="btn btn-primary">Was ist Odoo?</a>
-                    <a href="odoo-hosting-rechner.html" class="btn btn-secondary">Kostenrechner</a>
+            <h1>Ihr Wegweiser für erfolgreiche<br>Odoo-Implementierung</h1>
+            <p>Entdecken Sie über 198 Fachartikel zu Odoo ERP, Hosting-Lösungen und der neuen Version 19. Alles was deutsche Unternehmen für ihre digitale Transformation brauchen.</p>
+            <div class="hero-buttons">
+                <a href="odoo/was-ist-odoo.html" class="btn-primary">Was ist Odoo?</a>
+                <a href="odoo-hosting-rechner.html" class="btn-secondary">Kostenrechner</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Warum Odoo Experten Deutschland?</h2>
+            <div class="features-grid">
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">📚</div>
+                    <h3>198+ Fachartikel</h3>
+                    <p>Umfassende Wissensdatenbank zu allen Odoo-Themen</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">🌍</div>
+                    <h3>7M+ Nutzer weltweit</h3>
+                    <p>Teil der größten Open-Source ERP Community</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">🔒</div>
+                    <h3>100% DSGVO-konform</h3>
+                    <p>Sichere Lösungen für deutsche Unternehmen</p>
+                </div>
+                <div class="feature-card glass-effect">
+                    <div class="feature-icon">🚀</div>
+                    <h3>24/7 Support</h3>
+                    <p>Professionelle Unterstützung rund um die Uhr</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <section class="stats-section">
+    <section class="articles-section">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">198+</div>
-                    <div class="stat-label">Fachartikel</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">7M+</div>
-                    <div class="stat-label">Odoo Nutzer weltweit</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">DSGVO-konform</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div class="stat-label">Support verfügbar</div>
-                </div>
+            <h2 class="section-title">Ihre Themengebiete im Überblick</h2>
+            <p class="section-subtitle">Wählen Sie Ihren Schwerpunkt und tauchen Sie ein in die Welt von Odoo</p>
+            
+            <div class="filter-tags">
+                <button class="filter-tag active" data-category="all">Alle Artikel</button>
+                <button class="filter-tag" data-category="odoo">Odoo ERP</button>
+                <button class="filter-tag" data-category="odoo-19">Odoo 19</button>
+                <button class="filter-tag" data-category="hosting">Hosting</button>
+            </div>
+            
+            <div class="articles-grid" id="articles-container">
+                <!-- Odoo ERP Articles -->
+                <article class="article-card fade-in" data-category="odoo">
+                    <div class="article-category">Odoo ERP</div>
+                    <h3>Was ist Odoo?</h3>
+                    <p>Eine umfassende Einführung in das weltweit führende Open-Source ERP-System und seine Vorteile für deutsche Unternehmen.</p>
+                    <a href="odoo/was-ist-odoo.html" class="article-link">Weiterlesen →</a>
+                </article>
+                
+                <article class="article-card fade-in" data-category="odoo">
+                    <div class="article-category">Odoo ERP</div>
+                    <h3>Odoo für Kleinunternehmen</h3>
+                    <p>Wie kleine und mittlere Unternehmen von Odoo profitieren können - mit praktischen Beispielen und Kostenanalysen.</p>
+                    <a href="odoo/odoo-fuer-kleinunternehmen.html" class="article-link">Weiterlesen →</a>
+                </article>
+                
+                <article class="article-card fade-in" data-category="odoo">
+                    <div class="article-category">Odoo ERP</div>
+                    <h3>Odoo vs. SAP Vergleich</h3>
+                    <p>Der große Vergleich: Odoo gegen SAP - Funktionen, Kosten und Eignung für verschiedene Unternehmensgrößen.</p>
+                    <a href="odoo/odoo-vs-sap-vergleich.html" class="article-link">Weiterlesen →</a>
+                </article>
+                
+                <!-- Odoo 19 Articles -->
+                <article class="article-card fade-in" data-category="odoo-19">
+                    <div class="article-category">Odoo 19</div>
+                    <h3>Odoo 19 neue Features</h3>
+                    <p>Alle neuen Funktionen und Verbesserungen in Odoo 19 - von KI-Integration bis zur verbesserten Performance.</p>
+                    <a href="odoo-19/19-odoo-19-neue-features.html" class="article-link">Weiterlesen →</a>
+                </article>
+                
+                <article class="article-card fade-in" data-category="odoo-19">
+                    <div class="article-category">Odoo 19</div>
+                    <h3>Odoo 19 Upgrade Guide</h3>
+                    <p>Schritt-für-Schritt Anleitung für das Upgrade auf Odoo 19 - mit Checklisten und Best Practices.</p>
+                    <a href="odoo-19/19-odoo-19-upgrade-guide.html" class="article-link">Weiterlesen →</a>
+                </article>
+                
+                <article class="article-card fade-in" data-category="odoo-19">
+                    <div class="article-category">Odoo 19</div>
+                    <h3>Odoo 19 KI Features</h3>
+                    <p>Künstliche Intelligenz in Odoo 19: Wie AI Ihre Geschäftsprozesse revolutioniert.</p>
+                    <a href="odoo-19/19-odoo-19-ki-features-business.html" class="article-link">Weiterlesen →</a>
+                </article>
+                
+                <!-- Hosting Articles -->
+                <article class="article-card fade-in" data-category="hosting">
+                    <div class="article-category">Hosting</div>
+                    <h3>Odoo Hosting Deutschland</h3>
+                    <p>DSGVO-konforme Hosting-Lösungen für Odoo in Deutschland - Anbieter, Preise und Empfehlungen.</p>
+                    <a href="odoo-hosting/odoo-hosting-deutschland.html" class="article-link">Weiterlesen →</a>
+                </article>
+                
+                <article class="article-card fade-in" data-category="hosting">
+                    <div class="article-category">Hosting</div>
+                    <h3>Cloud vs. On-Premise</h3>
+                    <p>Die große Entscheidung: Cloud-Hosting oder eigener Server? Vor- und Nachteile im Detail.</p>
+                    <a href="odoo-hosting/odoo-cloud-vs-on-premise.html" class="article-link">Weiterlesen →</a>
+                </article>
+                
+                <article class="article-card fade-in" data-category="hosting">
+                    <div class="article-category">Hosting</div>
+                    <h3>Odoo Hosting Kosten</h3>
+                    <p>Transparente Kostenübersicht für Odoo-Hosting - von kostenlosen bis zu Enterprise-Lösungen.</p>
+                    <a href="odoo-hosting/guenstige-odoo-hosting-kosten.html" class="article-link">Weiterlesen →</a>
+                </article>
+            </div>
+            
+            <div class="show-more-container">
+                <button class="btn-secondary" id="show-more-btn">Mehr Artikel anzeigen</button>
             </div>
         </div>
     </section>
     
-    <section class="cards-section">
+    <section class="cta-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Ihre Themengebiete im Überblick</h2>
-                <p>Wählen Sie Ihren Schwerpunkt und tauchen Sie ein in die Welt von Odoo</p>
-            </div>
-            
-            <div class="cards-grid">
-                <a href="odoo/index.html" class="feature-card">
-                    <div class="icon">🎯</div>
-                    <h3>Odoo ERP Grundlagen</h3>
-                    <p>Umfassende Einführung in Odoo ERP: Von der Installation bis zur Anpassung. Lernen Sie alle Module und Funktionen kennen.</p>
-                    <div class="article-count">
-                        <span>69 Artikel verfügbar</span>
-                    </div>
-                </a>
-                
-                <a href="odoo-hosting/index.html" class="feature-card">
-                    <div class="icon">☁️</div>
-                    <h3>Hosting & Infrastruktur</h3>
-                    <p>Vergleiche, Anleitungen und Best Practices für Odoo-Hosting. Finden Sie die perfekte Lösung für Ihr Unternehmen.</p>
-                    <div class="article-count">
-                        <span>71 Artikel verfügbar</span>
-                    </div>
-                </a>
-                
-                <a href="odoo-19/index.html" class="feature-card">
-                    <div class="icon">🚀</div>
-                    <h3>Odoo 19 Features</h3>
-                    <p>Die neueste Version im Detail: KI-Features, Performance-Verbesserungen und alles über das große Update.</p>
-                    <div class="article-count">
-                        <span>58 Artikel verfügbar</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="cards-section" style="background: var(--gray-50);">
-        <div class="container">
-            <div class="section-header">
-                <h2>Beliebte Artikel diese Woche</h2>
-                <p>Die meistgelesenen Beiträge unserer Community</p>
-            </div>
-            
-            <div class="article-grid">
-                <a href="odoo/was-ist-odoo.html" class="article-card">
-                    <div class="article-card-header">📚</div>
-                    <div class="article-card-body">
-                        <h3>Was ist Odoo? Das All-in-One ERP-System erklärt</h3>
-                        <p>Entdecken Sie Odoo: Das modulare ERP-System für deutsche KMU. Über 7 Millionen Nutzer weltweit vertrauen auf diese Business-Software.</p>
-                        <div class="article-meta">
-                            <span>9 Min. Lesezeit</span>
-                            <span>Odoo Grundlagen</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="odoo-19/19-odoo-19-neue-features.html" class="article-card">
-                    <div class="article-card-header">✨</div>
-                    <div class="article-card-body">
-                        <h3>Odoo 19: Die revolutionären neuen Features</h3>
-                        <p>KI-Integration, verbesserte Performance und neue Module - entdecken Sie alle Neuerungen in Odoo 19.</p>
-                        <div class="article-meta">
-                            <span>7 Min. Lesezeit</span>
-                            <span>Odoo 19</span>
-                        </div>
-                    </div>
-                </a>
-                
-                <a href="odoo-hosting/odoo-hosting-deutschland.html" class="article-card">
-                    <div class="article-card-header">🇩🇪</div>
-                    <div class="article-card-body">
-                        <h3>Odoo Hosting in Deutschland: DSGVO-konform</h3>
-                        <p>Die besten deutschen Hosting-Anbieter für Odoo im Vergleich. Mit Fokus auf Datenschutz und Performance.</p>
-                        <div class="article-meta">
-                            <span>6 Min. Lesezeit</span>
-                            <span>Hosting</span>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <section class="calculator-container" style="margin-top: 5rem;">
-        <div class="calculator-header">
-            <h2>Odoo Hosting-Kostenrechner</h2>
-            <p>Berechnen Sie die monatlichen Kosten für Ihr Odoo-Hosting</p>
-        </div>
-        
-        <form id="calculator-form">
-            <div class="form-group">
-                <label for="users">Anzahl der Benutzer</label>
-                <input type="range" id="users" name="users" min="1" max="100" value="10" class="range-slider">
-                <span class="range-value" id="users-value">10</span>
-            </div>
-            
-            <div class="form-group">
-                <label for="storage">Speicherplatz (GB)</label>
-                <input type="range" id="storage" name="storage" min="10" max="500" value="50" step="10" class="range-slider">
-                <span class="range-value" id="storage-value">50 GB</span>
-            </div>
-            
-            <div class="form-group">
-                <label>Zusätzliche Module</label>
-                <div class="checkbox-group">
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="modules" value="crm">
-                        <span>CRM</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="modules" value="accounting">
-                        <span>Buchhaltung</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="modules" value="inventory">
-                        <span>Lagerverwaltung</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" name="modules" value="manufacturing">
-                        <span>Produktion</span>
-                    </label>
-                </div>
-            </div>
-            
-            <button type="button" class="btn-calculate" onclick="calculateCosts()">Kosten berechnen</button>
-        </form>
-        
-        <div id="results" class="calculator-results" style="display: none;">
-            <div class="result-grid">
-                <div class="result-item">
-                    <div class="result-label">Monatliche Kosten</div>
-                    <div class="result-value" id="monthly-cost">€0</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-label">Jährliche Kosten</div>
-                    <div class="result-value" id="yearly-cost">€0</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-label">Kostenersparnis</div>
-                    <div class="result-value" id="savings">€0</div>
-                </div>
+            <div class="cta-card glass-effect">
+                <h2>Bereit für Ihre digitale Transformation?</h2>
+                <p>Nutzen Sie unseren kostenlosen Hosting-Rechner und finden Sie die perfekte Lösung für Ihr Unternehmen.</p>
+                <a href="odoo-hosting-rechner.html" class="btn-primary">Zum Kostenrechner</a>
             </div>
         </div>
     </section>
@@ -287,14 +239,43 @@
             mobileMenuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
         });
         
-        // Scroll Progress Bar
+        // Filter functionality
+        const filterTags = document.querySelectorAll('.filter-tag');
+        const articles = document.querySelectorAll('.article-card');
+        
+        filterTags.forEach(tag => {
+            tag.addEventListener('click', () => {
+                filterTags.forEach(t => t.classList.remove('active'));
+                tag.classList.add('active');
+                
+                const category = tag.dataset.category;
+                
+                articles.forEach(article => {
+                    if (category === 'all' || article.dataset.category === category) {
+                        article.style.display = 'block';
+                        article.classList.add('fade-in');
+                    } else {
+                        article.style.display = 'none';
+                    }
+                });
+            });
+        });
+        
+        // Show more functionality
+        const showMoreBtn = document.getElementById('show-more-btn');
+        if (showMoreBtn) {
+            showMoreBtn.addEventListener('click', () => {
+                window.location.href = 'odoo/index.html';
+            });
+        }
+        
+        // Scroll functionality
         window.addEventListener('scroll', () => {
             const scrollProgress = document.querySelector('.scroll-progress');
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrolled = (window.scrollY / scrollHeight) * 100;
             scrollProgress.style.width = scrolled + '%';
             
-            // Header scroll effect
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
@@ -302,7 +283,6 @@
                 header.classList.remove('scrolled');
             }
             
-            // Back to top button
             const backToTop = document.querySelector('.back-to-top');
             if (window.scrollY > 500) {
                 backToTop.classList.add('visible');
@@ -311,58 +291,26 @@
             }
         });
         
-        // Back to top functionality
         document.querySelector('.back-to-top').addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
         
-        // Range slider updates
-        document.querySelectorAll('.range-slider').forEach(slider => {
-            slider.addEventListener('input', (e) => {
-                const valueSpan = document.getElementById(e.target.id + '-value');
-                if (e.target.id === 'storage') {
-                    valueSpan.textContent = e.target.value + ' GB';
-                } else {
-                    valueSpan.textContent = e.target.value;
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
                 }
             });
-        });
+        }, observerOptions);
         
-        // Calculator functionality
-        function calculateCosts() {
-            const users = parseInt(document.getElementById('users').value);
-            const storage = parseInt(document.getElementById('storage').value);
-            const modules = document.querySelectorAll('input[name="modules"]:checked').length;
-            
-            // Base cost calculation
-            const userCost = users * 20;
-            const storageCost = (storage / 10) * 5;
-            const moduleCost = modules * 50;
-            
-            const monthlyTotal = userCost + storageCost + moduleCost;
-            const yearlyTotal = monthlyTotal * 12;
-            const savings = yearlyTotal * 0.15; // 15% savings compared to traditional ERP
-            
-            // Update results
-            document.getElementById('monthly-cost').textContent = '€' + monthlyTotal.toLocaleString('de-DE');
-            document.getElementById('yearly-cost').textContent = '€' + yearlyTotal.toLocaleString('de-DE');
-            document.getElementById('savings').textContent = '€' + Math.round(savings).toLocaleString('de-DE');
-            
-            // Show results with animation
-            const results = document.getElementById('results');
-            results.style.display = 'block';
-            results.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-        
-        // Checkbox styling
-        document.querySelectorAll('.checkbox-label input').forEach(checkbox => {
-            checkbox.addEventListener('change', (e) => {
-                if (e.target.checked) {
-                    e.target.parentElement.classList.add('checked');
-                } else {
-                    e.target.parentElement.classList.remove('checked');
-                }
-            });
+        document.querySelectorAll('.article-card, .feature-card').forEach(el => {
+            observer.observe(el);
         });
     </script>
 </body>
