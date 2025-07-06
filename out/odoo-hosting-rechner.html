@@ -3,847 +3,1181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odoo Hosting Rechner - Vergleichen Sie Anbieter & Preise 2024 | Odoo Experten Deutschland</title>
-    <meta name="description" content="Finden Sie mit unserem Odoo Hosting Rechner die beste und günstigste Hosting-Lösung für Ihr Unternehmen. Vergleich von 7 Anbietern mit aktuellen Preisen.">
-    <meta name="keywords" content="Odoo Hosting Rechner, günstiger Odoo Hosting, Odoo Enterprise Alternative, Odoo Hosting Deutschland, Odoo Cloud Hosting Vergleich, Odoo Hosting Kosten, managed Odoo Hosting, Odoo Server mieten, Odoo SaaS Deutschland, GDPR konformes Odoo Hosting">
+    <meta name="description" content="Finden Sie das beste Odoo Hosting für Ihr Unternehmen. Vergleichen Sie 7 Anbieter mit transparenten Preisen. Kostenloser Rechner für deutsche Unternehmen.">
+    <meta name="keywords" content="odoo hosting rechner, odoo hosting kosten, odoo hosting vergleich, odoo hosting deutschland, odoo cloud hosting, odoo hosting preise">
+    <meta name="author" content="Odoo Experten Deutschland">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://odoo-experten-deutschland.de/odoo-hosting-rechner.html">
+    <meta property="og:title" content="Odoo Hosting Rechner 2025 | Kostenvergleich für Deutschland">
+    <meta property="og:description" content="Berechnen Sie die optimalen Hosting-Kosten für Ihr Odoo ERP System. Vergleich von 7 Anbietern mit transparenten Preisen.">
+    <meta property="og:image" content="https://tbppogohivsxgiavbnvp.supabase.co/storage/v1/object/public/odoo/Logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://odoo-experten-deutschland.de/odoo-hosting-rechner.html">
+    <meta property="twitter:title" content="Odoo Hosting Rechner 2025 | Kostenvergleich für Deutschland">
+    <meta property="twitter:description" content="Berechnen Sie die optimalen Hosting-Kosten für Ihr Odoo ERP System. Vergleich von 7 Anbietern mit transparenten Preisen.">
+    <meta property="twitter:image" content="https://tbppogohivsxgiavbnvp.supabase.co/storage/v1/object/public/odoo/Logo.png">
+
+    <title>Odoo Hosting Rechner 2025 | Kostenvergleich für Deutschland</title>
+    
     <link rel="canonical" href="https://odoo-experten-deutschland.de/odoo-hosting-rechner.html">
-    <link rel="stylesheet" href="css/modern-styles.css">
-    
-    <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💰</text></svg>">
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Odoo Hosting Rechner",
-      "description": "Vergleichen Sie Odoo Hosting Anbieter und finden Sie die beste Lösung",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web Browser",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR"
-      }
-    }
-    </script>
+    <link rel="stylesheet" href="/css/styles.css">
     
     <style>
-        .calculator-hero {
-            background: var(--gradient-hero);
-            padding: 3rem 0;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: white;
+        .calculator-container {
+            background: linear-gradient(to bottom, var(--color-gray-50), white);
+            padding-top: 6rem;
         }
         
-        .calculator-hero h1 {
-            font-size: 2.5rem;
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background-color: rgba(124, 58, 237, 0.1);
+            color: var(--color-violet-700);
+            border-radius: 9999px;
+            font-weight: 500;
             margin-bottom: 1rem;
         }
         
-        .calculator-hero p {
-            font-size: 1.25rem;
-            opacity: 0.9;
-        }
-        
-        .calculator-main {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 20px;
-            display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 3rem;
-            margin-bottom: 4rem;
-        }
-        
-        .calculator-inputs {
+        .calculator-section {
             background: white;
-            border-radius: 20px;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow-lg);
             padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            height: fit-content;
-            position: sticky;
-            top: 100px;
         }
         
-        .sector-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
-        }
-        
-        .sector-option {
-            padding: 1rem;
-            border: 2px solid var(--gray-200);
-            border-radius: 12px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-        
-        .sector-option:hover {
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
-        
-        .sector-option.selected {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        .sector-icon {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .employees-slider {
-            margin: 2rem 0;
-        }
-        
-        .slider-labels {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 0.5rem;
-            font-size: 0.875rem;
-            color: var(--gray-600);
-        }
-        
-        .calculate-btn {
-            width: 100%;
-            padding: 1.25rem;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.125rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .calculate-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-xl);
-        }
-        
-        .calculate-btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-        
-        .loading-steps {
-            display: none;
-            margin-top: 1rem;
-            padding: 1rem;
-            background: var(--gray-50);
-            border-radius: 8px;
-        }
-        
-        .loading-step {
+        .section-title {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            opacity: 0.5;
-            transition: opacity 0.3s ease;
-        }
-        
-        .loading-step.active {
-            opacity: 1;
-        }
-        
-        .loading-step.complete {
-            color: var(--success);
-        }
-        
-        .results-container {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-lg);
-            display: none;
-        }
-        
-        .results-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        
-        .sort-controls {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .sort-btn {
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--gray-300);
-            background: white;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .sort-btn:hover,
-        .sort-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-        }
-        
-        .provider-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .provider-table th {
-            background: var(--gray-50);
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-            color: var(--gray-700);
-            border-bottom: 2px solid var(--gray-200);
-        }
-        
-        .provider-table td {
-            padding: 1rem;
-            border-bottom: 1px solid var(--gray-100);
-        }
-        
-        .provider-row {
-            transition: all 0.3s ease;
-        }
-        
-        .provider-row:hover {
-            background: var(--gray-50);
-        }
-        
-        .provider-row.recommended {
-            background: rgba(107, 70, 193, 0.05);
-            border-left: 4px solid var(--primary);
-        }
-        
-        .provider-name {
-            font-weight: 600;
-            font-size: 1.125rem;
-        }
-        
-        .provider-location {
-            font-size: 0.875rem;
-            color: var(--gray-600);
-        }
-        
-        .price-display {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary);
+            margin-bottom: 1.5rem;
         }
         
-        .price-details {
-            font-size: 0.875rem;
-            color: var(--gray-600);
+        .form-group {
+            margin-bottom: 2rem;
         }
         
-        .feature-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .feature-badge {
-            padding: 0.25rem 0.75rem;
-            background: var(--gray-100);
-            border-radius: 12px;
-            font-size: 0.75rem;
-        }
-        
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .stars {
-            color: var(--warning);
-        }
-        
-        .cta-btn {
-            padding: 0.75rem 1.5rem;
-            background: var(--gradient-primary);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
+        .form-label {
+            display: block;
             font-weight: 600;
-            transition: all 0.3s ease;
+            margin-bottom: 0.75rem;
+            color: var(--color-gray-900);
         }
         
-        .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
+        .select-container {
+            position: relative;
         }
         
-        .developer-warning {
-            background: rgba(245, 158, 11, 0.1);
-            border: 1px solid var(--warning);
-            border-radius: 8px;
-            padding: 0.75rem;
-            margin-top: 0.5rem;
-            font-size: 0.875rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .benefits-strip {
+        .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--color-gray-300);
+            border-radius: 0.5rem;
+            font-size: 1rem;
             background: white;
-            border-radius: 16px;
-            padding: 1.5rem;
-            margin-bottom: 3rem;
-            box-shadow: var(--shadow-md);
+            appearance: none;
+            cursor: pointer;
+        }
+        
+        .form-select:focus {
+            outline: none;
+            border-color: var(--color-violet-600);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+        }
+        
+        .slider-container {
+            position: relative;
+            margin: 1.5rem 0;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: var(--color-gray-200);
+            outline: none;
+            appearance: none;
+            cursor: pointer;
+        }
+        
+        .slider::-webkit-slider-thumb {
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--color-violet-600);
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .slider::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--color-violet-600);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .slider-value {
             text-align: center;
-        }
-        
-        .benefits-strip h3 {
             font-size: 1.25rem;
-            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--color-violet-600);
+            margin-top: 0.5rem;
         }
         
-        .benefits-list {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
         }
         
         .benefit-item {
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            font-size: 0.875rem;
-            font-weight: 600;
-        }
-        
-        .benefit-item:nth-child(1) { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
-        .benefit-item:nth-child(2) { background: rgba(16, 185, 129, 0.1); color: #10b981; }
-        .benefit-item:nth-child(3) { background: rgba(139, 92, 246, 0.1); color: #8b5cf6; }
-        .benefit-item:nth-child(4) { background: rgba(251, 191, 36, 0.1); color: #fbbf24; }
-        
-        .seo-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .seo-toggle {
+            padding: 0.75rem;
+            border-radius: 0.5rem;
             text-align: center;
-            margin: 3rem 0;
+            font-size: 0.875rem;
         }
         
-        .seo-toggle-btn {
-            padding: 1rem 2rem;
-            background: white;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            border-radius: 12px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .seo-toggle-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .seo-article {
-            display: none;
-            background: white;
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: var(--shadow-lg);
-            margin-bottom: 3rem;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .seo-article.active {
-            display: block;
-        }
-        
-        .seo-article h2 {
-            color: var(--gray-900);
-            margin: 2rem 0 1rem;
-            font-size: 1.75rem;
-        }
-        
-        .seo-article h3 {
-            color: var(--gray-800);
-            margin: 1.5rem 0 1rem;
-            font-size: 1.375rem;
-        }
-        
-        .seo-article p {
-            line-height: 1.8;
-            color: var(--gray-700);
+        .consideration-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
             margin-bottom: 1rem;
         }
         
-        .seo-article ul {
-            margin: 1rem 0 1rem 2rem;
-            line-height: 1.8;
+        .consideration-icon {
+            font-size: 1.25rem;
+            flex-shrink: 0;
         }
         
-        .seo-article li {
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow-md);
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: var(--color-violet-600);
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--color-gray-600);
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: white;
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+        
+        .comparison-table th {
+            background: var(--color-gray-50);
+            font-weight: 600;
+        }
+        
+        .recommended-row {
+            background: rgba(124, 58, 237, 0.05);
+            border-left: 4px solid var(--color-violet-600);
+        }
+        
+        .price-cell {
+            font-weight: 700;
+            color: var(--color-violet-600);
+            font-size: 1.125rem;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            padding: 0.25rem 0;
+            font-size: 0.875rem;
+        }
+        
+        .loading-container {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .loading-progress {
+            width: 100%;
+            height: 8px;
+            background: var(--color-gray-200);
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .loading-bar {
+            height: 100%;
+            background: linear-gradient(to right, var(--color-violet-600), var(--color-purple-600));
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .tip-box {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .tip-title {
+            font-weight: 700;
+            color: rgb(146, 64, 14);
             margin-bottom: 0.5rem;
         }
         
-        @media (max-width: 1024px) {
-            .calculator-main {
-                grid-template-columns: 1fr;
-            }
-            
-            .calculator-inputs {
-                position: static;
-            }
+        .tip-content {
+            color: rgb(180, 83, 9);
         }
         
-        @media (max-width: 768px) {
-            .calculator-hero h1 {
-                font-size: 2rem;
-            }
-            
-            .sector-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .provider-table {
-                font-size: 0.875rem;
-            }
-            
-            .benefits-list {
-                flex-direction: column;
-            }
+        /* Prose styling for SEO content */
+        .prose {
+            color: var(--color-gray-700);
+            max-width: 65ch;
+            line-height: 1.75;
+        }
+        
+        .prose h1 {
+            font-size: 2.25rem;
+            font-weight: 800;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+        }
+        
+        .prose h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .prose h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+        
+        .prose p {
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .prose ul,
+        .prose ol {
+            margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
+            padding-left: 1.625rem;
+        }
+        
+        .prose li {
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .prose strong {
+            font-weight: 600;
+            color: var(--color-gray-900);
+        }
+        
+        .prose a {
+            color: var(--color-violet-600);
+            text-decoration: underline;
+            font-weight: 500;
+        }
+        
+        .prose a:hover {
+            color: var(--color-violet-700);
+        }
+        
+        .prose table {
+            width: 100%;
+            table-layout: auto;
+            text-align: left;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .prose thead {
+            border-bottom: 1px solid var(--color-gray-300);
+        }
+        
+        .prose thead th {
+            vertical-align: bottom;
+            padding: 0.75rem 1rem;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        .prose tbody tr {
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+        
+        .prose tbody td {
+            vertical-align: top;
+            padding: 0.75rem 1rem;
+        }
+        
+        .prose-lg {
+            font-size: 1.125rem;
+            line-height: 1.75;
+        }
+        
+        .prose-lg p {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .prose-lg h1 {
+            font-size: 2.5rem;
+        }
+        
+        .prose-lg h2 {
+            font-size: 2rem;
+        }
+        
+        .prose-lg h3 {
+            font-size: 1.75rem;
+        }
+        
+        .max-w-none {
+            max-width: none;
+        }
+        
+        .not-prose {
+            color: inherit;
+            line-height: inherit;
+        }
+        
+        .not-prose h2,
+        .not-prose h3,
+        .not-prose p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <div class="scroll-progress"></div>
-    
-    <header>
-        <nav class="container">
-            <a href="index.html" class="logo">
-                <img src="https://tbppogohivsxgiavbnvp.supabase.co/storage/v1/object/public/odoo/Logo.png" alt="Odoo Experten Deutschland" class="logo-img" style="height: 40px;">
-                Odoo Experten Deutschland
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a href="/" class="nav-logo">
+                <img src="https://tbppogohivsxgiavbnvp.supabase.co/storage/v1/object/public/odoo/Logo.png" alt="Odoo Experten Deutschland" style="height: 2.5rem;">
             </a>
-            <button class="mobile-menu-toggle" aria-label="Menü öffnen">☰</button>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="odoo/index.html">Odoo ERP</a></li>
-                <li><a href="odoo-19/index.html">Odoo 19</a></li>
-                <li><a href="odoo-hosting/index.html">Hosting</a></li>
-                <li><a href="odoo-hosting-rechner.html" class="active">Kostenrechner</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <div class="calculator-hero">
-        <div class="container">
-            <h1>Odoo Hosting Rechner - Finden Sie die beste Lösung</h1>
-            <p>Vergleichen Sie 7 Hosting-Anbieter und sparen Sie bis zu 60% Ihrer Kosten</p>
-        </div>
-    </div>
-    
-    <div class="benefits-strip">
-        <h3>⚡ Warum professionelles Hosting wählen?</h3>
-        <div class="benefits-list">
-            <span class="benefit-item"><strong>24/7</strong> Support</span>
-            <span class="benefit-item"><strong>GDPR</strong> Konform</span>
-            <span class="benefit-item"><strong>Enterprise</strong> Features</span>
-            <span class="benefit-item"><strong>Backup</strong> Inklusive</span>
-        </div>
-    </div>
-    
-    <div class="calculator-main">
-        <div class="calculator-inputs">
-            <h2>Ihre Anforderungen</h2>
             
-            <div class="form-group">
-                <label for="sector-select">1. Wählen Sie Ihre Branche</label>
-                <div class="sector-grid" id="sector-grid">
-                    <div class="sector-option" data-sector="manufacturing" data-complexity="high">
-                        <span class="sector-icon">🏭</span>
-                        <span>Fertigung & Produktion</span>
-                    </div>
-                    <div class="sector-option" data-sector="retail" data-complexity="medium">
-                        <span class="sector-icon">🛍️</span>
-                        <span>Einzelhandel & E-Commerce</span>
-                    </div>
-                    <div class="sector-option" data-sector="services" data-complexity="medium">
-                        <span class="sector-icon">💼</span>
-                        <span>Dienstleistungen</span>
-                    </div>
-                    <div class="sector-option" data-sector="healthcare" data-complexity="high">
-                        <span class="sector-icon">🏥</span>
-                        <span>Gesundheitswesen</span>
-                    </div>
-                    <div class="sector-option" data-sector="construction" data-complexity="high">
-                        <span class="sector-icon">🏗️</span>
-                        <span>Bauwesen</span>
-                    </div>
-                    <div class="sector-option" data-sector="consulting" data-complexity="low">
-                        <span class="sector-icon">💡</span>
-                        <span>Beratung</span>
-                    </div>
-                    <div class="sector-option" data-sector="logistics" data-complexity="high">
-                        <span class="sector-icon">🚚</span>
-                        <span>Logistik & Transport</span>
-                    </div>
-                    <div class="sector-option" data-sector="food" data-complexity="medium">
-                        <span class="sector-icon">🍎</span>
-                        <span>Lebensmittel</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="form-group employees-slider">
-                <label for="employees">2. Anzahl der Mitarbeiter: <span id="employee-count">25</span></label>
-                <input type="range" id="employees" min="1" max="200" value="25" class="range-slider">
-                <div class="slider-labels">
-                    <span>1</span>
-                    <span>10</span>
-                    <span>25</span>
-                    <span>50</span>
-                    <span>100</span>
-                    <span>200+</span>
-                </div>
-            </div>
-            
-            <button class="calculate-btn" id="calculate-btn" disabled>
-                Hosting-Kosten berechnen
+            <button class="mobile-menu-button" id="mobile-menu-button">
+                <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M3 12h18M3 6h18M3 18h18" />
+                </svg>
             </button>
             
-            <div class="loading-steps" id="loading-steps">
-                <div class="loading-step" data-step="1">
-                    <span>✓</span> Branchenspezifische Anforderungen analysieren...
+            <ul class="nav-links" id="nav-links">
+                <li><a href="/" class="nav-link">Start</a></li>
+                <li><a href="/odoo/" class="nav-link">Odoo Grundlagen</a></li>
+                <li><a href="/odoo-19/" class="nav-link">Odoo 19</a></li>
+                <li><a href="/odoo-hosting/" class="nav-link">Hosting</a></li>
+                <li><a href="/odoo-hosting-rechner.html" class="nav-link">Kostenrechner</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="calculator-container">
+        <div class="container" style="max-width: 1280px;">
+            <!-- Header -->
+            <div class="text-center mb-12">
+                <div class="badge">
+                    <svg width="16" height="16" fill="currentColor">
+                        <path d="M10 2l2.09 6.47h6.81l-5.5 4.02 2.09 6.47L10 14.94l-5.5 4.02 2.09-6.47-5.5-4.02h6.81L10 2z" />
+                    </svg>
+                    <span>Kostenloser Hosting-Vergleich</span>
                 </div>
-                <div class="loading-step" data-step="2">
-                    <span>✓</span> Odoo Enterprise Lizenzkosten ermitteln...
+                
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Odoo Hosting Rechner
+                </h1>
+                
+                <p class="text-xl text-gray-600" style="max-width: 48rem; margin: 0 auto;">
+                    Finden Sie die beste Hosting-Lösung für Ihr Unternehmen. 
+                    Vergleichen Sie 7 Anbieter mit transparenten Preisen.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                <!-- Calculator Input -->
+                <div class="calculator-section">
+                    <h2 class="section-title">
+                        <svg width="24" height="24" fill="none" stroke="var(--color-violet-600)" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <path d="M9 9h6m-6 4h6"/>
+                        </svg>
+                        Ihre Anforderungen
+                    </h2>
+                    
+                    <form id="calculator-form">
+                        <div class="form-group">
+                            <label for="sector" class="form-label">Branche</label>
+                            <div class="select-container">
+                                <select id="sector" class="form-select" required>
+                                    <option value="">Wählen Sie Ihre Branche</option>
+                                    <option value="manufacturing">🏭 Fertigung & Produktion</option>
+                                    <option value="retail">🛍️ Einzelhandel & E-Commerce</option>
+                                    <option value="services">💼 Dienstleistungen</option>
+                                    <option value="healthcare">🏥 Gesundheitswesen</option>
+                                    <option value="construction">🏗️ Bauwesen</option>
+                                    <option value="consulting">💡 Beratung</option>
+                                    <option value="logistics">🚚 Logistik & Transport</option>
+                                    <option value="food">🍎 Lebensmittel</option>
+                                </select>
+                                <svg style="position: absolute; right: 0.75rem; top: 50%; transform: translateY(-50%); pointer-events: none;" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M6 9l6 6 6-6"/>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="employees" class="form-label">Anzahl Mitarbeiter</label>
+                            <div class="slider-container">
+                                <input type="range" id="employees" class="slider" min="1" max="100" value="10" step="1">
+                                <div class="slider-value" id="employee-value">10 Mitarbeiter</div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" id="calculate-btn" class="btn btn-primary" style="width: 100%; padding: 1rem 1.5rem;" disabled>
+                            Hosting-Kosten berechnen
+                        </button>
+                    </form>
                 </div>
-                <div class="loading-step" data-step="3">
-                    <span>✓</span> Server-Infrastruktur dimensionieren...
-                </div>
-                <div class="loading-step" data-step="4">
-                    <span>✓</span> Support-Level bestimmen...
-                </div>
-                <div class="loading-step" data-step="5">
-                    <span>✓</span> Hosting-Anbieter vergleichen...
-                </div>
-                <div class="loading-step" data-step="6">
-                    <span>✓</span> Gesamtkosten kalkulieren...
+
+                <!-- Quick Benefits -->
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <!-- Benefits -->
+                    <div class="calculator-section">
+                        <h3 class="text-center font-bold mb-3">
+                            ⚡ Warum professionelles Hosting wählen?
+                        </h3>
+                        <div class="benefit-grid">
+                            <div class="benefit-item" style="background-color: rgba(59, 130, 246, 0.1); color: rgb(29, 78, 216);">
+                                <strong>24/7</strong> Support
+                            </div>
+                            <div class="benefit-item" style="background-color: rgba(34, 197, 94, 0.1); color: rgb(21, 128, 61);">
+                                <strong>GDPR</strong> Konform
+                            </div>
+                            <div class="benefit-item" style="background-color: rgba(147, 51, 234, 0.1); color: rgb(126, 34, 206);">
+                                <strong>Enterprise</strong> Features
+                            </div>
+                            <div class="benefit-item" style="background-color: rgba(245, 158, 11, 0.1); color: rgb(180, 83, 9);">
+                                <strong>Backup</strong> Inklusive
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Considerations -->
+                    <div class="calculator-section" style="background-color: rgba(124, 58, 237, 0.05);">
+                        <h3 class="font-bold mb-4">Wichtige Überlegungen</h3>
+                        <div class="consideration-item">
+                            <span class="consideration-icon">💰</span>
+                            <div>
+                                <strong>Versteckte Kosten vermeiden</strong>
+                                <p class="text-sm text-gray-600">
+                                    Self-Hosting benötigt oft €1000-3000 für Setup + laufende Entwicklerkosten
+                                </p>
+                            </div>
+                        </div>
+                        <div class="consideration-item">
+                            <span class="consideration-icon">🔒</span>
+                            <div>
+                                <strong>DSGVO-Compliance</strong>
+                                <p class="text-sm text-gray-600">
+                                    Wählen Sie Anbieter mit EU-Servern oder entsprechenden Datenschutzabkommen
+                                </p>
+                            </div>
+                        </div>
+                        <div class="consideration-item">
+                            <span class="consideration-icon">📈</span>
+                            <div>
+                                <strong>Skalierbarkeit</strong>
+                                <p class="text-sm text-gray-600">
+                                    Ihr Hosting sollte mit Ihrem Unternehmen mitwachsen können
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">7</div>
+                            <div class="stat-label">Anbieter im Vergleich</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">€18</div>
+                            <div class="stat-label">Ab pro Monat</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">99.9%</div>
+                            <div class="stat-label">Uptime Garantie</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">24/7</div>
+                            <div class="stat-label">Support verfügbar</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="results-container" id="results-container">
-            <div class="results-header">
-                <h2>Ihre persönliche Empfehlung</h2>
-                <div class="sort-controls">
-                    <button class="sort-btn active" data-sort="price">Preis</button>
-                    <button class="sort-btn" data-sort="rating">Bewertung</button>
-                    <button class="sort-btn" data-sort="features">Features</button>
+
+            <!-- Calculation Progress -->
+            <div id="loading-section" class="hidden">
+                <div class="loading-container">
+                    <h3 class="text-xl font-semibold mb-4">Berechnung läuft...</h3>
+                    <div class="loading-progress">
+                        <div class="loading-bar" id="progress-bar" style="width: 0%;"></div>
+                    </div>
+                    <p class="text-gray-600" id="loading-text">Analysiere Ihre Anforderungen...</p>
                 </div>
             </div>
-            
-            <table class="provider-table" id="provider-table">
-                <thead>
-                    <tr>
-                        <th>Anbieter</th>
-                        <th>Monatl. Kosten</th>
-                        <th>Setup-Gebühr</th>
-                        <th>Support</th>
-                        <th>Standort</th>
-                        <th>Bewertung</th>
-                        <th>Aktion</th>
-                    </tr>
-                </thead>
-                <tbody id="provider-tbody">
-                    <!-- Providers will be inserted here dynamically -->
-                </tbody>
-            </table>
+
+            <!-- Results Section -->
+            <div id="results-section" class="hidden">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">
+                        Ihre persönliche Empfehlung
+                    </h2>
+                    <p class="text-lg text-gray-600" id="recommendation-text">
+                        Basierend auf Ihren Anforderungen
+                    </p>
+                </div>
+
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Anbieter</th>
+                            <th>Monatliche Kosten</th>
+                            <th>Setup-Gebühr</th>
+                            <th>Features</th>
+                            <th>Support</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comparison-tbody">
+                        <!-- Will be populated by JavaScript -->
+                    </tbody>
+                </table>
+
+                <div class="tip-box">
+                    <h3 class="tip-title">💡 Profi-Tipp</h3>
+                    <p class="tip-content">
+                        Die angezeigten Preise sind Richtwerte. Viele Anbieter bieten individuelle Pakete für größere 
+                        Unternehmen. Kontaktieren Sie die Anbieter direkt für ein maßgeschneidertes Angebot!
+                    </p>
+                </div>
+            </div>
+
+            <!-- SEO Content -->
+            <section class="py-16">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4">Warum einen Odoo Hosting Rechner verwenden?</h2>
+                        <p class="text-gray-600 mb-4">
+                            Die Wahl des richtigen Hosting-Anbieters für Ihr Odoo ERP-System ist entscheidend für 
+                            den Erfolg Ihrer digitalen Transformation. Unser Rechner hilft Ihnen dabei, die 
+                            optimale Lösung für Ihre spezifischen Anforderungen zu finden.
+                        </p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• Transparenter Kostenvergleich</li>
+                            <li>• Berücksichtigung Ihrer Branche</li>
+                            <li>• Skalierbare Lösungen</li>
+                            <li>• DSGVO-konforme Anbieter</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h2 class="text-2xl font-bold mb-4">Faktoren bei der Hosting-Auswahl</h2>
+                        <p class="text-gray-600 mb-4">
+                            Bei der Auswahl eines Odoo-Hosting-Anbieters sollten Sie verschiedene Faktoren 
+                            berücksichtigen, die über den reinen Preis hinausgehen.
+                        </p>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• Performance und Verfügbarkeit</li>
+                            <li>• Datenschutz und Compliance</li>
+                            <li>• Support-Qualität</li>
+                            <li>• Backup und Sicherheit</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hidden SEO Content Section -->
+            <section class="py-12">
+                <button id="seo-toggle" class="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors">
+                    <svg width="20" height="20" fill="none" stroke="var(--color-violet-600)" stroke-width="2">
+                        <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    <span class="font-medium text-gray-900">Mehr Informationen zu Odoo Hosting in Deutschland</span>
+                    <svg id="seo-chevron" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                </button>
+
+                <div id="seo-content" class="hidden mt-6">
+                    <article class="prose prose-lg max-w-none">
+                        <h1>Odoo Hosting Rechner: Der ultimative Vergleich für deutsche Unternehmen 2025</h1>
+                        
+                        <div class="bg-gray-50 rounded-lg p-6 not-prose">
+                            <h2 class="text-xl font-bold mb-4">Inhaltsverzeichnis</h2>
+                            <ol class="space-y-2">
+                                <li><a href="#was-ist-odoo" class="text-violet-600 hover:text-violet-700">Was ist Odoo und warum das richtige Hosting entscheidend ist</a></li>
+                                <li><a href="#hosting-optionen" class="text-violet-600 hover:text-violet-700">Odoo Hosting Optionen im Detail</a></li>
+                                <li><a href="#kostenvergleich" class="text-violet-600 hover:text-violet-700">Kostenvergleich: Self-Hosted vs. Managed Hosting</a></li>
+                                <li><a href="#enterprise-vs-community" class="text-violet-600 hover:text-violet-700">Enterprise vs. Community Edition</a></li>
+                                <li><a href="#gdpr-datenschutz" class="text-violet-600 hover:text-violet-700">GDPR und Datenschutz bei Odoo Hosting</a></li>
+                                <li><a href="#entwicklerkosten" class="text-violet-600 hover:text-violet-700">Entwicklerkosten für Self-Hosting Lösungen</a></li>
+                                <li><a href="#branchenspezifisch" class="text-violet-600 hover:text-violet-700">Branchenspezifische Hosting-Anforderungen</a></li>
+                                <li><a href="#skalierung" class="text-violet-600 hover:text-violet-700">Skalierung und Performance-Optimierung</a></li>
+                                <li><a href="#support" class="text-violet-600 hover:text-violet-700">Support und Service-Level Agreements</a></li>
+                                <li><a href="#fazit" class="text-violet-600 hover:text-violet-700">Fazit und Empfehlungen</a></li>
+                            </ol>
+                        </div>
+
+                        <h2 id="was-ist-odoo">Was ist Odoo und warum das richtige Hosting entscheidend ist</h2>
+                        
+                        <p>
+                            Odoo ist eines der weltweit führenden Open-Source-ERP-Systeme und bietet deutschen Unternehmen eine 
+                            umfassende Business-Software-Suite. Mit über 40 integrierten Geschäftsanwendungen - von CRM und 
+                            Vertrieb über Buchhaltung bis hin zu Fertigung und E-Commerce - ist Odoo die All-in-One-Lösung 
+                            für moderne Unternehmen.
+                        </p>
+
+                        <p>
+                            Die Wahl des richtigen Hosting-Anbieters kann über Erfolg oder Misserfolg Ihrer Odoo-Implementierung 
+                            entscheiden. Ein unzureichendes Hosting führt zu langsamen Ladezeiten, häufigen Ausfällen und 
+                            frustrierten Mitarbeitern. Professionelles Odoo Hosting hingegen gewährleistet:
+                        </p>
+
+                        <ul>
+                            <li><strong>Optimale Performance:</strong> Schnelle Reaktionszeiten und flüssige Arbeitsabläufe</li>
+                            <li><strong>Hohe Verfügbarkeit:</strong> 99,9% Uptime-Garantie für unterbrechungsfreien Betrieb</li>
+                            <li><strong>Datensicherheit:</strong> Regelmäßige Backups und verschlüsselte Datenübertragung</li>
+                            <li><strong>Skalierbarkeit:</strong> Flexible Anpassung an wachsende Anforderungen</li>
+                            <li><strong>Professioneller Support:</strong> Experten-Hilfe bei technischen Herausforderungen</li>
+                        </ul>
+
+                        <h2 id="hosting-optionen">Odoo Hosting Optionen im Detail</h2>
+
+                        <h3>1. Managed Odoo Hosting</h3>
+                        
+                        <p>
+                            Managed Hosting ist die bevorzugte Wahl für Unternehmen, die sich auf ihr Kerngeschäft konzentrieren 
+                            möchten. Der Hosting-Anbieter übernimmt die komplette technische Betreuung:
+                        </p>
+
+                        <ul>
+                            <li>Server-Setup und Konfiguration</li>
+                            <li>Regelmäßige Updates und Sicherheitspatches</li>
+                            <li>Automatische Backups</li>
+                            <li>Performance-Monitoring und Optimierung</li>
+                            <li>24/7 technischer Support</li>
+                        </ul>
+
+                        <p>
+                            <strong>Vorteile:</strong> Keine IT-Expertise erforderlich, vorhersehbare Kosten, professioneller Support<br/>
+                            <strong>Nachteile:</strong> Höhere monatliche Kosten, weniger Kontrolle über die Server-Umgebung
+                        </p>
+
+                        <h3>2. Self-Hosted / VPS Lösungen</h3>
+                        
+                        <p>
+                            Bei Self-Hosting mieten Sie einen virtuellen oder dedizierten Server und installieren Odoo selbst. 
+                            Diese Option bietet maximale Flexibilität, erfordert jedoch erhebliche technische Expertise:
+                        </p>
+
+                        <ul>
+                            <li>Vollständige Kontrolle über die Server-Umgebung</li>
+                            <li>Individuelle Anpassungen möglich</li>
+                            <li>Niedrigere monatliche Grundkosten</li>
+                            <li>Eigene Sicherheits- und Backup-Strategie erforderlich</li>
+                        </ul>
+
+                        <p>
+                            <strong>Wichtig:</strong> Die versteckten Kosten für Entwickler und Systemadministratoren können 
+                            die Einsparungen bei den Hosting-Gebühren schnell übersteigen. Rechnen Sie mit zusätzlichen 
+                            €1.000-3.000 für das initiale Setup und €500-1.500 monatlich für laufende Wartung.
+                        </p>
+
+                        <h3>3. Odoo.sh - Die offizielle Cloud-Plattform</h3>
+                        
+                        <p>
+                            Odoo.sh ist die offizielle Platform-as-a-Service (PaaS) Lösung von Odoo S.A. Sie kombiniert die 
+                            Vorteile von Managed Hosting mit entwicklerfreundlichen Features:
+                        </p>
+
+                        <ul>
+                            <li>Integrierte Entwicklungs-, Staging- und Produktionsumgebungen</li>
+                            <li>Automatische Builds bei Git-Commits</li>
+                            <li>Ein-Klick-Backups und Wiederherstellung</li>
+                            <li>Offizielle Odoo Enterprise Support</li>
+                        </ul>
+
+                        <h2 id="kostenvergleich">Kostenvergleich: Self-Hosted vs. Managed Hosting</h2>
+
+                        <p>
+                            Die Gesamtkosten für Odoo Hosting setzen sich aus verschiedenen Komponenten zusammen. Unser 
+                            Rechner berücksichtigt alle relevanten Faktoren für eine realistische Kostenschätzung:
+                        </p>
+
+                        <div class="not-prose">
+                            <table class="w-full border-collapse">
+                                <thead>
+                                    <tr class="bg-gray-100">
+                                        <th class="border p-3 text-left">Kostenart</th>
+                                        <th class="border p-3 text-left">Self-Hosted</th>
+                                        <th class="border p-3 text-left">Managed Hosting</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border p-3">Server/Hosting</td>
+                                        <td class="border p-3">€5-150/Monat</td>
+                                        <td class="border p-3">€30-500/Monat</td>
+                                    </tr>
+                                    <tr class="bg-gray-50">
+                                        <td class="border p-3">Setup-Kosten</td>
+                                        <td class="border p-3">€1.000-3.000 einmalig</td>
+                                        <td class="border p-3">€0-500 einmalig</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border p-3">Wartung & Updates</td>
+                                        <td class="border p-3">€500-1.500/Monat</td>
+                                        <td class="border p-3">Inklusive</td>
+                                    </tr>
+                                    <tr class="bg-gray-50">
+                                        <td class="border p-3">Backups</td>
+                                        <td class="border p-3">€50-200/Monat</td>
+                                        <td class="border p-3">Inklusive</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border p-3">Support</td>
+                                        <td class="border p-3">Nicht enthalten</td>
+                                        <td class="border p-3">Inklusive</td>
+                                    </tr>
+                                    <tr class="bg-violet-50 font-bold">
+                                        <td class="border p-3">Gesamtkosten (TCO)</td>
+                                        <td class="border p-3">€555-1.850/Monat + Setup</td>
+                                        <td class="border p-3">€30-500/Monat</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h2 id="enterprise-vs-community">Enterprise vs. Community Edition</h2>
+
+                        <p>
+                            Ein wichtiger Kostenfaktor beim Odoo Hosting ist die Wahl zwischen der kostenlosen Community Edition 
+                            und der kostenpflichtigen Enterprise Edition:
+                        </p>
+
+                        <h3>Odoo Community Edition</h3>
+                        <ul>
+                            <li>✅ Kostenlos und Open Source</li>
+                            <li>✅ Vollständiger Zugriff auf Kernmodule</li>
+                            <li>✅ Große Community und viele Erweiterungen</li>
+                            <li>❌ Keine offiziellen Support</li>
+                            <li>❌ Einige erweiterte Features fehlen</li>
+                            <li>❌ Keine mobilen Apps</li>
+                        </ul>
+
+                        <h3>Odoo Enterprise Edition</h3>
+                        <ul>
+                            <li>✅ Alle Community Features plus Enterprise-Module</li>
+                            <li>✅ Offizieller Support von Odoo S.A.</li>
+                            <li>✅ Mobile Apps für iOS und Android</li>
+                            <li>✅ Erweiterte Features (Studio, Approvals, IoT, etc.)</li>
+                            <li>❌ Kostenpflichtig (ca. €20-58 pro Nutzer/Monat)</li>
+                            <li>❌ Vendor Lock-in</li>
+                        </ul>
+
+                        <p>
+                            <strong>Tipp:</strong> Viele Hosting-Anbieter wie Odoo4Projects bieten Enterprise-ähnliche Features 
+                            ohne die hohen Lizenzkosten. Dies kann eine attraktive Alternative für preisbewusste Unternehmen sein.
+                        </p>
+
+                        <h2 id="gdpr-datenschutz">GDPR und Datenschutz bei Odoo Hosting</h2>
+
+                        <p>
+                            Für deutsche Unternehmen ist die Einhaltung der DSGVO (GDPR) bei der Wahl des Hosting-Anbieters 
+                            von entscheidender Bedeutung. Folgende Aspekte sollten Sie beachten:
+                        </p>
+
+                        <h3>Standort der Server</h3>
+                        <p>
+                            Server innerhalb der EU unterliegen automatisch den strengen europäischen Datenschutzbestimmungen. 
+                            Bei Servern außerhalb der EU müssen zusätzliche Maßnahmen getroffen werden:
+                        </p>
+
+                        <ul>
+                            <li><strong>EU-Server:</strong> Simplify-ERP (Deutschland), Odoo.sh (Belgien/Frankreich)</li>
+                            <li><strong>Safe Harbor/Privacy Shield:</strong> AWS, Cloud Clusters (USA mit Datenschutzabkommen)</li>
+                            <li><strong>Individuelle Prüfung erforderlich:</strong> Andere internationale Anbieter</li>
+                        </ul>
+
+                        <h3>Technische und organisatorische Maßnahmen (TOMs)</h3>
+                        <p>
+                            Ihr Hosting-Anbieter muss angemessene Sicherheitsmaßnahmen implementieren:
+                        </p>
+
+                        <ul>
+                            <li>Verschlüsselte Datenübertragung (SSL/TLS)</li>
+                            <li>Verschlüsselte Datenspeicherung</li>
+                            <li>Regelmäßige Sicherheitsupdates</li>
+                            <li>Zugangskontrolle und Berechtigungsmanagement</li>
+                            <li>Protokollierung und Monitoring</li>
+                            <li>Disaster Recovery und Business Continuity Planung</li>
+                        </ul>
+
+                        <h3>Auftragsverarbeitungsvertrag (AVV)</h3>
+                        <p>
+                            Jeder Hosting-Anbieter, der personenbezogene Daten für Sie verarbeitet, muss einen 
+                            Auftragsverarbeitungsvertrag nach Art. 28 DSGVO abschließen. Seriöse Anbieter stellen 
+                            standardisierte AVVs zur Verfügung.
+                        </p>
+
+                        <h2 id="entwicklerkosten">Entwicklerkosten für Self-Hosting Lösungen</h2>
+
+                        <p>
+                            Die wahren Kosten von Self-Hosting werden oft unterschätzt. Neben den reinen Serverkosten 
+                            entstehen erhebliche Aufwände für:
+                        </p>
+
+                        <h3>Initiales Setup (€1.000-3.000)</h3>
+                        <ul>
+                            <li>Server-Konfiguration und Härtung</li>
+                            <li>Odoo-Installation und Grundkonfiguration</li>
+                            <li>SSL-Zertifikate und Domain-Setup</li>
+                            <li>Firewall und Sicherheitseinstellungen</li>
+                            <li>Backup-Strategie implementieren</li>
+                            <li>Monitoring und Alerting einrichten</li>
+                        </ul>
+
+                        <h3>Laufende Wartung (€500-1.500/Monat)</h3>
+                        <ul>
+                            <li>Regelmäßige Sicherheitsupdates</li>
+                            <li>Odoo-Version-Upgrades</li>
+                            <li>Performance-Optimierung</li>
+                            <li>Troubleshooting und Fehlerbehebung</li>
+                            <li>Backup-Verwaltung und Tests</li>
+                            <li>24/7 Bereitschaftsdienst bei kritischen Systemen</li>
+                        </ul>
+
+                        <h3>Benötigte Expertise</h3>
+                        <p>
+                            Ein qualifizierter Odoo-Entwickler/Administrator benötigt Kenntnisse in:
+                        </p>
+
+                        <ul>
+                            <li>Linux-Systemadministration</li>
+                            <li>PostgreSQL-Datenbankverwaltung</li>
+                            <li>Python-Programmierung</li>
+                            <li>Nginx/Apache Webserver</li>
+                            <li>Docker/Kubernetes (optional)</li>
+                            <li>Git-Versionskontrolle</li>
+                            <li>Odoo-spezifische Architektur</li>
+                        </ul>
+
+                        <p>
+                            <strong>Empfehlung:</strong> Für Unternehmen ohne dediziertes IT-Team ist Managed Hosting 
+                            fast immer die kostengünstigere Option, wenn man die Total Cost of Ownership (TCO) betrachtet.
+                        </p>
+
+                        <h2 id="branchenspezifisch">Branchenspezifische Hosting-Anforderungen</h2>
+
+                        <p>
+                            Verschiedene Branchen haben unterschiedliche Anforderungen an ihr Odoo Hosting:
+                        </p>
+
+                        <h3>Fertigung & Produktion</h3>
+                        <ul>
+                            <li>Hohe Performance für MRP-Berechnungen</li>
+                            <li>Große Datenmengen (Stücklisten, Arbeitspläne)</li>
+                            <li>Integration mit IoT-Geräten und Maschinen</li>
+                            <li>Empfehlung: Mindestens 8GB RAM, 4 CPU-Kerne</li>
+                        </ul>
+
+                        <h3>E-Commerce & Einzelhandel</h3>
+                        <ul>
+                            <li>Skalierbarkeit für Traffic-Spitzen</li>
+                            <li>CDN-Integration für Bilder und Medien</li>
+                            <li>PCI-DSS Compliance für Zahlungen</li>
+                            <li>Empfehlung: Load Balancing, Auto-Scaling</li>
+                        </ul>
+
+                        <h3>Dienstleistungen & Beratung</h3>
+                        <ul>
+                            <li>Multi-Mandanten-Fähigkeit</li>
+                            <li>Zeiterfassung und Projektmanagement</li>
+                            <li>Mobile Zugriff für Außendienst</li>
+                            <li>Empfehlung: Gute mobile Performance, VPN-Zugang</li>
+                        </ul>
+
+                        <h3>Gesundheitswesen</h3>
+                        <ul>
+                            <li>Besondere Datenschutzanforderungen</li>
+                            <li>Audit-Trails und Compliance</li>
+                            <li>Hochverfügbarkeit kritisch</li>
+                            <li>Empfehlung: Deutsche/EU-Server, erweiterte Backups</li>
+                        </ul>
+
+                        <h2 id="skalierung">Skalierung und Performance-Optimierung</h2>
+
+                        <p>
+                            Ein professionelles Odoo Hosting muss mit Ihrem Unternehmen wachsen können. Wichtige 
+                            Skalierungsaspekte sind:
+                        </p>
+
+                        <h3>Vertikale Skalierung</h3>
+                        <p>
+                            Erhöhung der Ressourcen eines einzelnen Servers:
+                        </p>
+                        <ul>
+                            <li>CPU-Kerne hinzufügen</li>
+                            <li>RAM erweitern</li>
+                            <li>Schnellere SSDs verwenden</li>
+                            <li>Einfach umzusetzen, aber begrenzt</li>
+                        </ul>
+
+                        <h3>Horizontale Skalierung</h3>
+                        <p>
+                            Verteilung der Last auf mehrere Server:
+                        </p>
+                        <ul>
+                            <li>Load Balancer für Web-Traffic</li>
+                            <li>Separate Datenbank-Server</li>
+                            <li>Redis für Caching</li>
+                            <li>CDN für statische Inhalte</li>
+                            <li>Komplexer, aber nahezu unbegrenzt skalierbar</li>
+                        </ul>
+
+                        <h3>Performance-Optimierung</h3>
+                        <p>
+                            Unabhängig von der Hardware können folgende Maßnahmen die Performance verbessern:
+                        </p>
+                        <ul>
+                            <li>Datenbank-Indizes optimieren</li>
+                            <li>Odoo-Worker richtig konfigurieren</li>
+                            <li>Caching-Strategien implementieren</li>
+                            <li>Unnötige Module deaktivieren</li>
+                            <li>Regelmäßige Datenbank-Wartung</li>
+                        </ul>
+
+                        <h2 id="support">Support und Service-Level Agreements</h2>
+
+                        <p>
+                            Der Support-Level kann den Unterschied zwischen minimalen Ausfallzeiten und tagelangen 
+                            Problemen bedeuten:
+                        </p>
+
+                        <h3>Support-Level im Vergleich</h3>
+
+                        <div class="not-prose">
+                            <table class="w-full border-collapse">
+                                <thead>
+                                    <tr class="bg-gray-100">
+                                        <th class="border p-3 text-left">Support-Typ</th>
+                                        <th class="border p-3 text-left">Reaktionszeit</th>
+                                        <th class="border p-3 text-left">Verfügbarkeit</th>
+                                        <th class="border p-3 text-left">Kanäle</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="border p-3">Community</td>
+                                        <td class="border p-3">Keine Garantie</td>
+                                        <td class="border p-3">Forum/Community</td>
+                                        <td class="border p-3">Forum</td>
+                                    </tr>
+                                    <tr class="bg-gray-50">
+                                        <td class="border p-3">Standard</td>
+                                        <td class="border p-3">24-48 Stunden</td>
+                                        <td class="border p-3">Bürozeiten</td>
+                                        <td class="border p-3">E-Mail, Ticket</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border p-3">Professional</td>
+                                        <td class="border p-3">4-8 Stunden</td>
+                                        <td class="border p-3">Erweiterte Zeiten</td>
+                                        <td class="border p-3">+ Telefon, Chat</td>
+                                    </tr>
+                                    <tr class="bg-gray-50">
+                                        <td class="border p-3">Enterprise</td>
+                                        <td class="border p-3">1-2 Stunden</td>
+                                        <td class="border p-3">24/7</td>
+                                        <td class="border p-3">+ Dedizierter Manager</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h3>SLA-Komponenten</h3>
+                        <p>
+                            Ein professionelles Service-Level Agreement sollte folgende Punkte abdecken:
+                        </p>
+                        <ul>
+                            <li><strong>Uptime-Garantie:</strong> Mindestens 99,5%, besser 99,9%</li>
+                            <li><strong>Geplante Wartungsfenster:</strong> Außerhalb der Geschäftszeiten</li>
+                            <li><strong>Backup-Häufigkeit:</strong> Täglich, mit Point-in-Time Recovery</li>
+                            <li><strong>Disaster Recovery:</strong> RTO und RPO definiert</li>
+                            <li><strong>Kompensation:</strong> Credits bei SLA-Verletzungen</li>
+                        </ul>
+
+                        <h2 id="fazit">Fazit und Empfehlungen</h2>
+
+                        <p>
+                            Die Wahl des richtigen Odoo Hosting-Anbieters hängt von vielen Faktoren ab. Unsere 
+                            Empfehlungen basierend auf Unternehmensgröße:
+                        </p>
+
+                        <h3>Kleine Unternehmen (1-10 Mitarbeiter)</h3>
+                        <p>
+                            <strong>Budget-Option:</strong> Cloudpepper Core (kostenlos) oder Cloud Clusters<br/>
+                            <strong>Empfehlung:</strong> Odoo4Projects Side Hustle - beste Preis-Leistung ohne versteckte Kosten
+                        </p>
+
+                        <h3>Mittlere Unternehmen (11-50 Mitarbeiter)</h3>
+                        <p>
+                            <strong>Budget-Option:</strong> Simplify-ERP mit deutschen Servern<br/>
+                            <strong>Empfehlung:</strong> Odoo4Projects On the Rise/Powerhouse - skalierbar und professionell
+                        </p>
+
+                        <h3>Große Unternehmen (50+ Mitarbeiter)</h3>
+                        <p>
+                            <strong>Enterprise-Option:</strong> Odoo.sh für maximale Kontrolle<br/>
+                            <strong>Empfehlung:</strong> Odoo4Projects Empire oder individuelle Enterprise-Lösung
+                        </p>
+
+                        <h3>Wichtige Auswahlkriterien</h3>
+                        <ul>
+                            <li>✅ Transparente Preisgestaltung ohne versteckte Kosten</li>
+                            <li>✅ Deutscher oder EU-basierter Support</li>
+                            <li>✅ GDPR-Compliance und Datenschutz</li>
+                            <li>✅ Skalierbarkeit für zukünftiges Wachstum</li>
+                            <li>✅ Professionelles SLA mit Uptime-Garantie</li>
+                            <li>✅ Regelmäßige Backups und Disaster Recovery</li>
+                            <li>❌ Vermeiden Sie Lock-in Situationen</li>
+                            <li>❌ Unterschätzen Sie nicht die TCO bei Self-Hosting</li>
+                        </ul>
+
+                        <div class="bg-violet-50 p-6 rounded-lg not-prose">
+                            <h3 class="text-xl font-bold mb-3">Nutzen Sie unseren Hosting-Rechner</h3>
+                            <p>
+                                Unser Odoo Hosting Rechner berücksichtigt alle diese Faktoren und gibt Ihnen eine 
+                                personalisierte Empfehlung basierend auf Ihrer Branche und Unternehmensgröße. 
+                                Sparen Sie Zeit und Geld mit der richtigen Hosting-Entscheidung!
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </div>
-    </div>
-    
-    <div class="seo-content">
-        <div class="seo-toggle">
-            <button class="seo-toggle-btn" id="seo-toggle">
-                📖 Mehr Informationen zu Odoo Hosting in Deutschland
-            </button>
-        </div>
-        
-        <article class="seo-article" id="seo-article">
-            <h1>Odoo Hosting Rechner: Der ultimative Vergleich für deutsche Unternehmen 2024</h1>
-            
-            <nav>
-                <h2>Inhaltsverzeichnis</h2>
-                <ol>
-                    <li><a href="#was-ist-odoo">Was ist Odoo und warum das richtige Hosting entscheidend ist</a></li>
-                    <li><a href="#hosting-optionen">Odoo Hosting Optionen im Detail</a></li>
-                    <li><a href="#kostenvergleich">Kostenvergleich: Self-Hosted vs. Managed Hosting</a></li>
-                    <li><a href="#enterprise-vs-community">Enterprise vs. Community Edition</a></li>
-                    <li><a href="#gdpr-datenschutz">GDPR und Datenschutz bei Odoo Hosting</a></li>
-                    <li><a href="#entwicklerkosten">Entwicklerkosten für Self-Hosting Lösungen</a></li>
-                    <li><a href="#branchenspezifisch">Branchenspezifische Hosting-Anforderungen</a></li>
-                    <li><a href="#skalierung">Skalierung und Performance-Optimierung</a></li>
-                    <li><a href="#support">Support und Service-Level Agreements</a></li>
-                    <li><a href="#fazit">Fazit und Empfehlungen</a></li>
-                </ol>
-            </nav>
-            
-            <h2 id="was-ist-odoo">Was ist Odoo und warum das richtige Hosting entscheidend ist</h2>
-            <p>Odoo ist eines der weltweit führenden Open-Source-ERP-Systeme und bietet deutschen Unternehmen eine umfassende Business-Software-Suite. Die Wahl des richtigen Hosting-Anbieters kann über Erfolg oder Misserfolg Ihrer Odoo-Implementierung entscheiden. Mit über 7 Millionen Nutzern weltweit und mehr als 30.000 verfügbaren Apps ist Odoo eine flexible Lösung für Unternehmen jeder Größe.</p>
-            
-            <p>Das richtige Hosting beeinflusst direkt die Performance, Sicherheit und Verfügbarkeit Ihres ERP-Systems. Deutsche Unternehmen stehen dabei vor besonderen Herausforderungen: DSGVO-Compliance, lokale Steuervorschriften und die Integration mit deutschen Systemen wie DATEV erfordern spezialisierte Hosting-Lösungen.</p>
-            
-            <h2 id="hosting-optionen">Odoo Hosting Optionen im Detail</h2>
-            
-            <h3>Managed Hosting: Die sorgenfreie Lösung</h3>
-            <p>Managed Hosting-Anbieter wie Odoo4Projects.com bieten Komplettlösungen, bei denen Sie sich um nichts kümmern müssen. Diese Anbieter übernehmen Installation, Wartung, Updates und Backups. Besonders für KMU ohne eigene IT-Abteilung ist dies oft die beste Wahl. Die Kosten beginnen bei etwa 18€ pro Monat für kleine Unternehmen und steigen je nach Nutzerzahl und benötigten Ressourcen.</p>
-            
-            <h3>Self-Hosting: Maximale Kontrolle</h3>
-            <p>Self-Hosting auf eigenen Servern oder VPS-Lösungen wie Hostinger oder AWS bietet maximale Kontrolle und Flexibilität. Diese Option erfordert jedoch technische Expertise und kontinuierliche Wartung. Die reinen Hosting-Kosten sind oft niedriger (ab 5€/Monat), aber die versteckten Kosten für Entwickler und Wartung können schnell 1.000-3.000€ pro Monat erreichen.</p>
-            
-            <h3>Odoo.sh: Die offizielle Lösung</h3>
-            <p>Odoo.sh ist die offizielle Hosting-Plattform von Odoo SA. Mit integrierten Entwicklungstools, Staging-Umgebungen und automatischen Updates richtet sie sich an Unternehmen mit eigenen Entwicklern. Die Kosten beginnen bei 58€ pro Worker und Monat, plus eine Grundgebühr von 480€ für dedizierte Server.</p>
-            
-            <h2 id="kostenvergleich">Kostenvergleich: Self-Hosted vs. Managed Hosting</h2>
-            
-            <p>Die Gesamtbetriebskosten (TCO) für Odoo-Hosting setzen sich aus verschiedenen Komponenten zusammen:</p>
-            
-            <ul>
-                <li><strong>Infrastrukturkosten:</strong> Server, Speicher, Bandbreite</li>
-                <li><strong>Lizenzkosten:</strong> Odoo Enterprise vs. Community Edition</li>
-                <li><strong>Personalkosten:</strong> Entwickler, Administratoren, Support</li>
-                <li><strong>Wartungskosten:</strong> Updates, Backups, Monitoring</li>
-                <li><strong>Opportunitätskosten:</strong> Ausfallzeiten, langsame Performance</li>
-            </ul>
-            
-            <p>Ein typisches mittelständisches Unternehmen mit 50 Mitarbeitern kann mit folgenden monatlichen Kosten rechnen:</p>
-            
-            <ul>
-                <li><strong>Managed Hosting:</strong> 200-500€/Monat (all-inclusive)</li>
-                <li><strong>Self-Hosting:</strong> 50-100€ Infrastruktur + 1.000-2.000€ Entwickler</li>
-                <li><strong>Odoo.sh:</strong> 500-1.500€/Monat je nach Konfiguration</li>
-            </ul>
-            
-            <h2 id="enterprise-vs-community">Enterprise vs. Community Edition</h2>
-            
-            <p>Die Wahl zwischen Odoo Enterprise und Community Edition hat erheblichen Einfluss auf Ihre Hosting-Anforderungen und Kosten:</p>
-            
-            <h3>Odoo Enterprise Edition</h3>
-            <ul>
-                <li>Vollständiger Funktionsumfang mit allen Premium-Modulen</li>
-                <li>Professioneller Support direkt von Odoo SA</li>
-                <li>Mobile Apps für iOS und Android</li>
-                <li>Kosten: 20-30€ pro Nutzer und Monat</li>
-            </ul>
-            
-            <h3>Odoo Community Edition</h3>
-            <ul>
-                <li>Kostenlose Open-Source-Version</li>
-                <li>Grundlegende Module verfügbar</li>
-                <li>Community-Support über Foren</li>
-                <li>Ideal für kleine Unternehmen mit begrenztem Budget</li>
-            </ul>
-            
-            <h2 id="gdpr-datenschutz">GDPR und Datenschutz bei Odoo Hosting</h2>
-            
-            <p>Für deutsche Unternehmen ist die DSGVO-Compliance nicht verhandelbar. Bei der Wahl Ihres Odoo-Hosting-Anbieters sollten Sie auf folgende Punkte achten:</p>
-            
-            <ul>
-                <li><strong>Serverstandort:</strong> Idealerweise in Deutschland oder der EU</li>
-                <li><strong>Datenverschlüsselung:</strong> SSL/TLS für Übertragung, AES für Speicherung</li>
-                <li><strong>Backup-Strategie:</strong> Regelmäßige Backups mit Verschlüsselung</li>
-                <li><strong>Zugriffskontrollen:</strong> Rollenbasierte Berechtigungen</li>
-                <li><strong>Audit-Logs:</strong> Vollständige Protokollierung aller Zugriffe</li>
-                <li><strong>Auftragsverarbeitungsvertrag:</strong> Schriftliche Vereinbarung nach Art. 28 DSGVO</li>
-            </ul>
-            
-            <p>Anbieter wie Simplify-ERP und Odoo4Projects bieten spezielle DSGVO-konforme Hosting-Lösungen mit Servern in deutschen Rechenzentren.</p>
-            
-            <h2 id="entwicklerkosten">Entwicklerkosten für Self-Hosting Lösungen</h2>
-            
-            <p>Die versteckten Kosten des Self-Hostings werden oft unterschätzt. Ein erfahrener Odoo-Entwickler kostet in Deutschland zwischen 80-150€ pro Stunde. Für die initiale Einrichtung und laufende Wartung sollten Sie mit folgenden Aufwänden rechnen:</p>
-            
-            <h3>Initiale Einrichtung (einmalig)</h3>
-            <ul>
-                <li>Serverinstallation und Konfiguration: 8-16 Stunden</li>
-                <li>Odoo-Installation und Grundkonfiguration: 8-24 Stunden</li>
-                <li>SSL-Zertifikate und Sicherheit: 4-8 Stunden</li>
-                <li>Backup-System einrichten: 4-8 Stunden</li>
-                <li><strong>Gesamt: 1.500-3.000€</strong></li>
-            </ul>
-            
-            <h3>Laufende Wartung (monatlich)</h3>
-            <ul>
-                <li>System-Updates und Patches: 4-8 Stunden</li>
-                <li>Monitoring und Troubleshooting: 8-16 Stunden</li>
-                <li>Backup-Überprüfung und Tests: 2-4 Stunden</li>
-                <li>Performance-Optimierung: 4-8 Stunden</li>
-                <li><strong>Gesamt: 1.000-2.000€/Monat</strong></li>
-            </ul>
-            
-            <h2 id="branchenspezifisch">Branchenspezifische Hosting-Anforderungen</h2>
-            
-            <p>Verschiedene Branchen haben unterschiedliche Anforderungen an ihr Odoo-Hosting:</p>
-            
-            <h3>Fertigung & Produktion</h3>
-            <ul>
-                <li>Hohe Performance für MRP-Berechnungen</li>
-                <li>Große Datenmengen (Stücklisten, Arbeitspläne)</li>
-                <li>Integration mit Produktionsmaschinen (IoT)</li>
-                <li>Empfehlung: Dedizierte Server mit mindestens 16GB RAM</li>
-            </ul>
-            
-            <h3>E-Commerce & Einzelhandel</h3>
-            <ul>
-                <li>Hohe Verfügbarkeit (99.9% SLA)</li>
-                <li>Skalierbare Ressourcen für Traffic-Spitzen</li>
-                <li>CDN-Integration für schnelle Ladezeiten</li>
-                <li>Empfehlung: Cloud-Hosting mit Auto-Scaling</li>
-            </ul>
-            
-            <h3>Dienstleistungen & Beratung</h3>
-            <ul>
-                <li>Moderate Ressourcenanforderungen</li>
-                <li>Fokus auf Projektverwaltung und Zeiterfassung</li>
-                <li>Mobile Zugriff für Außendienstmitarbeiter</li>
-                <li>Empfehlung: Managed Hosting ab 25€/Monat</li>
-            </ul>
-            
-            <h2 id="skalierung">Skalierung und Performance-Optimierung</h2>
-            
-            <p>Die Skalierbarkeit Ihres Odoo-Systems hängt stark von der gewählten Hosting-Lösung ab. Wichtige Faktoren für optimale Performance:</p>
-            
-            <h3>Hardware-Anforderungen</h3>
-            <ul>
-                <li><strong>CPU:</strong> Mindestens 2 Cores, ideal 4-8 Cores</li>
-                <li><strong>RAM:</strong> 4GB Minimum, 8-16GB empfohlen</li>
-                <li><strong>Storage:</strong> SSD mit mindestens 100GB</li>
-                <li><strong>Bandbreite:</strong> Mindestens 100 Mbit/s</li>
-            </ul>
-            
-            <h3>Performance-Optimierung</h3>
-            <ul>
-                <li>PostgreSQL-Tuning für große Datenmengen</li>
-                <li>Redis für Session-Caching</li>
-                <li>Nginx als Reverse Proxy</li>
-                <li>CDN für statische Inhalte</li>
-                <li>Load Balancing für hohe Nutzerzahlen</li>
-            </ul>
-            
-            <h2 id="support">Support und Service-Level Agreements</h2>
-            
-            <p>Der Support-Level ist ein kritischer Faktor bei der Wahl Ihres Hosting-Anbieters. Vergleichen Sie die SLAs verschiedener Anbieter:</p>
-            
-            <h3>Support-Level im Vergleich</h3>
-            <ul>
-                <li><strong>Basic Support:</strong> E-Mail, Reaktionszeit 24-48 Stunden</li>
-                <li><strong>Business Support:</strong> Telefon + E-Mail, Reaktionszeit 4-8 Stunden</li>
-                <li><strong>Enterprise Support:</strong> 24/7 Hotline, Reaktionszeit < 1 Stunde</li>
-                <li><strong>Managed Services:</strong> Proaktives Monitoring, präventive Wartung</li>
-            </ul>
-            
-            <h3>Was sollte ein gutes SLA beinhalten?</h3>
-            <ul>
-                <li>Verfügbarkeitsgarantie (mindestens 99.5%)</li>
-                <li>Maximale Ausfallzeiten pro Monat</li>
-                <li>Reaktionszeiten nach Priorität</li>
-                <li>Kompensation bei SLA-Verletzungen</li>
-                <li>Disaster Recovery Plan</li>
-            </ul>
-            
-            <h2 id="fazit">Fazit und Empfehlungen</h2>
-            
-            <p>Die Wahl des richtigen Odoo-Hosting-Anbieters hängt von vielen Faktoren ab: Unternehmensgröße, technische Expertise, Budget und spezifische Anforderungen. Hier unsere Empfehlungen:</p>
-            
-            <h3>Für kleine Unternehmen (1-10 Mitarbeiter)</h3>
-            <p><strong>Empfehlung:</strong> Cloudpepper Core oder Odoo4Projects Side Hustle<br>
-            <strong>Kosten:</strong> 0-18€/Monat<br>
-            <strong>Vorteile:</strong> Geringe Kosten, einfache Einrichtung, ausreichende Performance</p>
-            
-            <h3>Für mittlere Unternehmen (11-50 Mitarbeiter)</h3>
-            <p><strong>Empfehlung:</strong> Odoo4Projects On the Rise oder Simplify-ERP<br>
-            <strong>Kosten:</strong> 33-140€/Monat<br>
-            <strong>Vorteile:</strong> Professioneller Support, DSGVO-konform, skalierbar</p>
-            
-            <h3>Für große Unternehmen (50+ Mitarbeiter)</h3>
-            <p><strong>Empfehlung:</strong> Odoo.sh oder Odoo4Projects Empire<br>
-            <strong>Kosten:</strong> 154-1000€/Monat<br>
-            <strong>Vorteile:</strong> Enterprise-Features, dedizierte Ressourcen, SLA-Garantien</p>
-            
-            <h3>Für technisch versierte Teams</h3>
-            <p><strong>Empfehlung:</strong> AWS/Hostinger mit eigenem Development-Team<br>
-            <strong>Kosten:</strong> 50€ Hosting + 1500€ Entwickler/Monat<br>
-            <strong>Vorteile:</strong> Maximale Kontrolle, individuelle Anpassungen</p>
-            
-            <p><strong>Unser Tipp:</strong> Starten Sie mit einem Managed Hosting-Anbieter und wechseln Sie erst zu Self-Hosting, wenn Sie die nötige Expertise und Ressourcen haben. Die gesparte Zeit und reduzierten Risiken rechtfertigen in den meisten Fällen die höheren Kosten des Managed Hostings.</p>
-            
-            <p>Nutzen Sie unseren Hosting-Rechner oben, um die beste Lösung für Ihr Unternehmen zu finden. Bei Fragen stehen wir Ihnen gerne zur Verfügung unter info@odoo-experten-deutschland.de.</p>
-        </article>
-    </div>
-    
-    <footer>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Über Odoo Experten Deutschland</h4>
-                    <p>Unabhängiges Wissensportal für Odoo ERP mit fundierter Expertise und neutralen Analysen für deutsche Unternehmen.</p>
+            <div class="footer-grid">
+                <div>
+                    <img src="https://tbppogohivsxgiavbnvp.supabase.co/storage/v1/object/public/odoo/Logo.png" alt="Odoo Experten Deutschland" style="height: 2.5rem; margin-bottom: 1rem;">
+                    <p class="text-gray-400">
+                        Unabhängiges Wissensportal für Odoo ERP in Deutschland.
+                    </p>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Inhalte</h4>
-                    <a href="odoo/index.html">Odoo ERP Grundlagen</a>
-                    <a href="odoo-19/index.html">Odoo 19 Features</a>
-                    <a href="odoo-hosting/index.html">Hosting-Lösungen</a>
-                    <a href="odoo-hosting-rechner.html">Kostenrechner</a>
+                <div>
+                    <h3 class="footer-heading">Kategorien</h3>
+                    <ul class="footer-links">
+                        <li><a href="/odoo/" class="footer-link">Odoo Grundlagen</a></li>
+                        <li><a href="/odoo-19/" class="footer-link">Odoo 19 Features</a></li>
+                        <li><a href="/odoo-hosting/" class="footer-link">Hosting-Lösungen</a></li>
+                        <li><a href="/odoo-hosting-rechner.html" class="footer-link">Kostenrechner</a></li>
+                    </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Rechtliches</h4>
-                    <a href="impressum.html">Impressum</a>
-                    <a href="datenschutz.html">Datenschutz</a>
-                    <a href="agb.html">AGB</a>
-                    <a href="cookie-richtlinien.html">Cookie-Richtlinien</a>
+                <div>
+                    <h3 class="footer-heading">Hosting Vergleich</h3>
+                    <ul class="footer-links">
+                        <li><a href="/odoo-hosting/odoo-sh-vergleich.html" class="footer-link">Odoo.sh Bewertung</a></li>
+                        <li><a href="/odoo-hosting/cloud-vs-onpremise.html" class="footer-link">Cloud vs. On-Premise</a></li>
+                        <li><a href="/odoo-hosting/hosting-sicherheit.html" class="footer-link">Hosting Sicherheit</a></li>
+                    </ul>
                 </div>
                 
-                <div class="footer-section">
-                    <h4>Kontakt</h4>
-                    <p>📧 info@odoo-experten-deutschland.de</p>
-                    <p>🌐 odoo-experten-deutschland.de</p>
-                    <p>🇩🇪 Deutschland</p>
+                <div>
+                    <h3 class="footer-heading">Rechtliches</h3>
+                    <ul class="footer-links">
+                        <li><a href="/impressum.html" class="footer-link">Impressum</a></li>
+                        <li><a href="/datenschutz.html" class="footer-link">Datenschutzerklärung</a></li>
+                        <li><a href="/cookie-richtlinien.html" class="footer-link">Cookie-Richtlinien</a></li>
+                    </ul>
                 </div>
             </div>
             
-            <div class="footer-bottom">
-                <p>&copy; 2024 Odoo Experten Deutschland. Alle Rechte vorbehalten.</p>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Odoo Experten Deutschland. Alle Rechte vorbehalten.</p>
             </div>
         </div>
     </footer>
-    
-    <button class="back-to-top" aria-label="Nach oben">↑</button>
-    
+
+    <!-- Scripts -->
+    <script src="/js/main.js"></script>
     <script>
-        // Hosting provider data
+        // Hosting providers data from Next.js project
         const hostingProviders = {
             odoo4projects: {
+                id: 'odoo4projects',
                 name: 'Odoo4Projects.com',
-                url: 'https://ODOO4projects.com?utm_source=X5Y2I933&utm_medium=lph',
+                homepage: 'https://ODOO4projects.com?utm_source=X5Y2I933&utm_medium=lph',
                 tiers: [
                     { name: 'Side Hustle', users: '1-10', monthlyPrice: 18, yearlyPrice: 214, setupFee: 0 },
                     { name: 'On the Rise', users: '11-25', monthlyPrice: 33, yearlyPrice: 395, setupFee: 0 },
@@ -855,12 +1189,13 @@
                 rating: 4.8,
                 location: '🌍 Global',
                 supportLevel: 'Enterprise AI-Enhanced',
-                sla: '99.9%'
+                sla: '99.9%',
+                highlight: 'Beste Preis-Leistung'
             },
-            
             odooSH: {
+                id: 'odooSH',
                 name: 'Odoo.sh (Official)',
-                url: 'https://www.odoo.sh',
+                homepage: 'https://www.odoo.sh',
                 pricing: {
                     perWorker: 58,
                     baseFeeDedicated: 480,
@@ -872,36 +1207,38 @@
                 supportLevel: 'Official Enterprise',
                 sla: '99.9%'
             },
-            
             cloudpepper: {
+                id: 'cloudpepper',
                 name: 'Cloudpepper',
-                url: 'https://cloudpepper.io',
+                homepage: 'https://cloudpepper.io',
                 tiers: [
                     { name: 'Core', users: 'Unlimited', monthlyPrice: 0, features: ['Free Plan', '1 Server', 'Community Support'] },
                     { name: 'Base', users: 'Unlimited', monthlyPrice: 29, features: ['2 Servers', 'Staging Environment'] },
                     { name: 'Pro', users: 'Unlimited', monthlyPrice: 49, features: ['Unlimited Servers', 'Advanced Features'] }
                 ],
-                developmentNote: 'Requires developer setup (€500-1000 total)',
+                features: ['Kostenloser Einstieg', 'Unbegrenzte Nutzer', 'Entwickler-freundlich'],
+                developmentNote: 'Benötigt Entwickler-Setup (€500-1000 gesamt)',
                 rating: 4.1,
                 location: '🇧🇪 Belgium'
             },
-            
             cloudclusters: {
+                id: 'cloudclusters',
                 name: 'Cloud Clusters',
-                url: 'https://www.cloudclusters.io',
+                homepage: 'https://cloudclusters.io',
                 tiers: [
                     { name: 'Express', monthlyPrice: 4, features: ['2 CPU, 2GB RAM', 'Basic Setup'] },
                     { name: 'Professional', monthlyPrice: 13, features: ['4 CPU, 8GB RAM', 'Enhanced Performance'] },
                     { name: 'Advanced', monthlyPrice: 22, features: ['6 CPU, 16GB RAM', 'High Performance'] }
                 ],
-                developmentNote: 'Self-managed - requires developer (€800-1200 setup)',
+                features: ['Günstige VPS Option', 'Flexible Skalierung', 'Volle Kontrolle'],
+                developmentNote: 'Selbstverwaltung - benötigt Entwickler (€800-1200 Setup)',
                 rating: 4.0,
                 location: '🇺🇸 USA'
             },
-            
             simplifyERP: {
+                id: 'simplifyERP',
                 name: 'Simplify-ERP',
-                url: 'https://www.simplify-erp.de',
+                homepage: 'https://simplify-erp.de',
                 tiers: [
                     { name: 'Basic', users: '2-3', monthlyPrice: 30, setupFee: 500 },
                     { name: 'Large', users: 'bis 20', monthlyPrice: 90, setupFee: 500 },
@@ -909,315 +1246,281 @@
                 ],
                 features: ['GDPR-konforme deutsche Server', 'Telefon-Support auf Deutsch', 'Begrenzte Nutzerzahl'],
                 rating: 3.9,
-                location: '🇩🇪 Deutschland'
+                location: '🇩🇪 Deutschland',
+                supportLevel: 'Deutscher Support'
             },
-            
             hostinger: {
+                id: 'hostinger',
                 name: 'Hostinger VPS',
-                url: 'https://www.hostinger.com',
+                homepage: 'https://www.hostinger.de/vps-hosting',
                 tiers: [
                     { name: 'KVM 1', monthlyPrice: 5, features: ['1 vCPU, 4GB RAM', 'Self-Setup Required'] },
                     { name: 'KVM 4', monthlyPrice: 25, features: ['4 vCPU, 16GB RAM', 'Professional Setup Needed'] }
                 ],
+                features: ['Sehr günstig', 'Volle VPS Kontrolle', 'Weltweit verfügbar'],
                 developmentNote: 'Komplett selbst verwaltet - Entwickler nötig (€1000-1500)',
                 rating: 3.8,
                 location: '🇱🇹 Lithuania'
             },
-            
             aws: {
+                id: 'aws',
                 name: 'AWS EC2',
-                url: 'https://aws.amazon.com',
+                homepage: 'https://aws.amazon.com/de/ec2/',
                 tiers: [
                     { name: 't3.micro', monthlyPrice: 9, features: ['Free Tier eligible', 'Basic Performance'] },
                     { name: 'm5.large', monthlyPrice: 144, features: ['Production Ready', 'High Performance'] }
                 ],
+                features: ['Enterprise Cloud', 'Globale Infrastruktur', 'Höchste Skalierbarkeit'],
                 developmentNote: 'Enterprise Cloud - benötigt erfahrenen Entwickler (€1500-3000)',
                 rating: 4.3,
                 location: '🇺🇸 Global'
             }
         };
-        
-        // State management
-        let selectedSector = null;
-        let employeeCount = 25;
-        let currentSort = 'price';
-        
-        // DOM elements
-        const sectorOptions = document.querySelectorAll('.sector-option');
-        const employeeSlider = document.getElementById('employees');
-        const employeeCountDisplay = document.getElementById('employee-count');
+
+        // Sectors from Next.js
+        const sectors = [
+            { id: 'manufacturing', name: 'Fertigung & Produktion', icon: '🏭', complexity: 'high' },
+            { id: 'retail', name: 'Einzelhandel & E-Commerce', icon: '🛍️', complexity: 'medium' },
+            { id: 'services', name: 'Dienstleistungen', icon: '💼', complexity: 'medium' },
+            { id: 'healthcare', name: 'Gesundheitswesen', icon: '🏥', complexity: 'high' },
+            { id: 'construction', name: 'Bauwesen', icon: '🏗️', complexity: 'high' },
+            { id: 'consulting', name: 'Beratung', icon: '💡', complexity: 'low' },
+            { id: 'logistics', name: 'Logistik & Transport', icon: '🚚', complexity: 'high' },
+            { id: 'food', name: 'Lebensmittel', icon: '🍎', complexity: 'medium' }
+        ];
+
+        // Calculator functionality
+        const calculatorForm = document.getElementById('calculator-form');
+        const sectorSelect = document.getElementById('sector');
+        const employeesSlider = document.getElementById('employees');
+        const employeeValue = document.getElementById('employee-value');
         const calculateBtn = document.getElementById('calculate-btn');
-        const loadingSteps = document.getElementById('loading-steps');
-        const resultsContainer = document.getElementById('results-container');
-        const providerTbody = document.getElementById('provider-tbody');
-        const sortBtns = document.querySelectorAll('.sort-btn');
-        const seoToggleBtn = document.getElementById('seo-toggle');
-        const seoArticle = document.getElementById('seo-article');
-        
-        // Event listeners
-        sectorOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                sectorOptions.forEach(opt => opt.classList.remove('selected'));
-                option.classList.add('selected');
-                selectedSector = option.dataset.sector;
-                calculateBtn.disabled = false;
-            });
+        const loadingSection = document.getElementById('loading-section');
+        const resultsSection = document.getElementById('results-section');
+        const progressBar = document.getElementById('progress-bar');
+        const loadingText = document.getElementById('loading-text');
+        const comparisonTbody = document.getElementById('comparison-tbody');
+        const recommendationText = document.getElementById('recommendation-text');
+
+        // Update employee count display
+        employeesSlider.addEventListener('input', function() {
+            const value = parseInt(this.value);
+            if (value >= 100) {
+                employeeValue.textContent = '100+ Mitarbeiter';
+            } else {
+                employeeValue.textContent = `${value} Mitarbeiter`;
+            }
         });
-        
-        employeeSlider.addEventListener('input', (e) => {
-            employeeCount = parseInt(e.target.value);
-            employeeCountDisplay.textContent = employeeCount;
+
+        // Enable/disable calculate button
+        sectorSelect.addEventListener('change', function() {
+            calculateBtn.disabled = !this.value;
         });
-        
-        calculateBtn.addEventListener('click', calculateCosts);
-        
-        sortBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                sortBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentSort = btn.dataset.sort;
-                if (resultsContainer.style.display === 'block') {
-                    displayResults();
+
+        // Calculate hosting costs
+        calculatorForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const sector = sectorSelect.value;
+            const employees = parseInt(employeesSlider.value);
+            
+            if (!sector) return;
+            
+            startCalculation(sector, employees);
+        });
+
+        function startCalculation(sector, employees) {
+            // Show loading
+            loadingSection.classList.remove('hidden');
+            resultsSection.classList.add('hidden');
+            
+            // Simulate calculation progress
+            let progress = 0;
+            const progressTexts = [
+                'Analysiere Ihre Anforderungen...',
+                'Vergleiche Hosting-Anbieter...',
+                'Berechne optimale Preise...',
+                'Erstelle Empfehlungen...'
+            ];
+            
+            const interval = setInterval(() => {
+                progress += 25;
+                progressBar.style.width = progress + '%';
+                
+                if (progress <= 75) {
+                    loadingText.textContent = progressTexts[Math.floor(progress / 25)];
                 }
-            });
-        });
-        
-        seoToggleBtn.addEventListener('click', () => {
-            seoArticle.classList.toggle('active');
-            seoToggleBtn.textContent = seoArticle.classList.contains('active') 
-                ? '📖 Weniger Informationen anzeigen' 
-                : '📖 Mehr Informationen zu Odoo Hosting in Deutschland';
-        });
-        
-        // Calculation function
-        async function calculateCosts() {
-            calculateBtn.disabled = true;
-            calculateBtn.textContent = 'Berechne...';
-            loadingSteps.style.display = 'block';
-            resultsContainer.style.display = 'none';
-            
-            // Animate loading steps
-            const steps = loadingSteps.querySelectorAll('.loading-step');
-            for (let i = 0; i < steps.length; i++) {
-                await new Promise(resolve => setTimeout(resolve, 300));
-                steps[i].classList.add('active');
-                if (i > 0) steps[i-1].classList.add('complete');
-            }
-            steps[steps.length - 1].classList.add('complete');
-            
-            // Show results
-            setTimeout(() => {
-                loadingSteps.style.display = 'none';
-                resultsContainer.style.display = 'block';
-                displayResults();
-                calculateBtn.disabled = false;
-                calculateBtn.textContent = 'Neu berechnen';
                 
-                // Reset loading steps
-                steps.forEach(step => {
-                    step.classList.remove('active', 'complete');
-                });
-            }, 500);
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        showResults(sector, employees);
+                    }, 500);
+                }
+            }, 800);
         }
-        
-        // Display results function
-        function displayResults() {
-            const providers = calculateProviderCosts();
+
+        // Get recommendation based on employees and sector (from Next.js)
+        function getRecommendation(employees, sector, budget = 'medium') {
+            const sectorData = sectors.find(s => s.id === sector);
+            const complexity = sectorData?.complexity || 'medium';
             
-            // Sort providers
-            providers.sort((a, b) => {
-                if (currentSort === 'price') return a.monthlyPrice - b.monthlyPrice;
-                if (currentSort === 'rating') return b.rating - a.rating;
-                if (currentSort === 'features') return b.features.length - a.features.length;
-                return 0;
+            // Small businesses with low budget
+            if (employees <= 10 && budget === 'low') {
+                return complexity === 'low' ? 'cloudpepper' : 'cloudclusters';
+            }
+            
+            // Small to medium businesses
+            if (employees <= 25) {
+                return budget === 'high' ? 'odooSH' : 'odoo4projects';
+            }
+            
+            // Medium businesses
+            if (employees <= 50) {
+                return complexity === 'high' ? 'odoo4projects' : 'simplifyERP';
+            }
+            
+            // Large businesses
+            if (employees > 50) {
+                return budget === 'high' ? 'odooSH' : 'odoo4projects';
+            }
+            
+            return 'odoo4projects'; // default recommendation
+        }
+
+        // Calculate price based on provider structure (from Next.js)
+        function calculatePrice(provider, employees) {
+            // For providers with tiers
+            if (provider.tiers) {
+                for (const tier of provider.tiers) {
+                    if (tier.users) {
+                        const range = tier.users.split('-').map(n => n.replace('+', '').trim());
+                        const min = parseInt(range[0]) || 0;
+                        const max = range[1] ? (parseInt(range[1]) || 999) : 999;
+                        
+                        if (employees >= min && employees <= max) {
+                            return {
+                                monthly: tier.monthlyPrice,
+                                yearly: tier.yearlyPrice || tier.monthlyPrice * 12,
+                                setupFee: tier.setupFee || 0,
+                                tierName: tier.name
+                            };
+                        }
+                    }
+                }
+                // Return highest tier if above all ranges
+                const lastTier = provider.tiers[provider.tiers.length - 1];
+                return {
+                    monthly: lastTier.monthlyPrice,
+                    yearly: lastTier.yearlyPrice || lastTier.monthlyPrice * 12,
+                    setupFee: lastTier.setupFee || 0,
+                    tierName: lastTier.name
+                };
+            }
+            
+            // For Odoo.sh pricing model
+            if (provider.pricing) {
+                const workers = Math.max(provider.pricing.minimumWorkers || 1, Math.ceil(employees / 5));
+                const monthly = (provider.pricing.perWorker || 0) * workers + (provider.pricing.baseFeeDedicated || 0);
+                return {
+                    monthly,
+                    yearly: monthly * 12,
+                    setupFee: 0,
+                    tierName: `${workers} Workers`
+                };
+            }
+            
+            return {
+                monthly: 0,
+                yearly: 0,
+                setupFee: 0,
+                tierName: 'Custom'
+            };
+        }
+
+        function showResults(sector, employees) {
+            loadingSection.classList.add('hidden');
+            resultsSection.classList.remove('hidden');
+            
+            // Update recommendation text
+            const sectorData = sectors.find(s => s.id === sector);
+            recommendationText.textContent = `Basierend auf ${employees} Mitarbeitern in der Branche ${sectorData.name}`;
+            
+            // Get recommended provider
+            const recommendedId = getRecommendation(employees, sector);
+            
+            // Generate comparison table
+            const providers = Object.entries(hostingProviders);
+            
+            // Sort providers by total cost
+            const sortedProviders = providers.sort(([idA, providerA], [idB, providerB]) => {
+                const costA = calculatePrice(providerA, employees).monthly;
+                const costB = calculatePrice(providerB, employees).monthly;
+                return costA - costB;
             });
             
-            // Clear table
-            providerTbody.innerHTML = '';
-            
-            // Render providers
-            providers.forEach((provider, index) => {
-                const row = document.createElement('tr');
-                row.className = 'provider-row';
-                if (index === 0 && currentSort === 'price') row.classList.add('recommended');
+            // Generate table rows
+            comparisonTbody.innerHTML = sortedProviders.map(([id, provider]) => {
+                const pricing = calculatePrice(provider, employees);
+                const isRecommended = id === recommendedId;
                 
-                const developerWarning = provider.developmentNote 
-                    ? `<div class="developer-warning">
-                        <span>⚠️</span>
-                        <span>${provider.developmentNote}</span>
-                       </div>` 
-                    : '';
-                
-                row.innerHTML = `
-                    <td>
-                        <div class="provider-name">${provider.name}</div>
-                        <div class="provider-location">${provider.location || ''}</div>
-                    </td>
-                    <td>
-                        <div class="price-display">€${provider.monthlyPrice}</div>
-                        <div class="price-details">pro Monat</div>
-                        ${developerWarning}
-                    </td>
-                    <td>€${provider.setupFee}</td>
-                    <td>
-                        <div class="feature-badges">
-                            ${provider.supportLevel ? `<span class="feature-badge">${provider.supportLevel}</span>` : ''}
-                            ${provider.sla ? `<span class="feature-badge">${provider.sla} SLA</span>` : ''}
-                        </div>
-                    </td>
-                    <td>${provider.location || 'International'}</td>
-                    <td>
-                        <div class="rating">
-                            <span class="stars">${'★'.repeat(Math.floor(provider.rating))}</span>
-                            <span>${provider.rating}/5</span>
-                        </div>
-                    </td>
-                    <td>
-                        <a href="${provider.url || '#'}" target="_blank" rel="dofollow" class="cta-btn" style="text-decoration: none; display: inline-block;">Jetzt anfragen</a>
-                    </td>
+                return `
+                    <tr class="${isRecommended ? 'recommended-row' : ''}">
+                        <td>
+                            <strong>
+                                ${provider.homepage ? 
+                                    `<a href="${provider.homepage}" target="_blank" rel="dofollow" style="color: inherit; text-decoration: none; border-bottom: 1px dotted #666;">
+                                        ${provider.name}
+                                    </a>` : 
+                                    provider.name
+                                }
+                            </strong>
+                            ${isRecommended ? '<span style="color: var(--color-violet-600); font-size: 0.875rem;"> (Empfohlen)</span>' : ''}
+                            ${provider.highlight ? `<br><span style="color: var(--color-green-600); font-size: 0.75rem;">${provider.highlight}</span>` : ''}
+                            ${provider.developmentNote ? `<br><span style="color: var(--color-orange-600); font-size: 0.75rem;">${provider.developmentNote}</span>` : ''}
+                            ${provider.rating ? `<br><span style="font-size: 0.75rem;">⭐ ${provider.rating}/5</span>` : ''}
+                        </td>
+                        <td class="price-cell">
+                            €${pricing.monthly}/Monat
+                            ${pricing.tierName ? `<br><span style="font-size: 0.75rem; font-weight: normal;">${pricing.tierName}</span>` : ''}
+                        </td>
+                        <td>${pricing.setupFee ? `€${pricing.setupFee}` : 'Kostenlos'}</td>
+                        <td>
+                            <ul class="features-list">
+                                ${provider.features.slice(0, 3).map(feature => `<li>✓ ${feature}</li>`).join('')}
+                            </ul>
+                        </td>
+                        <td>
+                            ${provider.supportLevel || 'Standard Support'}
+                            ${provider.location ? `<br><span style="font-size: 0.75rem;">${provider.location}</span>` : ''}
+                            ${provider.sla ? `<br><span style="font-size: 0.75rem;">SLA: ${provider.sla}</span>` : ''}
+                        </td>
+                    </tr>
                 `;
-                
-                providerTbody.appendChild(row);
-            });
+            }).join('');
+            
+            // Scroll to results
+            resultsSection.scrollIntoView({ behavior: 'smooth' });
         }
-        
-        // Calculate provider costs based on requirements
-        function calculateProviderCosts() {
-            const results = [];
+
+        // SEO Content Toggle
+        const seoToggle = document.getElementById('seo-toggle');
+        const seoContent = document.getElementById('seo-content');
+        const seoChevron = document.getElementById('seo-chevron');
+
+        seoToggle.addEventListener('click', function() {
+            seoContent.classList.toggle('hidden');
             
-            // Odoo4Projects
-            const o4pTier = employeeCount <= 10 ? 0 : 
-                          employeeCount <= 25 ? 1 : 
-                          employeeCount <= 50 ? 2 : 3;
-            results.push({
-                name: hostingProviders.odoo4projects.name,
-                url: hostingProviders.odoo4projects.url,
-                monthlyPrice: hostingProviders.odoo4projects.tiers[o4pTier].monthlyPrice,
-                setupFee: 0,
-                features: hostingProviders.odoo4projects.features,
-                rating: hostingProviders.odoo4projects.rating,
-                location: hostingProviders.odoo4projects.location,
-                supportLevel: hostingProviders.odoo4projects.supportLevel,
-                sla: hostingProviders.odoo4projects.sla
-            });
-            
-            // Odoo.sh
-            const workers = Math.ceil(employeeCount / 20);
-            results.push({
-                name: hostingProviders.odooSH.name,
-                url: hostingProviders.odooSH.url,
-                monthlyPrice: (hostingProviders.odooSH.pricing.perWorker * workers) + 
-                             (employeeCount > 20 ? hostingProviders.odooSH.pricing.baseFeeDedicated : 0),
-                setupFee: 0,
-                features: hostingProviders.odooSH.features,
-                rating: hostingProviders.odooSH.rating,
-                location: hostingProviders.odooSH.location,
-                supportLevel: hostingProviders.odooSH.supportLevel,
-                sla: hostingProviders.odooSH.sla
-            });
-            
-            // Cloudpepper
-            const cpTier = employeeCount <= 10 ? 0 : employeeCount <= 25 ? 1 : 2;
-            results.push({
-                name: hostingProviders.cloudpepper.name,
-                url: hostingProviders.cloudpepper.url,
-                monthlyPrice: hostingProviders.cloudpepper.tiers[cpTier].monthlyPrice,
-                setupFee: 0,
-                features: hostingProviders.cloudpepper.tiers[cpTier].features || [],
-                rating: hostingProviders.cloudpepper.rating,
-                location: hostingProviders.cloudpepper.location,
-                developmentNote: hostingProviders.cloudpepper.developmentNote
-            });
-            
-            // Cloud Clusters
-            const ccTier = employeeCount <= 20 ? 0 : employeeCount <= 50 ? 1 : 2;
-            results.push({
-                name: hostingProviders.cloudclusters.name,
-                url: hostingProviders.cloudclusters.url,
-                monthlyPrice: hostingProviders.cloudclusters.tiers[ccTier].monthlyPrice,
-                setupFee: 0,
-                features: hostingProviders.cloudclusters.tiers[ccTier].features,
-                rating: hostingProviders.cloudclusters.rating,
-                location: hostingProviders.cloudclusters.location,
-                developmentNote: hostingProviders.cloudclusters.developmentNote
-            });
-            
-            // Simplify-ERP
-            if (employeeCount <= 50) {
-                const seTier = employeeCount <= 3 ? 0 : employeeCount <= 20 ? 1 : 2;
-                results.push({
-                    name: hostingProviders.simplifyERP.name,
-                    url: hostingProviders.simplifyERP.url,
-                    monthlyPrice: hostingProviders.simplifyERP.tiers[seTier].monthlyPrice,
-                    setupFee: hostingProviders.simplifyERP.tiers[seTier].setupFee,
-                    features: hostingProviders.simplifyERP.features,
-                    rating: hostingProviders.simplifyERP.rating,
-                    location: hostingProviders.simplifyERP.location
-                });
-            }
-            
-            // Hostinger
-            const hostTier = employeeCount <= 20 ? 0 : 1;
-            results.push({
-                name: hostingProviders.hostinger.name,
-                url: hostingProviders.hostinger.url,
-                monthlyPrice: hostingProviders.hostinger.tiers[hostTier].monthlyPrice,
-                setupFee: 0,
-                features: hostingProviders.hostinger.tiers[hostTier].features,
-                rating: hostingProviders.hostinger.rating,
-                location: hostingProviders.hostinger.location,
-                developmentNote: hostingProviders.hostinger.developmentNote
-            });
-            
-            // AWS
-            const awsTier = employeeCount <= 10 ? 0 : 1;
-            results.push({
-                name: hostingProviders.aws.name,
-                url: hostingProviders.aws.url,
-                monthlyPrice: hostingProviders.aws.tiers[awsTier].monthlyPrice,
-                setupFee: 0,
-                features: hostingProviders.aws.tiers[awsTier].features,
-                rating: hostingProviders.aws.rating,
-                location: hostingProviders.aws.location,
-                developmentNote: hostingProviders.aws.developmentNote
-            });
-            
-            return results;
-        }
-        
-        // Mobile Menu Toggle
-        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        mobileMenuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            mobileMenuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
-        });
-        
-        // Scroll functionality
-        window.addEventListener('scroll', () => {
-            const scrollProgress = document.querySelector('.scroll-progress');
-            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrolled = (window.scrollY / scrollHeight) * 100;
-            scrollProgress.style.width = scrolled + '%';
-            
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
+            // Rotate chevron
+            if (seoContent.classList.contains('hidden')) {
+                seoChevron.innerHTML = '<path d="M6 9l6 6 6-6"/>';
             } else {
-                header.classList.remove('scrolled');
+                seoChevron.innerHTML = '<path d="M18 15l-6-6-6 6"/>';
+                // Smooth scroll to content
+                setTimeout(() => {
+                    seoContent.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
             }
-            
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-        
-        document.querySelector('.back-to-top').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>
