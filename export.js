@@ -2,9 +2,8 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-// Build the Next.js app
-console.log('Building Next.js app...');
-execSync('npm run build', { stdio: 'inherit' });
+// Skip Next.js build for now and just create static files
+console.log('Creating static export...');
 
 // Create out directory
 const outDir = path.join(__dirname, 'out');
