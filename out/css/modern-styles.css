@@ -509,9 +509,27 @@ nav {
 
 .article-meta {
   display: flex;
-  gap: 1rem;
-  font-size: 0.875rem;
-  color: var(--gray-500);
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+  border-top: 1px solid var(--gray-200);
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 0.95rem;
+  color: var(--gray-600);
+}
+
+.article-meta span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.article-meta span:not(:last-child)::after {
+  content: '•';
+  margin-left: 1.5rem;
+  color: var(--gray-400);
 }
 
 /* Modern Index Page */
@@ -1182,19 +1200,6 @@ select.form-control {
   font-weight: 800;
 }
 
-.article-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  color: var(--gray-600);
-  font-size: 1rem;
-}
-
-.article-meta span {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
 
 .article-content {
   max-width: 800px;
