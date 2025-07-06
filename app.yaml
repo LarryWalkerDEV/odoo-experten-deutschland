@@ -1,22 +1,20 @@
 name: odoo-experten-deutschland
 region: fra
-services:
+static_sites:
 - name: web
   github:
     repo: LarryWalkerDEV/odoo-experten-deutschland
     branch: main
     deploy_on_push: true
-  build_command: npm run build
-  run_command: npm start
-  environment_slug: node-js
-  instance_size_slug: apps-s-1vcpu-1gb
-  instance_count: 1
-  http_port: 3000
+  build_command: npm ci && npm run build
+  output_dir: out
   source_dir: /
   envs:
   - key: NODE_ENV
     value: production
-    scope: RUN_AND_BUILD_TIME
+    scope: BUILD_TIME
   - key: NEXT_PUBLIC_SITE_URL
     value: https://odoo-experten-deutschland.de
-    scope: RUN_AND_BUILD_TIME
+    scope: BUILD_TIME
+  routes:
+  - path: /

@@ -1,18 +1,6 @@
 import { MetadataRoute } from 'next'
-import { createClient } from '@supabase/supabase-js'
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-)
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Fetch all articles from Supabase
-  const { data: articles } = await supabase
-    .from('articles')
-    .select('slug, category, updated_at')
-    .order('updated_at', { ascending: false })
-
   const baseUrl = 'https://odoo-experten-deutschland.de'
   const currentDate = new Date().toISOString()
 
@@ -74,30 +62,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ]
 
-  // Dynamic article pages
-  const articlePages: MetadataRoute.Sitemap = articles?.map((article) => {
-    let categoryPath = ''
-    switch (article.category) {
-      case 'odoo':
-        categoryPath = '/odoo/'
-        break
-      case 'odoo-19':
-        categoryPath = '/odoo-19/'
-        break
-      case 'odoo-hosting':
-        categoryPath = '/odoo-hosting/'
-        break
-      default:
-        categoryPath = '/odoo/'
-    }
-
-    return {
-      url: `${baseUrl}${categoryPath}${article.slug}`,
-      lastModified: article.updated_at || currentDate,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    }
-  }) || []
-
-  return [...staticPages, ...articlePages]
+  // TODO: Add dynamic article pages when API is available
+  // For now, just return static pages
+  return staticPages
 }
