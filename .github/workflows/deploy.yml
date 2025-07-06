@@ -1,0 +1,41 @@
+name: Deploy to DigitalOcean
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Install doctl
+      uses: digitalocean/action-doctl@v2
+      with:
+        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+        
+    - name: Deploy to DigitalOcean App Platform
+      run: |
+        # Update app spec with repository info
+        sed -i "s|YOUR_USERNAME/odoo-experten-deutschland|${{ github.repository }}|g" app.yaml
+        
+        # Check if app exists
+        if doctl apps list --format ID,Name | grep -q "odoo-experten-deutschland"; then
+          echo "Updating existing app..."
+          APP_ID=$(doctl apps list --format ID,Name | grep "odoo-experten-deutschland" | awk '{print $1}')
+          doctl apps update $APP_ID --spec app.yaml
+        else
+          echo "Creating new app..."
+          doctl apps create --spec app.yaml
+        fi
+        
+    - name: Get app URL
+      run: |
+        APP_ID=$(doctl apps list --format ID,Name | grep "odoo-experten-deutschland" | awk '{print $1}')
+        echo "App deployed successfully!"
+        echo "App URL: $(doctl apps get $APP_ID --format LiveURL)"
