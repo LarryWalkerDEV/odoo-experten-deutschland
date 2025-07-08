@@ -71,22 +71,22 @@ export default async function OdooPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <main className="min-min-h-svh bg-gray-50 dark:bg-gray-900">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-primary/10 via-white to-purple-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pt-24 pb-16">
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative max-w-full md:max-w-7xl mx-auto mobile-container overflow-hidden">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+              <h1 className="text-4xl md:mobile-headline font-bold text-gray-900 dark:text-white mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6">
                 Odoo ERP - Wissen & Anleitungen
               </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8">
+              <p className="mobile-text mobile-text text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-2 sm:mb-3 md:mb-4 sm:mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 md:mb-8">
                 Entdecken Sie umfassende Artikel zu Odoo ERP - von Grundlagen bis zu fortgeschrittenen 
                 Themen, speziell für deutsche Unternehmen aufbereitet.
               </p>
 
               {/* Stats */}
-              <div className="flex items-center justify-center gap-8 text-sm">
+              <div className="flex items-center justify-center gap-2 sm:gap-3 md:gap-4 sm:gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 md:gap-8 text-sm">
                 <div className="flex items-center gap-2">
                   <BookOpen className="w-5 h-5 text-primary" />
                   <span className="text-gray-700 dark:text-gray-300">
@@ -104,8 +104,8 @@ export default async function OdooPage() {
 
         {/* Search & Filter Bar */}
         <section className="sticky top-20 z-40 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex flex-col sm:flex-row gap-4">
+          <div className="max-w-full md:max-w-7xl mx-auto mobile-container py-4 overflow-hidden">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
               <div className="flex-1 relative">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
                 <input
@@ -114,7 +114,7 @@ export default async function OdooPage() {
                   className="w-full pl-10 pr-4 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg focus:outline-none focus:border-primary transition-colors"
                 />
               </div>
-              <button className="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+              <button className="touch-target" className="flex items-center gap-2 px-4 py-2 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
                 <Filter className="w-5 h-5" />
                 <span>Filter</span>
               </button>
@@ -123,14 +123,14 @@ export default async function OdooPage() {
         </section>
 
         {/* Articles Grid */}
-        <section className="py-12">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-6 sm:py-4 sm:py-6 md:py-8 md:py-12">
+          <div className="max-w-full md:max-w-7xl mx-auto mobile-container overflow-hidden">
             {articles.length === 0 ? (
               <div className="text-center py-20">
-                <div className="w-20 h-20 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <BookOpen className="w-10 h-10 text-gray-400" />
+                <div className="w-20 h-20 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3 md:mb-4">
+                  <BookOpen className="w-5 h-5 sm:w-6 sm:h-6 sm:w-8 sm:h-8 sm:w-10 sm:h-10 text-gray-400" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+                <h3 className="mobile-text mobile-text font-semibold text-gray-900 dark:text-white mb-2">
                   Noch keine Artikel verfügbar
                 </h3>
                 <p className="text-gray-600 dark:text-gray-400">
@@ -138,7 +138,7 @@ export default async function OdooPage() {
                 </p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:responsive-grid lg:grid-cols-1 sm:responsive-grid lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 sm:gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 md:gap-8">
                 {articles.map((article, index) => {
                   const author = authorMap[article.author_id] || 
                     (article.author ? authors.find(a => a.name === article.author) : null)
@@ -158,7 +158,7 @@ export default async function OdooPage() {
             {/* Load More */}
             {articles.length > 0 && articles.length >= 12 && (
               <div className="text-center mt-12">
-                <button className="px-6 py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg font-medium hover:shadow-lg transition-all duration-200 border border-gray-200 dark:border-gray-700">
+                <button className="touch-target" className="px-4 sm:touch-target px-4 sm:px-6 py-2 sm:py-3 bg-white dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg font-medium hover:shadow-lg transition-all duration-200 sm:duration-200 sm:duration-300 border border-gray-200 dark:border-gray-700">
                   Weitere Artikel laden
                 </button>
               </div>
@@ -167,23 +167,23 @@ export default async function OdooPage() {
         </section>
 
         {/* Newsletter CTA */}
-        <section className="py-16 bg-gradient-to-br from-primary to-purple-600">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
+        <section className="py-4 sm:py-6 md:py-8 sm:py-6 sm:py-4 sm:py-6 md:py-8 md:py-12 md:py-16 bg-gradient-to-br from-primary to-purple-600">
+          <div className="max-w-full md:max-w-4xl mx-auto mobile-container text-center overflow-hidden">
+            <h2 className="text-3xl font-bold text-white mb-2 sm:mb-3 md:mb-4">
               Verpassen Sie keine Odoo-News
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="mobile-text mobile-text text-white/90 mb-2 sm:mb-3 md:mb-4 sm:mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 md:mb-8">
               Erhalten Sie die neuesten Artikel und Tipps direkt in Ihr Postfach
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Ihre E-Mail-Adresse"
                 className="flex-1 px-4 py-3 bg-white/20 backdrop-blur-sm border border-white/30 rounded-lg text-white placeholder-white/70 focus:outline-none focus:bg-white/30 transition-colors"
               />
-              <button
+              <button className="touch-target"
                 type="submit"
-                className="px-6 py-3 bg-white text-primary rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="px-4 sm:touch-target px-4 sm:px-6 py-2 sm:py-3 bg-white text-primary rounded-lg font-medium hover:shadow-lg transform active:scale-95 sm:hover:scale-105 transition-all duration-200 sm:duration-200 sm:duration-300"
               >
                 Abonnieren
               </button>

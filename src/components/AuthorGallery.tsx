@@ -26,24 +26,24 @@ const authors: Author[] = [
 
 export default function AuthorGallery() {
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-4 sm:py-6 md:py-8 sm:py-6 sm:py-4 sm:py-6 md:py-8 md:py-12 md:py-16 bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-full md:max-w-7xl mx-auto mobile-container overflow-hidden">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4">
             Unsere Odoo-Experten
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400">
+          <p className="mobile-text mobile-text text-gray-600 dark:text-gray-400">
             Lernen Sie unser Team von zertifizierten Odoo-Spezialisten kennen
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-1 sm:responsive-grid lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 sm:gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 md:gap-8">
           {authors.map((author) => (
             <div
               key={author.name}
               className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 text-center hover:shadow-xl transition-shadow"
             >
-              <div className="mb-4">
+              <div className="mb-2 sm:mb-3 md:mb-4">
                 <Image
                   src={author.imageUrl}
                   alt={author.name}
@@ -52,7 +52,7 @@ export default function AuthorGallery() {
                   className="rounded-full mx-auto object-cover shadow-md"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+              <h3 className="mobile-text mobile-text font-semibold text-gray-900 dark:text-white mb-2">
                 {author.name}
               </h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm">

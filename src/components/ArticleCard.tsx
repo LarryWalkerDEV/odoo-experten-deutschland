@@ -40,7 +40,7 @@ export default function ArticleCard({ article, author, index = 0 }: ArticleCardP
       className="h-full"
     >
       <Link href={articleUrl} className="block h-full">
-        <div className="h-full bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group">
+        <div className="h-full bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-200 sm:duration-300 overflow-hidden group">
           {/* Category Badge */}
           <div className="relative">
             <div className="absolute top-4 left-4 z-10">
@@ -61,7 +61,7 @@ export default function ArticleCard({ article, author, index = 0 }: ArticleCardP
               <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
               <motion.div
                 className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"
-                animate={{
+                animate={{ className="gpu-accelerate"
                   scale: [1, 1.2, 1],
                   opacity: [0.3, 0.5, 0.3],
                 }}
@@ -77,16 +77,16 @@ export default function ArticleCard({ article, author, index = 0 }: ArticleCardP
           {/* Content */}
           <div className="p-6 -mt-12 relative z-10">
             <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
+              <h3 className="mobile-text mobile-text font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary transition-colors line-clamp-2">
                 {article.title}
               </h3>
               
-              <p className="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
+              <p className="text-gray-600 dark:text-gray-400 mb-2 sm:mb-3 md:mb-4 line-clamp-3">
                 {article.meta_description}
               </p>
 
               {/* Meta Info */}
-              <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-4">
+              <div className="flex items-center gap-2 sm:gap-3 md:gap-4 text-sm text-gray-500 dark:text-gray-400 mb-2 sm:mb-3 md:mb-4">
                 <div className="flex items-center gap-1">
                   <Calendar className="w-4 h-4" />
                   <span>{new Date(article.created_at).toLocaleDateString('de-DE', { 
@@ -114,7 +114,7 @@ export default function ArticleCard({ article, author, index = 0 }: ArticleCardP
                         className="rounded-full object-cover"
                       />
                     ) : (
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 sm:w-8 sm:h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center">
                         <User className="w-5 h-5 text-white" />
                       </div>
                     )}

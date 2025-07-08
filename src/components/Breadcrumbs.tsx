@@ -37,7 +37,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      <nav aria-label="Breadcrumb" className="mb-6">
+      <nav aria-label="Breadcrumb" className="mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6">
         <ol className="flex items-center flex-wrap gap-2 text-sm">
           <li className="flex items-center">
             <Link 

@@ -9,9 +9,9 @@ export default function SEOContent() {
 
   return (
     <div className="mt-12">
-      <button
+      <button className="touch-target"
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors"
+        className="w-full flex items-center justify-center gap-2 px-4 sm:touch-target px-4 sm:px-6 py-2 sm:py-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 rounded-lg transition-colors"
       >
         <BookOpen className="w-5 h-5 text-violet-600" />
         <span className="font-medium text-gray-900 dark:text-white">
@@ -28,7 +28,7 @@ export default function SEOContent() {
         {isExpanded && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
+            animate={{ className="gpu-accelerate" height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
@@ -37,18 +37,18 @@ export default function SEOContent() {
               <h1>Odoo Hosting Rechner: Der ultimative Vergleich für deutsche Unternehmen 2025</h1>
               
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 not-prose">
-                <h2 className="text-xl font-bold mb-4">Inhaltsverzeichnis</h2>
+                <h2 className="mobile-text mobile-text font-bold mb-2 sm:mb-3 md:mb-4">Inhaltsverzeichnis</h2>
                 <ol className="space-y-2">
-                  <li><a href="#was-ist-odoo" className="text-violet-600 hover:text-violet-700">Was ist Odoo und warum das richtige Hosting entscheidend ist</a></li>
-                  <li><a href="#hosting-optionen" className="text-violet-600 hover:text-violet-700">Odoo Hosting Optionen im Detail</a></li>
-                  <li><a href="#kostenvergleich" className="text-violet-600 hover:text-violet-700">Kostenvergleich: Self-Hosted vs. Managed Hosting</a></li>
-                  <li><a href="#enterprise-vs-community" className="text-violet-600 hover:text-violet-700">Enterprise vs. Community Edition</a></li>
-                  <li><a href="#gdpr-datenschutz" className="text-violet-600 hover:text-violet-700">GDPR und Datenschutz bei Odoo Hosting</a></li>
-                  <li><a href="#entwicklerkosten" className="text-violet-600 hover:text-violet-700">Entwicklerkosten für Self-Hosting Lösungen</a></li>
-                  <li><a href="#branchenspezifisch" className="text-violet-600 hover:text-violet-700">Branchenspezifische Hosting-Anforderungen</a></li>
-                  <li><a href="#skalierung" className="text-violet-600 hover:text-violet-700">Skalierung und Performance-Optimierung</a></li>
-                  <li><a href="#support" className="text-violet-600 hover:text-violet-700">Support und Service-Level Agreements</a></li>
-                  <li><a href="#fazit" className="text-violet-600 hover:text-violet-700">Fazit und Empfehlungen</a></li>
+                  <li><a className="touch-target" href="#was-ist-odoo" className="text-violet-600 hover:text-violet-700">Was ist Odoo und warum das richtige Hosting entscheidend ist</a></li>
+                  <li><a className="touch-target" href="#hosting-optionen" className="text-violet-600 hover:text-violet-700">Odoo Hosting Optionen im Detail</a></li>
+                  <li><a className="touch-target" href="#kostenvergleich" className="text-violet-600 hover:text-violet-700">Kostenvergleich: Self-Hosted vs. Managed Hosting</a></li>
+                  <li><a className="touch-target" href="#enterprise-vs-community" className="text-violet-600 hover:text-violet-700">Enterprise vs. Community Edition</a></li>
+                  <li><a className="touch-target" href="#gdpr-datenschutz" className="text-violet-600 hover:text-violet-700">GDPR und Datenschutz bei Odoo Hosting</a></li>
+                  <li><a className="touch-target" href="#entwicklerkosten" className="text-violet-600 hover:text-violet-700">Entwicklerkosten für Self-Hosting Lösungen</a></li>
+                  <li><a className="touch-target" href="#branchenspezifisch" className="text-violet-600 hover:text-violet-700">Branchenspezifische Hosting-Anforderungen</a></li>
+                  <li><a className="touch-target" href="#skalierung" className="text-violet-600 hover:text-violet-700">Skalierung und Performance-Optimierung</a></li>
+                  <li><a className="touch-target" href="#support" className="text-violet-600 hover:text-violet-700">Support und Service-Level Agreements</a></li>
+                  <li><a className="touch-target" href="#fazit" className="text-violet-600 hover:text-violet-700">Fazit und Empfehlungen</a></li>
                 </ol>
               </div>
 
@@ -479,7 +479,7 @@ export default function SEOContent() {
               </ul>
 
               <div className="bg-violet-50 dark:bg-violet-900/20 p-6 rounded-lg not-prose">
-                <h3 className="text-xl font-bold mb-3">Nutzen Sie unseren Hosting-Rechner</h3>
+                <h3 className="mobile-text mobile-text font-bold mb-3">Nutzen Sie unseren Hosting-Rechner</h3>
                 <p>
                   Unser Odoo Hosting Rechner berücksichtigt alle diese Faktoren und gibt Ihnen eine 
                   personalisierte Empfehlung basierend auf Ihrer Branche und Unternehmensgröße. 

@@ -54,8 +54,8 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
         <table className="w-full">
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
-              <th className="px-6 py-4 text-left">
-                <button
+              <th className="px-4 sm:px-6 py-4 text-left">
+                <button className="touch-target"
                   onClick={() => handleSort('name')}
                   className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-violet-600"
                 >
@@ -63,8 +63,8 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                   <ArrowUpDown className="w-4 h-4" />
                 </button>
               </th>
-              <th className="px-6 py-4 text-left">
-                <button
+              <th className="px-4 sm:px-6 py-4 text-left">
+                <button className="touch-target"
                   onClick={() => handleSort('price')}
                   className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-violet-600"
                 >
@@ -72,23 +72,23 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                   <ArrowUpDown className="w-4 h-4" />
                 </button>
               </th>
-              <th className="px-6 py-4 text-left hidden md:table-cell">
+              <th className="px-4 sm:px-6 py-4 text-left hidden md:table-cell">
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Setup-Gebühr
                 </span>
               </th>
-              <th className="px-6 py-4 text-left hidden lg:table-cell">
+              <th className="px-4 sm:px-6 py-4 text-left hidden lg:table-cell">
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Support
                 </span>
               </th>
-              <th className="px-6 py-4 text-left hidden lg:table-cell">
+              <th className="px-4 sm:px-6 py-4 text-left hidden lg:table-cell">
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Standort
                 </span>
               </th>
-              <th className="px-6 py-4 text-left">
-                <button
+              <th className="px-4 sm:px-6 py-4 text-left">
+                <button className="touch-target"
                   onClick={() => handleSort('rating')}
                   className="flex items-center gap-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-violet-600"
                 >
@@ -96,7 +96,7 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                   <ArrowUpDown className="w-4 h-4" />
                 </button>
               </th>
-              <th className="px-6 py-4 text-center">
+              <th className="px-4 sm:px-6 py-4 text-center">
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Aktion
                 </span>
@@ -116,7 +116,7 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                 <React.Fragment key={provider.id}>
                   <motion.tr
                     initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    animate={{ className="gpu-accelerate" opacity: 1, y: 0 }}
                     transition={{ delay: index * 0.1 }}
                     className={`
                       ${isRecommended ? 'bg-violet-50 dark:bg-violet-900/20' : 'hover:bg-gray-50 dark:hover:bg-gray-700/50'}
@@ -124,7 +124,7 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                     `}
                     onClick={() => setExpandedProvider(isExpanded ? null : provider.id)}
                   >
-                    <td className="px-6 py-4">
+                    <td className="px-4 sm:px-6 py-4">
                       <div className="flex flex-col">
                         <div className="flex items-center gap-2">
                           <span className="font-medium text-gray-900 dark:text-white">
@@ -151,7 +151,7 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                         )}
                       </div>
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-4 sm:px-6 py-4">
                       <div className="flex flex-col">
                         <span className="text-2xl font-bold text-gray-900 dark:text-white">
                           €{pricing.monthly}
@@ -166,22 +166,22 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                         )}
                       </div>
                     </td>
-                    <td className="px-6 py-4 hidden md:table-cell">
+                    <td className="px-4 sm:px-6 py-4 hidden md:table-cell">
                       <span className="text-gray-700 dark:text-gray-300">
                         {pricing.setupFee > 0 ? `€${pricing.setupFee}` : 'Keine'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 hidden lg:table-cell">
+                    <td className="px-4 sm:px-6 py-4 hidden lg:table-cell">
                       <span className="text-sm text-gray-700 dark:text-gray-300">
                         {provider.supportLevel || 'Community'}
                       </span>
                     </td>
-                    <td className="px-6 py-4 hidden lg:table-cell">
+                    <td className="px-4 sm:px-6 py-4 hidden lg:table-cell">
                       <span className="text-gray-700 dark:text-gray-300">
                         {provider.location}
                       </span>
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-4 sm:px-6 py-4">
                       <div className="flex items-center gap-1">
                         {[...Array(5)].map((_, i) => (
                           <Star
@@ -198,7 +198,7 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                         </span>
                       </div>
                     </td>
-                    <td className="px-6 py-4">
+                    <td className="px-4 sm:px-6 py-4">
                       <div className="flex items-center justify-center gap-2">
                         <a
                           href={provider.homepage}
@@ -209,7 +209,7 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                         >
                           Anfragen
                         </a>
-                        <button className="text-gray-500 hover:text-gray-700">
+                        <button className="touch-target" className="text-gray-500 hover:text-gray-700">
                           {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
                         </button>
                       </div>
@@ -219,7 +219,7 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                   {/* Expanded Details */}
                   {isExpanded && (
                     <tr className="bg-gray-50 dark:bg-gray-700/50">
-                      <td colSpan={7} className="px-6 py-4">
+                      <td colSpan={7} className="px-4 sm:px-6 py-4">
                         <div className="space-y-4">
                           {/* Features */}
                           <div>
@@ -256,7 +256,7 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                           
                           {/* Development Warning */}
                           {provider.developmentNote && (
-                            <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
+                            <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 mobile-card">
                               <div className="flex items-start gap-3">
                                 <AlertTriangle className="w-5 h-5 text-yellow-600 mt-0.5" />
                                 <div>
@@ -272,22 +272,22 @@ export default function ComparisonTable({ providers, employees, recommendedId }:
                           )}
                           
                           {/* Pricing Details */}
-                          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-4 border-t border-gray-200 dark:border-gray-600">
+                          <div className="grid grid-cols-1 md:grid-cols-1 sm:responsive-grid lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 pt-4 border-t border-gray-200 dark:border-gray-600">
                             <div>
                               <p className="text-sm text-gray-600 dark:text-gray-400">Monatlich</p>
-                              <p className="text-xl font-bold text-gray-900 dark:text-white">
+                              <p className="mobile-text mobile-text font-bold text-gray-900 dark:text-white">
                                 €{pricing.monthly}
                               </p>
                             </div>
                             <div>
                               <p className="text-sm text-gray-600 dark:text-gray-400">Jährlich</p>
-                              <p className="text-xl font-bold text-gray-900 dark:text-white">
+                              <p className="mobile-text mobile-text font-bold text-gray-900 dark:text-white">
                                 €{pricing.yearly}
                               </p>
                             </div>
                             <div>
                               <p className="text-sm text-gray-600 dark:text-gray-400">Ersparnis/Jahr</p>
-                              <p className="text-xl font-bold text-green-600 dark:text-green-400">
+                              <p className="mobile-text mobile-text font-bold text-green-600 dark:text-green-400">
                                 €{pricing.monthly * 12 - pricing.yearly}
                               </p>
                             </div>

@@ -12,8 +12,8 @@ export default function DataVisualization({ type, data, title }: DataVisualizati
   // If the type contains actual SVG markup, render it directly
   if (type && type.includes('<svg') || type.includes('<div')) {
     return (
-      <div className="my-8">
-        <div dangerouslySetInnerHTML={{ __html: type }} />
+      <div className="my-4 sm:my-6 md:my-8 visual-container">
+        <div dangerouslySetInnerHTML={{ __html: type }} className="w-full h-full" />
       </div>
     )
   }
@@ -59,12 +59,12 @@ export default function DataVisualization({ type, data, title }: DataVisualizati
           <text x="500" y="350" textAnchor="middle" className="fill-gray-700 text-sm font-medium">Odoo 19</text>
           
           {/* Values */}
-          <text x="200" y="190" textAnchor="middle" className="fill-gray-900 text-lg font-bold">100%</text>
-          <text x="350" y="130" textAnchor="middle" className="fill-gray-900 text-lg font-bold">125%</text>
-          <text x="500" y="70" textAnchor="middle" className="fill-violet-600 text-lg font-bold">140%</text>
+          <text x="200" y="190" textAnchor="middle" className="fill-gray-900 mobile-text font-bold">100%</text>
+          <text x="350" y="130" textAnchor="middle" className="fill-gray-900 mobile-text font-bold">125%</text>
+          <text x="500" y="70" textAnchor="middle" className="fill-violet-600 mobile-text font-bold">140%</text>
           
           {/* Title */}
-          <text x="400" y="30" textAnchor="middle" className="fill-gray-900 text-xl font-bold">
+          <text x="400" y="30" textAnchor="middle" className="fill-gray-900 mobile-text mobile-text font-bold">
             Performance-Steigerung in Odoo 19
           </text>
         </svg>
@@ -73,7 +73,7 @@ export default function DataVisualization({ type, data, title }: DataVisualizati
     
     if (normalizedType.includes('timeline') || normalizedType.includes('roadmap') || normalizedType.includes('entwicklung')) {
       return (
-        <svg viewBox="0 0 800 300" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <svg viewBox="0 0 800 300" className="w-full h-full min-h-svh" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id={`${uniqueId}-timeline`} x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stopColor="#8B5CF6" />
@@ -103,7 +103,7 @@ export default function DataVisualization({ type, data, title }: DataVisualizati
             </g>
           ))}
           
-          <text x="400" y="40" textAnchor="middle" className="fill-gray-900 text-xl font-bold">
+          <text x="400" y="40" textAnchor="middle" className="fill-gray-900 mobile-text mobile-text font-bold">
             Odoo 19 Entwicklungs-Roadmap
           </text>
         </svg>
@@ -154,7 +154,7 @@ export default function DataVisualization({ type, data, title }: DataVisualizati
           <text x="600" y="50" className="fill-green-600 text-2xl font-bold">+240% ROI</text>
           
           {/* Title */}
-          <text x="400" y="30" textAnchor="middle" className="fill-gray-900 text-xl font-bold">
+          <text x="400" y="30" textAnchor="middle" className="fill-gray-900 mobile-text mobile-text font-bold">
             Return on Investment mit Odoo 19
           </text>
         </svg>
@@ -163,7 +163,7 @@ export default function DataVisualization({ type, data, title }: DataVisualizati
     
     // Default chart - bar chart
     return (
-      <svg viewBox="0 0 800 400" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 800 400" className="w-full h-full min-h-svh" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id={`${uniqueId}-default`} x1="0%" y1="0%" x2="0%" y2="100%">
             <stop offset="0%" stopColor="#8B5CF6" stopOpacity="0.8" />
@@ -192,7 +192,7 @@ export default function DataVisualization({ type, data, title }: DataVisualizati
         <rect x="590" y="140" width="80" height="180" fill="#6D28D9" rx="8" />
         
         {/* Title */}
-        <text x="400" y="30" textAnchor="middle" className="fill-gray-900 text-xl font-bold">
+        <text x="400" y="30" textAnchor="middle" className="fill-gray-900 mobile-text mobile-text font-bold">
           {title || 'Datenanalyse'}
         </text>
         
@@ -212,7 +212,7 @@ export default function DataVisualization({ type, data, title }: DataVisualizati
   }
 
   return (
-    <div className="my-8 bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
+    <div className="my-8 bg-gray-50 dark:bg-gray-800 mobile-card rounded-lg sm:rounded-xl">
       <div className="w-full h-[400px]">
         {renderVisualization()}
       </div>

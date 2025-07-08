@@ -7,7 +7,7 @@ import { WebsiteStructuredData, OrganizationStructuredData } from '@/components/
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-min-h-svh bg-white">
       <WebsiteStructuredData
         name="Odoo Experten Deutschland"
         url="https://odoo-experten-deutschland.de"
@@ -27,29 +27,29 @@ export default function Home() {
 
         {/* Features Section */}
         <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-full md:max-w-7xl mx-auto mobile-container overflow-hidden">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="mobile-subtitle font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
                 Warum ist Odoo interessant?
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="mobile-text mobile-text text-gray-600 max-w-3xl mx-auto">
                 Erfahren Sie, was Odoo zu einer der führenden ERP-Lösungen macht
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:responsive-grid lg:grid-cols-1 sm:responsive-grid lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 sm:gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 md:gap-8">
               {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 group"
+                  className="bg-white mobile-card rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 sm:duration-300 group"
                 >
-                  <div className="w-14 h-14 bg-gradient-to-br from-violet-100 to-purple-100 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                  <div className="w-14 h-14 bg-gradient-to-br from-violet-100 to-purple-100 rounded-lg flex items-center justify-center mb-2 sm:mb-3 md:mb-4 group-active:scale-95 sm:hover:scale-110 transition-transform">
                     <feature.icon className="w-7 h-7 text-violet-600" />
                   </div>
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  <h3 className="mobile-text mobile-text font-semibold text-gray-900 mb-3">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 mb-4">
+                  <p className="text-gray-600 mb-2 sm:mb-3 md:mb-4">
                     {feature.description}
                   </p>
                   <ul className="space-y-2">
@@ -68,31 +68,31 @@ export default function Home() {
 
         {/* Content Categories */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-full md:max-w-7xl mx-auto mobile-container overflow-hidden">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="mobile-subtitle font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
                 Ihre Wissensquelle für Odoo
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="mobile-text mobile-text text-gray-600 max-w-3xl mx-auto">
                 Fundierte Artikel, neutrale Analysen und aktuelle Informationen
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-1 sm:responsive-grid lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 sm:gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 md:gap-8">
               {contentCategories.map((category, index) => (
                 <Link
                   key={index}
                   href={category.href}
-                  className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:shadow-xl transition-all duration-300"
+                  className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:shadow-xl transition-all duration-200 sm:duration-300"
                 >
                   <div className="p-8">
                     <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${category.gradient} flex items-center justify-center mb-6`}>
-                      <category.icon className="w-8 h-8 text-white" />
+                      <category.icon className="w-5 h-5 sm:w-6 sm:h-6 sm:w-8 sm:h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">
                       {category.title}
                     </h3>
-                    <p className="text-gray-600 mb-6">
+                    <p className="text-gray-600 mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6">
                       {category.description}
                     </p>
                     <div className="flex items-center text-violet-600 font-medium group-hover:gap-3 transition-all">
@@ -110,11 +110,11 @@ export default function Home() {
 
         {/* Stats Section */}
         <section className="py-20 bg-gradient-to-br from-violet-600 to-purple-600">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="max-w-full md:max-w-7xl mx-auto mobile-container overflow-hidden">
+            <div className="grid responsive-grid lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 sm:gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 md:gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center">
-                  <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+                  <div className="text-4xl md:mobile-headline font-bold text-white mb-2">
                     {stat.value}
                   </div>
                   <div className="text-white/80">
@@ -128,24 +128,24 @@ export default function Home() {
 
         {/* CTA Section */}
         <section className="py-20 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          <div className="max-w-full md:max-w-4xl mx-auto mobile-container text-center overflow-hidden">
+            <h2 className="mobile-subtitle font-bold text-gray-900 mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6">
               Informieren Sie sich umfassend
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="mobile-text mobile-text text-gray-600 mb-2 sm:mb-3 md:mb-4 sm:mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 md:mb-8">
               Treffen Sie fundierte Entscheidungen mit unserem neutralen Expertenwissen
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center">
               <Link
                 href="/odoo"
-                className="px-8 py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-xl transform hover:scale-105 transition-all duration-200 inline-flex items-center justify-center gap-2"
+                className="touch-target px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-xl transform active:scale-95 sm:hover:scale-105 transition-all duration-200 sm:duration-200 sm:duration-300 inline-flex items-center justify-center gap-2"
               >
                 Artikel durchsuchen
                 <ArrowRight className="w-5 h-5" />
               </Link>
               <Link
                 href="/odoo-hosting-rechner"
-                className="px-8 py-4 bg-white text-gray-900 rounded-lg font-medium hover:shadow-lg transition-all duration-200 border border-gray-200"
+                className="touch-target px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 bg-white text-gray-900 rounded-lg font-medium hover:shadow-lg transition-all duration-200 sm:duration-200 sm:duration-300 border border-gray-200"
               >
                 Kostenrechner nutzen
               </Link>

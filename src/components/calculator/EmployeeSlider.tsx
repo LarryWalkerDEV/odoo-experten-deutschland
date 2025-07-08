@@ -28,11 +28,11 @@ export default function EmployeeSlider({ value, onChange }: EmployeeSliderProps)
         <label htmlFor="employees" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           Anzahl Mitarbeiter
         </label>
-        <div className="text-center mb-4">
+        <div className="text-center mb-2 sm:mb-3 md:mb-4">
           <span className="text-3xl font-bold text-violet-600 dark:text-violet-400">
             {value}
           </span>
-          <span className="text-lg text-gray-600 dark:text-gray-400 ml-2">
+          <span className="mobile-text text-gray-600 dark:text-gray-400 ml-2">
             Mitarbeiter
           </span>
         </div>

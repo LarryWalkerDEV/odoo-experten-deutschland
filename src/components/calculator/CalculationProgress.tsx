@@ -55,16 +55,16 @@ export default function CalculationProgress({ isCalculating, onComplete }: Calcu
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        animate={{ className="gpu-accelerate" opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
       >
         <motion.div
           initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}
+          animate={{ className="gpu-accelerate" scale: 1 }}
           className="bg-white dark:bg-gray-800 rounded-xl shadow-2xl p-8 max-w-md w-full"
         >
-          <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+          <h3 className="mobile-text mobile-text font-bold text-gray-900 dark:text-white mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 text-center">
             Berechne optimale Hosting-Lösung...
           </h3>
           
@@ -73,7 +73,7 @@ export default function CalculationProgress({ isCalculating, onComplete }: Calcu
               <motion.div
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                animate={{ className="gpu-accelerate" opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
                 className="flex items-center gap-3"
               >
@@ -81,7 +81,7 @@ export default function CalculationProgress({ isCalculating, onComplete }: Calcu
                   {completedSteps.includes(index) ? (
                     <motion.div
                       initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
+                      animate={{ className="gpu-accelerate" scale: 1 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <CheckCircle className="w-5 h-5 text-green-500" />
@@ -110,9 +110,9 @@ export default function CalculationProgress({ isCalculating, onComplete }: Calcu
           <div className="mt-6">
             <div className="bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-violet-600 to-purple-600"
+                className="h-full min-h-svh bg-gradient-to-r from-violet-600 to-purple-600"
                 initial={{ width: '0%' }}
-                animate={{ width: `${((currentStep + 1) / calculationSteps.length) * 100}%` }}
+                animate={{ className="gpu-accelerate" width: `${((currentStep + 1) / calculationSteps.length) * 100}%` }}
                 transition={{ duration: 0.3 }}
               />
             </div>

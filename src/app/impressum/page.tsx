@@ -11,30 +11,30 @@ export const metadata: Metadata = {
 
 export default function ImpressumPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-min-h-svh bg-white dark:bg-gray-900">
       <Navigation />
       <main className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-violet-100 dark:bg-violet-900/30 rounded-full flex items-center justify-center">
-                <Scale className="w-6 h-6 text-violet-600 dark:text-violet-400" />
+        <div className="max-w-full md:max-w-4xl mx-auto mobile-container overflow-hidden">
+          <div className="mb-2 sm:mb-3 md:mb-4 sm:mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 md:mb-8">
+            <div className="flex items-center gap-3 mb-2 sm:mb-3 md:mb-4">
+              <div className="w-5 h-5 sm:w-6 sm:h-6 sm:w-8 sm:h-8 sm:w-10 sm:h-10 sm:w-12 sm:h-12 bg-violet-100 dark:bg-violet-900/30 rounded-full flex items-center justify-center">
+                <Scale className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600 dark:text-violet-400" />
               </div>
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
                 Impressum
               </h1>
             </div>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
+            <p className="mobile-text text-gray-600 dark:text-gray-400">
               Angaben gemäß § 5 TMG
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-mobile">
             {/* Company Information */}
-            <section className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-4">
+            <section className="bg-gray-50 dark:bg-gray-800 mobile-card rounded-lg sm:rounded-xl">
+              <div className="flex items-center gap-2 mb-2 sm:mb-3 md:mb-4">
                 <Building2 className="w-5 h-5 text-violet-600" />
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                <h2 className="mobile-text mobile-text font-bold text-gray-900 dark:text-white">
                   Unternehmensinformationen
                 </h2>
               </div>
@@ -47,10 +47,10 @@ export default function ImpressumPage() {
             </section>
 
             {/* Owner Information */}
-            <section className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-4">
+            <section className="bg-gray-50 dark:bg-gray-800 mobile-card rounded-lg sm:rounded-xl">
+              <div className="flex items-center gap-2 mb-2 sm:mb-3 md:mb-4">
                 <User className="w-5 h-5 text-violet-600" />
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                <h2 className="mobile-text mobile-text font-bold text-gray-900 dark:text-white">
                   Inhaberin
                 </h2>
               </div>
@@ -60,10 +60,10 @@ export default function ImpressumPage() {
             </section>
 
             {/* Contact */}
-            <section className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-4">
+            <section className="bg-gray-50 dark:bg-gray-800 mobile-card rounded-lg sm:rounded-xl">
+              <div className="flex items-center gap-2 mb-2 sm:mb-3 md:mb-4">
                 <Mail className="w-5 h-5 text-violet-600" />
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                <h2 className="mobile-text mobile-text font-bold text-gray-900 dark:text-white">
                   Kontakt
                 </h2>
               </div>
@@ -90,10 +90,10 @@ export default function ImpressumPage() {
             </section>
 
             {/* EU Representative */}
-            <section className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-4">
+            <section className="bg-gray-50 dark:bg-gray-800 mobile-card rounded-lg sm:rounded-xl">
+              <div className="flex items-center gap-2 mb-2 sm:mb-3 md:mb-4">
                 <Globe className="w-5 h-5 text-violet-600" />
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                <h2 className="mobile-text mobile-text font-bold text-gray-900 dark:text-white">
                   EU-Vertretung
                 </h2>
               </div>
@@ -107,10 +107,10 @@ export default function ImpressumPage() {
             </section>
 
             {/* Content Responsibility */}
-            <section className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-4">
+            <section className="bg-gray-50 dark:bg-gray-800 mobile-card rounded-lg sm:rounded-xl">
+              <div className="flex items-center gap-2 mb-2 sm:mb-3 md:mb-4">
                 <Shield className="w-5 h-5 text-violet-600" />
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+                <h2 className="mobile-text mobile-text font-bold text-gray-900 dark:text-white">
                   Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
                 </h2>
               </div>
@@ -124,8 +124,8 @@ export default function ImpressumPage() {
             </section>
 
             {/* Legal Notices */}
-            <section className="bg-violet-50 dark:bg-violet-900/20 rounded-xl p-6">
-              <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            <section className="bg-violet-50 dark:bg-violet-900/20 mobile-card rounded-lg sm:rounded-xl">
+              <h2 className="mobile-text mobile-text font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4">
                 Hinweise zur Website
               </h2>
               <div className="text-gray-700 dark:text-gray-300 space-y-4">

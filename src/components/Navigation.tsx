@@ -57,10 +57,10 @@ export default function Navigation() {
 
   return (
     <nav className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-200 sm:duration-300",
       scrolled ? "glass shadow-lg py-2" : "bg-transparent py-4"
     )}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-full md:max-w-7xl mx-auto mobile-container overflow-hidden">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
@@ -69,10 +69,10 @@ export default function Navigation() {
               alt="Odoo Experten Deutschland Logo" 
               width={40} 
               height={40}
-              className="w-10 h-10"
+              className="w-5 h-5 sm:w-6 sm:h-6 sm:w-8 sm:h-8 sm:w-10 sm:h-10"
               priority
             />
-            <span className="text-xl font-bold gradient-text">Odoo Experten</span>
+            <span className="mobile-text mobile-text font-bold gradient-text">Odoo Experten</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -102,10 +102,10 @@ export default function Navigation() {
                   {item.submenu && openSubmenu === item.name && (
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      animate={{ className="gpu-accelerate" opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className="absolute top-full left-0 mt-1 w-64 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden"
+                      className="absolute top-full left-0 mt-1 w-full sm:w-56 md:w-64 bg-white dark:bg-gray-900 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden"
                     >
                       {item.submenu.map((subitem) => (
                         <Link
@@ -124,21 +124,21 @@ export default function Navigation() {
           </div>
 
           {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-2 sm:gap-3 md:gap-4">
             <Link
               href="/odoo-hosting-rechner"
-              className="px-6 py-2.5 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+              className="px-4 sm:px-6 py-2.5 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transform active:scale-95 sm:hover:scale-105 transition-all duration-200 sm:duration-200 sm:duration-300"
             >
               Kostenrechner
             </Link>
           </div>
 
           {/* Mobile menu button */}
-          <button
+          <button className="touch-target"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="lg:hidden p-2 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
           </button>
         </div>
       </div>
@@ -148,7 +148,7 @@ export default function Navigation() {
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ className="gpu-accelerate" opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
             className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
@@ -187,7 +187,7 @@ export default function Navigation() {
               <Link
                 href="/odoo-hosting-rechner"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full px-6 py-3 bg-gradient-to-r from-primary to-purple-600 text-white rounded-lg font-medium text-center mt-4"
+                className="block w-full px-4 sm:touch-target px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-primary to-purple-600 text-white rounded-lg font-medium text-center mt-4"
               >
                 Kostenrechner
               </Link>

@@ -33,21 +33,21 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="max-w-full md:max-w-7xl mx-auto mobile-container py-6 sm:py-4 sm:py-6 md:py-8 md:py-12 overflow-hidden">
+        <div className="grid grid-cols-1 md:responsive-grid lg:grid-cols-5 gap-2 sm:gap-3 md:gap-4 sm:gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 md:gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-3 mb-4">
+            <Link href="/" className="flex items-center space-x-3 mb-2 sm:mb-3 md:mb-4">
               <Image 
                 src="https://tbppogohivsxgiavbnvp.supabase.co/storage/v1/object/public/odoo/Logo.png" 
                 alt="Odoo Experten Deutschland Logo" 
                 width={40} 
                 height={40}
-                className="w-10 h-10"
+                className="w-5 h-5 sm:w-6 sm:h-6 sm:w-8 sm:h-8 sm:w-10 sm:h-10"
               />
-              <span className="text-xl font-bold text-white">Odoo Experten Deutschland</span>
+              <span className="mobile-text mobile-text font-bold text-white">Odoo Experten Deutschland</span>
             </Link>
-            <p className="text-sm mb-6 max-w-md">
+            <p className="text-sm mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 max-w-md">
               Ihre unabhängige Wissensquelle für Odoo ERP. Neutrale Informationen und 
               fundierte Analysen für informierte Entscheidungen.
             </p>
@@ -58,7 +58,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:info@odoo-experten-deutschland.de" className="hover:text-primary transition-colors">
+                <a className="touch-target" href="mailto:info@odoo-experten-deutschland.de" className="hover:text-primary transition-colors">
                   info@odoo-experten-deutschland.de
                 </a>
               </div>
@@ -68,7 +68,7 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h3 className="font-semibold text-white mb-4">{category}</h3>
+              <h3 className="font-semibold text-white mb-2 sm:mb-3 md:mb-4">{category}</h3>
               <ul className="space-y-2 text-sm">
                 {links.map((link) => (
                   <li key={link.name}>
@@ -87,9 +87,9 @@ export default function Footer() {
 
         {/* Newsletter */}
         <div className="mt-12 pt-8 border-t border-gray-800">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:responsive-grid gap-2 sm:gap-3 md:gap-4 sm:gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 md:gap-8 items-center">
             <div>
-              <h3 className="text-lg font-semibold text-white mb-2">
+              <h3 className="mobile-text font-semibold text-white mb-2">
                 Newsletter abonnieren
               </h3>
               <p className="text-sm text-gray-400">
@@ -102,9 +102,9 @@ export default function Footer() {
                 placeholder="Ihre E-Mail-Adresse"
                 className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors"
               />
-              <button
+              <button className="touch-target"
                 type="submit"
-                className="px-6 py-2 bg-gradient-to-r from-primary to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+                className="px-4 sm:px-6 py-2 bg-gradient-to-r from-primary to-purple-600 text-white rounded-lg font-medium hover:shadow-lg transform active:scale-95 sm:hover:scale-105 transition-all duration-200 sm:duration-200 sm:duration-300"
               >
                 Abonnieren
               </button>
@@ -115,12 +115,12 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="bg-gray-950 py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="max-w-full md:max-w-7xl mx-auto mobile-container overflow-hidden">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-3 md:gap-4">
             <p className="text-sm text-gray-400">
               © 2025 Apex AI Research Labs LLC. Alle Rechte vorbehalten.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-4">
               <a 
                 href="https://linkedin.com" 
                 target="_blank" 

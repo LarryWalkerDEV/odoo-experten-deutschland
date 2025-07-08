@@ -107,10 +107,10 @@ export default async function ArticlePage({ params }: PageProps) {
         category="Odoo ERP"
       />
       <Navigation />
-      <main className="min-h-screen bg-white dark:bg-gray-900">
+      <main className="min-min-h-svh bg-white dark:bg-gray-900">
         {/* Article Header */}
         <article className="pt-24 pb-12">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-full md:max-w-4xl mx-auto mobile-container overflow-hidden">
             {/* Breadcrumb */}
             <Breadcrumbs 
               items={[
@@ -120,19 +120,19 @@ export default async function ArticlePage({ params }: PageProps) {
             />
 
             {/* Category Badge */}
-            <div className="mb-6">
+            <div className="mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6">
               <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-primary">
                 Odoo ERP
               </span>
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-4xl md:mobile-headline font-bold text-gray-900 dark:text-white mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6">
               {article.title}
             </h1>
 
             {/* Meta Info */}
-            <div className="flex flex-wrap items-center gap-6 text-sm text-gray-600 dark:text-gray-400 mb-8">
+            <div className="flex flex-wrap items-center gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 text-sm text-gray-600 dark:text-gray-400 mb-2 sm:mb-3 md:mb-4 sm:mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 md:mb-8">
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
                 <time dateTime={article.created_at}>
@@ -156,12 +156,12 @@ export default async function ArticlePage({ params }: PageProps) {
             </div>
 
             {/* Share Buttons */}
-            <div className="flex items-center gap-4 pb-8 border-b border-gray-200 dark:border-gray-700">
-              <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+            <div className="flex items-center gap-2 sm:gap-3 md:gap-4 pb-8 border-b border-gray-200 dark:border-gray-700">
+              <button className="touch-target" className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                 <Share2 className="w-4 h-4" />
                 <span>Teilen</span>
               </button>
-              <button className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+              <button className="touch-target" className="flex items-center gap-2 px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
                 <Bookmark className="w-4 h-4" />
                 <span>Speichern</span>
               </button>
@@ -169,19 +169,19 @@ export default async function ArticlePage({ params }: PageProps) {
           </div>
 
           {/* Article Content */}
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+          <div className="max-w-full md:max-w-4xl mx-auto mobile-container mt-8 overflow-hidden">
             <div className="prose prose-lg max-w-none">
               {/* Hook/Introduction */}
               {content.hook && (
-                <div className="text-xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+                <div className="mobile-text mobile-text text-gray-700 dark:text-gray-300 mb-2 sm:mb-3 md:mb-4 sm:mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 md:mb-8 leading-relaxed">
                   {content.hook}
                 </div>
               )}
 
               {/* Quick Overview */}
               {content.quick_overview && (
-                <div className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 mb-8">
-                  <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+                <div className="bg-gray-50 dark:bg-gray-800 mobile-card rounded-lg sm:rounded-xl mb-2 sm:mb-3 md:mb-4 sm:mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 md:mb-8">
+                  <h2 className="mobile-text mobile-text font-semibold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4">
                     Auf einen Blick
                   </h2>
                   <div className="text-gray-700 dark:text-gray-300">
@@ -193,7 +193,7 @@ export default async function ArticlePage({ params }: PageProps) {
               {/* Content Sections */}
               {content.content_sections?.map((section: any, index: number) => (
                 <section key={index} className="mb-12">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4">
                     {section.heading}
                   </h2>
                   <ContentRenderer content={section.content} />
@@ -211,13 +211,13 @@ export default async function ArticlePage({ params }: PageProps) {
               {/* FAQ Section */}
               {content.faq_section && (
                 <section className="mt-12 bg-gray-50 dark:bg-gray-800 rounded-xl p-8">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6">
                     {content.faq_section.heading}
                   </h2>
-                  <div className="space-y-6">
+                  <div className="space-mobile">
                     {content.faq_section.questions?.map((qa: any, index: number) => (
                       <div key={index}>
-                        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                        <h3 className="mobile-text font-semibold text-gray-900 dark:text-white mb-2">
                           {qa.question}
                         </h3>
                         <div className="text-gray-700 dark:text-gray-300">
@@ -232,7 +232,7 @@ export default async function ArticlePage({ params }: PageProps) {
               {/* Conclusion */}
               {content.conclusion && (
                 <section className="mt-12 p-6 bg-gradient-to-br from-primary/5 to-purple-600/5 rounded-xl">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4">
                     Fazit und nächste Schritte
                   </h2>
                   <div className="text-gray-700 dark:text-gray-300">

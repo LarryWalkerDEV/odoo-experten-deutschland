@@ -55,7 +55,7 @@ export default function AuthorEEAT({ author }: AuthorEEATProps) {
   return (
     <div className="mt-16 bg-gradient-to-br from-violet-50 to-purple-50 dark:from-gray-800 dark:to-gray-900 rounded-2xl p-8 border border-violet-200 dark:border-violet-800">
       {/* Author Header */}
-      <div className="flex items-start gap-6 mb-8">
+      <div className="flex items-start gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 mb-2 sm:mb-3 md:mb-4 sm:mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 md:mb-8">
         {author.image_url ? (
           <Image
             src={author.image_url}
@@ -76,7 +76,7 @@ export default function AuthorEEAT({ author }: AuthorEEATProps) {
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
                 {author.name}
               </h3>
-              <p className="text-lg text-violet-600 dark:text-violet-400 font-medium mb-3">
+              <p className="mobile-text text-violet-600 dark:text-violet-400 font-medium mb-3">
                 {author.title}
               </p>
             </div>
@@ -100,11 +100,11 @@ export default function AuthorEEAT({ author }: AuthorEEATProps) {
       </div>
 
       {/* EEAT Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-1 sm:responsive-grid lg:grid-cols-3 gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6">
         {/* Expertise */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-violet-100 dark:bg-violet-900/30 rounded-lg flex items-center justify-center">
+        <div className="bg-white dark:bg-gray-800 mobile-card rounded-lg sm:rounded-xl shadow-sm">
+          <div className="flex items-center gap-3 mb-2 sm:mb-3 md:mb-4">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 sm:w-8 sm:h-8 sm:w-10 sm:h-10 bg-violet-100 dark:bg-violet-900/30 rounded-lg flex items-center justify-center">
               <Briefcase className="w-5 h-5 text-violet-600 dark:text-violet-400" />
             </div>
             <h4 className="font-semibold text-gray-900 dark:text-white">Expertise</h4>
@@ -120,9 +120,9 @@ export default function AuthorEEAT({ author }: AuthorEEATProps) {
         </div>
 
         {/* Experience & Authority */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
+        <div className="bg-white dark:bg-gray-800 mobile-card rounded-lg sm:rounded-xl shadow-sm">
+          <div className="flex items-center gap-3 mb-2 sm:mb-3 md:mb-4">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 sm:w-8 sm:h-8 sm:w-10 sm:h-10 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
               <Award className="w-5 h-5 text-purple-600 dark:text-purple-400" />
             </div>
             <h4 className="font-semibold text-gray-900 dark:text-white">Autorität</h4>
@@ -138,9 +138,9 @@ export default function AuthorEEAT({ author }: AuthorEEATProps) {
         </div>
 
         {/* Trustworthiness */}
-        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-sm">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
+        <div className="bg-white dark:bg-gray-800 mobile-card rounded-lg sm:rounded-xl shadow-sm">
+          <div className="flex items-center gap-3 mb-2 sm:mb-3 md:mb-4">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 sm:w-8 sm:h-8 sm:w-10 sm:h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
               <Users className="w-5 h-5 text-green-600 dark:text-green-400" />
             </div>
             <h4 className="font-semibold text-gray-900 dark:text-white">Vertrauenswürdigkeit</h4>
@@ -158,7 +158,7 @@ export default function AuthorEEAT({ author }: AuthorEEATProps) {
 
       {/* Trust Signals */}
       <div className="mt-6 pt-6 border-t border-violet-200 dark:border-violet-800">
-        <div className="flex flex-wrap items-center gap-6 text-sm">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-2 sm:gap-3 md:gap-4 md:gap-6 text-sm">
           <div className="flex items-center gap-2">
             <BookOpen className="w-4 h-4 text-violet-600" />
             <span className="text-gray-700 dark:text-gray-300">Regelmäßig aktualisierte Inhalte</span>

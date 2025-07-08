@@ -11,20 +11,20 @@ export const metadata: Metadata = {
 
 export default function DatenschutzPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-min-h-svh bg-white dark:bg-gray-900">
       <Navigation />
       <main className="pt-24 pb-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-violet-100 dark:bg-violet-900/30 rounded-full flex items-center justify-center">
-                <Shield className="w-6 h-6 text-violet-600 dark:text-violet-400" />
+        <div className="max-w-full md:max-w-4xl mx-auto mobile-container overflow-hidden">
+          <div className="mb-2 sm:mb-3 md:mb-4 sm:mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6 md:mb-8">
+            <div className="flex items-center gap-3 mb-2 sm:mb-3 md:mb-4">
+              <div className="w-5 h-5 sm:w-6 sm:h-6 sm:w-8 sm:h-8 sm:w-10 sm:h-10 sm:w-12 sm:h-12 bg-violet-100 dark:bg-violet-900/30 rounded-full flex items-center justify-center">
+                <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600 dark:text-violet-400" />
               </div>
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
                 Datenschutzerklärung
               </h1>
             </div>
-            <p className="text-lg text-gray-600 dark:text-gray-400">
+            <p className="mobile-text text-gray-600 dark:text-gray-400">
               Stand: {new Date().toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' })}
             </p>
           </div>
@@ -32,7 +32,7 @@ export default function DatenschutzPage() {
           <div className="prose prose-lg max-w-none dark:prose-invert">
             {/* Introduction */}
             <section className="mb-12">
-              <p className="text-gray-700 dark:text-gray-300 mb-6">
+              <p className="text-gray-700 dark:text-gray-300 mb-3 sm:mb-2 sm:mb-3 md:mb-4 md:mb-6">
                 Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten 
                 daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2003). In dieser 
                 Datenschutzerklärung informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im 
@@ -42,8 +42,8 @@ export default function DatenschutzPage() {
 
             {/* Responsible Party */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Lock className="w-6 h-6 text-violet-600" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4 flex items-center gap-2">
+                <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600" />
                 Verantwortlicher
               </h2>
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
@@ -53,7 +53,7 @@ export default function DatenschutzPage() {
                   1309 Coffeen Avenue STE 1200<br />
                   Sheridan, Wyoming 82801<br />
                   USA<br /><br />
-                  E-Mail: <a href="mailto:info@odoo-experten-deutschland.de" className="text-violet-600 hover:text-violet-700 underline">
+                  E-Mail: <a className="touch-target" href="mailto:info@odoo-experten-deutschland.de" className="text-violet-600 hover:text-violet-700 underline">
                     info@odoo-experten-deutschland.de
                   </a>
                 </p>
@@ -62,8 +62,8 @@ export default function DatenschutzPage() {
 
             {/* EU Representative */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Globe className="w-6 h-6 text-violet-600" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4 flex items-center gap-2">
+                <Globe className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600" />
                 EU-Vertretung gemäß Art. 27 DSGVO
               </h2>
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
@@ -71,7 +71,7 @@ export default function DatenschutzPage() {
                   Als außerhalb der EU ansässiges Unternehmen haben wir gemäß Art. 27 DSGVO unsere Inhaberin 
                   als Vertreterin in der EU benannt:<br /><br />
                   <strong>Olga Goertz</strong><br />
-                  E-Mail: <a href="mailto:info@odoo-experten-deutschland.de" className="text-violet-600 hover:text-violet-700 underline">
+                  E-Mail: <a className="touch-target" href="mailto:info@odoo-experten-deutschland.de" className="text-violet-600 hover:text-violet-700 underline">
                     info@odoo-experten-deutschland.de
                   </a>
                 </p>
@@ -80,15 +80,15 @@ export default function DatenschutzPage() {
 
             {/* Data Collection Overview */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Database className="w-6 h-6 text-violet-600" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4 flex items-center gap-2">
+                <Database className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600" />
                 Datenerfassung auf unserer Website
               </h2>
               
-              <div className="space-y-6">
+              <div className="space-mobile">
                 {/* Server Log Files */}
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  <h3 className="mobile-text mobile-text font-semibold text-gray-900 dark:text-white mb-3">
                     Server-Log-Dateien
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-3">
@@ -111,7 +111,7 @@ export default function DatenschutzPage() {
 
                 {/* Cookies */}
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  <h3 className="mobile-text mobile-text font-semibold text-gray-900 dark:text-white mb-3">
                     Cookies
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-3">
@@ -125,7 +125,7 @@ export default function DatenschutzPage() {
                   </ul>
                   <p className="text-gray-700 dark:text-gray-300">
                     Detaillierte Informationen finden Sie in unseren{' '}
-                    <a href="/cookie-richtlinien" className="text-violet-600 hover:text-violet-700 underline">
+                    <a className="touch-target" href="/cookie-richtlinien" className="text-violet-600 hover:text-violet-700 underline">
                       Cookie-Richtlinien
                     </a>.
                   </p>
@@ -133,7 +133,7 @@ export default function DatenschutzPage() {
 
                 {/* Contact Forms */}
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  <h3 className="mobile-text mobile-text font-semibold text-gray-900 dark:text-white mb-3">
                     Kontaktformular
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-3">
@@ -151,15 +151,15 @@ export default function DatenschutzPage() {
 
             {/* Third-Party Services */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Users className="w-6 h-6 text-violet-600" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4 flex items-center gap-2">
+                <Users className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600" />
                 Dienste von Drittanbietern
               </h2>
               
-              <div className="space-y-6">
+              <div className="space-mobile">
                 {/* Google Analytics */}
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  <h3 className="mobile-text mobile-text font-semibold text-gray-900 dark:text-white mb-3">
                     Google Analytics
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-3">
@@ -173,7 +173,7 @@ export default function DatenschutzPage() {
                     <strong>Zweck:</strong> Webanalyse<br />
                     <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)<br />
                     <strong>Datenschutzerklärung:</strong>{' '}
-                    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" 
+                    <a className="touch-target" href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" 
                        className="text-violet-600 hover:text-violet-700 underline">
                       Google Privacy Policy
                     </a>
@@ -182,7 +182,7 @@ export default function DatenschutzPage() {
 
                 {/* Supabase */}
                 <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  <h3 className="mobile-text mobile-text font-semibold text-gray-900 dark:text-white mb-3">
                     Supabase
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 mb-3">
@@ -194,7 +194,7 @@ export default function DatenschutzPage() {
                     <strong>Zweck:</strong> Datenspeicherung und -verarbeitung<br />
                     <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)<br />
                     <strong>Datenschutzerklärung:</strong>{' '}
-                    <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" 
+                    <a className="touch-target" href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer" 
                        className="text-violet-600 hover:text-violet-700 underline">
                       Supabase Privacy Policy
                     </a>
@@ -205,13 +205,13 @@ export default function DatenschutzPage() {
 
             {/* User Rights */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <FileText className="w-6 h-6 text-violet-600" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4 flex items-center gap-2">
+                <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600" />
                 Ihre Rechte
               </h2>
               
               <div className="bg-violet-50 dark:bg-violet-900/20 rounded-lg p-6">
-                <p className="text-gray-700 dark:text-gray-300 mb-4">
+                <p className="text-gray-700 dark:text-gray-300 mb-2 sm:mb-3 md:mb-4">
                   Ihnen stehen grundsätzlich folgende Rechte zu:
                 </p>
                 <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
@@ -225,7 +225,7 @@ export default function DatenschutzPage() {
                 </ul>
                 <p className="text-gray-700 dark:text-gray-300 mt-4">
                   Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:{' '}
-                  <a href="mailto:info@odoo-experten-deutschland.de" className="text-violet-600 hover:text-violet-700 underline">
+                  <a className="touch-target" href="mailto:info@odoo-experten-deutschland.de" className="text-violet-600 hover:text-violet-700 underline">
                     info@odoo-experten-deutschland.de
                   </a>
                 </p>
@@ -234,8 +234,8 @@ export default function DatenschutzPage() {
 
             {/* Data Security */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Lock className="w-6 h-6 text-violet-600" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4 flex items-center gap-2">
+                <Lock className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600" />
                 Datensicherheit
               </h2>
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
@@ -255,8 +255,8 @@ export default function DatenschutzPage() {
 
             {/* Data Retention */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Clock className="w-6 h-6 text-violet-600" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4 flex items-center gap-2">
+                <Clock className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600" />
                 Speicherdauer
               </h2>
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
@@ -270,8 +270,8 @@ export default function DatenschutzPage() {
 
             {/* Complaint Right */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Shield className="w-6 h-6 text-violet-600" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4 flex items-center gap-2">
+                <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600" />
                 Beschwerderecht
               </h2>
               <div className="bg-yellow-50 dark:bg-yellow-900/20 rounded-lg p-6">
@@ -285,7 +285,7 @@ export default function DatenschutzPage() {
 
             {/* Updates */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4">
                 Änderungen dieser Datenschutzerklärung
               </h2>
               <p className="text-gray-700 dark:text-gray-300">
@@ -297,8 +297,8 @@ export default function DatenschutzPage() {
 
             {/* Contact */}
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                <Mail className="w-6 h-6 text-violet-600" />
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 md:mb-4 flex items-center gap-2">
+                <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-violet-600" />
                 Kontakt für Datenschutzfragen
               </h2>
               <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
@@ -306,7 +306,7 @@ export default function DatenschutzPage() {
                   Bei Fragen zum Datenschutz oder zur Verarbeitung Ihrer persönlichen Daten können Sie sich 
                   jederzeit an uns wenden:<br /><br />
                   <strong>E-Mail:</strong>{' '}
-                  <a href="mailto:info@odoo-experten-deutschland.de" className="text-violet-600 hover:text-violet-700 underline">
+                  <a className="touch-target" href="mailto:info@odoo-experten-deutschland.de" className="text-violet-600 hover:text-violet-700 underline">
                     info@odoo-experten-deutschland.de
                   </a>
                 </p>
