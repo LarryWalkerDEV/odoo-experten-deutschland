@@ -1,0 +1,35 @@
+name: odoo-experten-deutschland
+region: fra
+services:
+- build_command: npm run build
+  dockerfile_path: Dockerfile
+  environment_slug: node-js
+  envs:
+  - key: NODE_ENV
+    scope: RUN_AND_BUILD_TIME
+    value: production
+  - key: NEXT_PUBLIC_SITE_URL
+    scope: RUN_AND_BUILD_TIME
+    value: https://odoo-experten-deutschland.de
+  - key: NEXT_PUBLIC_SUPABASE_URL
+    scope: RUN_AND_BUILD_TIME
+    type: SECRET
+  - key: NEXT_PUBLIC_SUPABASE_ANON_KEY
+    scope: RUN_AND_BUILD_TIME
+    type: SECRET
+  - key: SUPABASE_SERVICE_ROLE_KEY
+    scope: RUN_TIME
+    type: SECRET
+  github:
+    branch: master
+    deploy_on_push: true
+    repo: <YOUR_GITHUB_REPO>
+  health_check:
+    http_path: /
+  http_port: 3000
+  instance_count: 1
+  instance_size_slug: apps-s-1vcpu-1gb
+  name: web
+  routes:
+  - path: /
+  source_dir: /odoo-experten-deutschland
