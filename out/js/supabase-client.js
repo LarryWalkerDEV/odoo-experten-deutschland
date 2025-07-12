@@ -29,10 +29,25 @@ const supabaseClient = {
     return supabase;
   },
 
-  // Fetch all articles with optional filters
+  // Fetch all articles with optional filters (with Redis caching)
   async getArticles(filters = {}) {
     await this.init();
     
+    // Create cache key
+    const cacheKey = window.redisCache?.generateKey('articles', filters) || `articles:${JSON.stringify(filters)}`;
+    
+    // Try cache first if available
+    if (window.redisCache) {
+      return await window.redisCache.getOrFetch(cacheKey, async () => {
+        return await this._fetchArticles(filters);
+      }, 1800); // 30 minutes cache
+    }
+    
+    return await this._fetchArticles(filters);
+  },
+
+  // Internal fetch function
+  async _fetchArticles(filters = {}) {
     let query = supabase
       .from('articles')
       .select('*')

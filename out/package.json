@@ -1,0 +1,20 @@
+{
+  "name": "odoo-experten-static-cached",
+  "version": "1.0.0",
+  "description": "Odoo Experten Deutschland static website with Redis caching",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'",
+    "start": "vercel --prod"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.28.4"
+  },
+  "devDependencies": {
+    "vercel": "^32.7.2"
+  },
+  "keywords": ["odoo", "static", "redis", "cache", "vercel"],
+  "author": "LarryWalkerDEV",
+  "license": "MIT"
+}
